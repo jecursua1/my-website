@@ -76,8 +76,8 @@ function FloatCard({
 }
 
 const cyclingPhrases = [
-  'Build a team that performs',
   'Rank higher on Google',
+  'Build a team that performs',
   'Automate your operations',
   'Scale with AI & smart systems',
 ]
@@ -222,9 +222,9 @@ export default function Hero() {
             fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
           }}
         >
+          <CyclingText />
           <span className="text-white">Hi, I&apos;m </span>
           <span className="grad-text">Jerico Ursua</span>
-          <CyclingText />
         </h1>
 
         <p
