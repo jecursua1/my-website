@@ -103,7 +103,7 @@ function CyclingText() {
         fontSize: 'clamp(1.3rem, 2.5vw, 1.9rem)',
         fontWeight: 700,
         animation: 'slideUp 0.45s ease forwards',
-        marginTop: '-16px',
+        marginTop: '0px',
         marginBottom: '20px',
       }}
     >
@@ -216,7 +216,7 @@ export default function Hero() {
 
       <div className="relative z-10">
         <h1
-          className="font-black leading-[1.15] mb-3 overflow-hidden"
+          className="font-black leading-[1.15] mb-3"
           style={{
             fontFamily: "'Plus Jakarta Sans', sans-serif",
             fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
