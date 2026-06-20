@@ -241,6 +241,8 @@ export default function Hero() {
           className="text-[#7070a0] mb-4 leading-relaxed"
           style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)' }}
         >
+          Chief of Staff &middot; HR Specialist &middot; SEO Specialist &middot; AI &amp; Automation Expert
+          <br />
           Helping businesses hire better, rank higher, and automate smarter.
         </p>
 
