@@ -18,7 +18,7 @@ export default function FadeIn({
   direction = 'up',
   delay = 0,
   className = '',
-  once = true,
+  once = false,
 }: FadeInProps) {
   const variants = {
     hidden: {
