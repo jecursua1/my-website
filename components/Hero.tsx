@@ -232,7 +232,8 @@ export default function Hero() {
             fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
           }}
         >
-          <span className="text-white block">Hi, I&apos;m Jerico Ursua</span>
+          <span className="text-white">Hi, I&apos;m </span>
+          <span className="grad-text">Jerico Ursua</span>
           <CyclingText />
         </h1>
 
