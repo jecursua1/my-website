@@ -3,10 +3,21 @@ import { Resend } from 'resend'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
+const serviceLabels: Record<string, string> = {
+  cos: 'Chief of Staff & Operations',
+  seo: 'SEO Strategy',
+  hr: 'HR & People Operations',
+  web: 'Web & System Development',
+  automation: 'Automation & Workflow',
+  ai: 'AI Integration & Prompting',
+  other: 'Other',
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
     const { name, email, subject, message, service } = body
+    const serviceLabel = service ? (serviceLabels[service] ?? service) : null
 
     if (!name || !email || !subject || !message) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
@@ -29,10 +40,10 @@ export async function POST(req: NextRequest) {
               <td style="padding: 8px 0; color: #666;"><strong>Email</strong></td>
               <td style="padding: 8px 0;"><a href="mailto:${email}">${email}</a></td>
             </tr>
-            ${service ? `
+            ${serviceLabel ? `
             <tr>
               <td style="padding: 8px 0; color: #666;"><strong>Service</strong></td>
-              <td style="padding: 8px 0;">${service}</td>
+              <td style="padding: 8px 0;">${serviceLabel}</td>
             </tr>` : ''}
             <tr>
               <td style="padding: 8px 0; color: #666;"><strong>Subject</strong></td>
