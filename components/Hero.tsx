@@ -104,7 +104,7 @@ function CyclingText() {
         fontWeight: 700,
         animation: 'slideUp 0.45s ease forwards',
         marginTop: '0px',
-        marginBottom: '20px',
+        marginBottom: '48px',
       }}
     >
       {cyclingPhrases[index]}
@@ -216,7 +216,7 @@ export default function Hero() {
 
       <div className="relative z-10">
         <h1
-          className="font-black leading-[1.15] mb-3"
+          className="font-black leading-[1.15] mb-2"
           style={{
             fontFamily: "'Plus Jakarta Sans', sans-serif",
             fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
@@ -228,7 +228,7 @@ export default function Hero() {
         </h1>
 
         <p
-          className="text-[#7070a0] mb-4 leading-relaxed mt-8"
+          className="text-[#7070a0] mb-4 leading-relaxed mt-2"
           style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)' }}
         >
           Chief of Staff &middot; HR Specialist &middot; SEO Specialist &middot; AI &amp; Automation Expert
