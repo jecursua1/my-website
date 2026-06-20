@@ -61,7 +61,6 @@ export default function About() {
               'Strategic Thinker',
               'Detail-Oriented',
               'Results-Driven',
-              'Clear Communicator',
               'Collaborative',
               'Adaptable',
               'Fast Learner',

@@ -18,6 +18,7 @@ const config: Config = {
         float: 'float 4s ease-in-out infinite',
         'float-delayed': 'float 4s ease-in-out 2s infinite',
         'bounce-arrow': 'bounceArrow 2s ease-in-out infinite',
+        'glow-pulse': 'glowPulse 2.5s ease-in-out infinite',
       },
       keyframes: {
         float: {
@@ -27,6 +28,10 @@ const config: Config = {
         bounceArrow: {
           '0%, 100%': { transform: 'rotate(45deg) translateY(0)' },
           '50%': { transform: 'rotate(45deg) translateY(6px)' },
+        },
+        glowPulse: {
+          '0%, 100%': { boxShadow: '0 0 8px rgba(124,58,237,0.3), 0 0 16px rgba(6,182,212,0.1)' },
+          '50%': { boxShadow: '0 0 18px rgba(124,58,237,0.6), 0 0 32px rgba(6,182,212,0.25)' },
         },
       },
     },

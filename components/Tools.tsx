@@ -1,5 +1,99 @@
-﻿import FadeIn from '@/components/FadeIn'
-import { toolCategories } from '@/lib/data'
+import FadeIn from '@/components/FadeIn'
+import { toolCategories, highlightTools } from '@/lib/data'
+
+const toolIcons: Record<string, React.ReactNode> = {
+  'GoHighLevel': (
+    <svg viewBox="0 0 24 24" width="22" height="22">
+      <circle cx="12" cy="12" r="12" fill="#0D1C2E"/>
+      {/* Yellow arrow — left, tallest */}
+      <polygon points="4.5,13 7.5,5.5 10.5,13 9,13 9,20 6,20 6,13" fill="#FFC107"/>
+      <polygon points="7.5,5.5 10.5,13 9,13 9,20" fill="#996600" opacity="0.45"/>
+      {/* Green arrow — right, medium */}
+      <polygon points="13.5,14 16.5,7.5 19.5,14 18,14 18,20 15,20 15,14" fill="#43C644"/>
+      <polygon points="16.5,7.5 19.5,14 18,14 18,20" fill="#1A6B1A" opacity="0.45"/>
+      {/* Blue arrow — center, shortest */}
+      <polygon points="9.5,16.5 12,12 14.5,16.5 13.5,16.5 13.5,20 10.5,20 10.5,16.5" fill="#3B8FE8"/>
+      <polygon points="12,12 14.5,16.5 13.5,16.5 13.5,20" fill="#0D3D7A" opacity="0.45"/>
+    </svg>
+  ),
+  'Claude AI': (
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+      <path d="M12 2L9.5 9.5H2l6 4.5-2.5 7.5L12 17l6.5 4.5L16 14l6-4.5h-7.5z" fill="#CC785C"/>
+    </svg>
+  ),
+  'SEMRush': (
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+      <path d="M11.64 0C5.212 0 0 5.21 0 11.64c0 6.43 5.212 11.64 11.64 11.64.36 0 .717-.016 1.07-.048v-3.628a8.02 8.02 0 0 1-1.07.072c-4.434 0-8.035-3.6-8.035-8.035S7.206 3.605 11.64 3.605c4.434 0 8.035 3.6 8.035 8.035 0 .358-.024.71-.07 1.054h3.628c.031-.347.047-.7.047-1.054C23.28 5.21 18.068 0 11.64 0zm3.498 11.028l-3.5-2.02v4.04l3.5-2.02zm-3.5 5.234v3.609c3.695-.424 6.678-3.076 7.527-6.614h-3.65a4.434 4.434 0 0 1-3.877 3.005z" fill="#FF642D"/>
+    </svg>
+  ),
+  'Zapier': (
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+      <path d="M21.121 9.836H14.98L19.2 5.616a9.231 9.231 0 0 0-1.104-1.104 9.23 9.23 0 0 0-1.104-1.104l-4.22 4.22V1.487A9.302 9.302 0 0 0 12 1.456c-.532 0-1.056.031-1.572.1v6.13L6.208 3.408a9.231 9.231 0 0 0-1.104 1.104A9.23 9.23 0 0 0 4 5.616l4.22 4.22H2.087A9.302 9.302 0 0 0 2 12c0 .531.031 1.055.1 1.572h6.13L4.01 17.792a9.26 9.26 0 0 0 2.198 2.198l4.22-4.22v6.243c.516.069 1.04.1 1.572.1.531 0 1.055-.031 1.572-.1V15.77l4.22 4.22a9.26 9.26 0 0 0 2.198-2.198l-4.22-4.22h6.243c.069-.517.1-1.04.1-1.572 0-.531-.031-1.056-.1-1.572l-6.893.408z" fill="#FF4A00"/>
+    </svg>
+  ),
+  'Notion': (
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+      <path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933z" fill="#fff"/>
+    </svg>
+  ),
+  'Next.js': (
+    <svg viewBox="0 0 24 24" width="22" height="22">
+      <path d="M11.572 0c-.176 0-.31.001-.358.007a19.76 19.76 0 0 1-.364.033C7.443.346 4.25 2.185 2.228 5.012a11.875 11.875 0 0 0-2.119 5.243c-.096.659-.108.854-.108 1.747s.012 1.089.108 1.748c.652 4.506 3.86 8.292 8.209 9.695.779.25 1.6.422 2.534.525.363.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.207-.106.247-.134.219-.158-.02-.013-.9-1.193-1.955-2.62l-1.919-2.592-2.404-3.558a338.739 338.739 0 0 0-2.422-3.556c-.009-.002-.018 1.579-.023 3.51-.007 3.38-.01 3.515-.052 3.595a.426.426 0 0 1-.206.214c-.075.037-.14.044-.495.044H7.81l-.108-.068a.438.438 0 0 1-.157-.171l-.05-.106.006-4.703.007-4.705.072-.092a.645.645 0 0 1 .174-.143c.096-.047.134-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 1.999 2.895 4.361a10760.433 10760.433 0 0 0 4.735 7.17l1.9 2.879.096-.063a12.317 12.317 0 0 0 2.466-2.163 11.944 11.944 0 0 0 2.824-6.134c.096-.66.108-.854.108-1.748 0-.893-.012-1.088-.108-1.747-.652-4.506-3.859-8.292-8.208-9.695a12.597 12.597 0 0 0-2.499-.523A33.119 33.119 0 0 0 11.573 0zm4.069 7.217c.347 0 .408.005.486.047a.473.473 0 0 1 .237.277c.018.06.023 1.365.018 4.304l-.006 4.218-.744-1.14-.746-1.14v-3.066c0-1.982.01-3.097.023-3.15a.478.478 0 0 1 .233-.296c.096-.05.13-.054.499-.054z" fill="#fff"/>
+    </svg>
+  ),
+  'Slack': (
+    <svg viewBox="0 0 24 24" width="22" height="22">
+      <path fill="#E01E5A" d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52z"/>
+      <path fill="#E01E5A" d="M6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313z"/>
+      <path fill="#36C5F0" d="M8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834z"/>
+      <path fill="#36C5F0" d="M8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312z"/>
+      <path fill="#2EB67D" d="M18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834z"/>
+      <path fill="#2EB67D" d="M17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312z"/>
+      <path fill="#ECB22E" d="M15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52z"/>
+      <path fill="#ECB22E" d="M15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/>
+    </svg>
+  ),
+  'G-Suite': (
+    <svg viewBox="0 0 24 24" width="22" height="22">
+      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+    </svg>
+  ),
+  'Vercel': (
+    <svg viewBox="0 0 24 24" width="22" height="22">
+      <path d="M24 22.525H0L12 1.475z" fill="#fff"/>
+    </svg>
+  ),
+  'ClickUp': (
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+      <path d="M2.143 16.5l2.56-2.143c1.64 2.285 3.352 3.321 5.183 3.321 1.82 0 3.498-1.02 5.08-3.232l2.594 2.094C15.385 19.54 12.97 21.214 9.886 21.214c-3.092 0-5.54-1.705-7.743-4.714z" fill="url(#cu_grad1)"/>
+      <path d="M9.886 2.786l5.49 5.312-1.788 2.155-3.702-3.582-3.702 3.582-1.788-2.155z" fill="url(#cu_grad2)"/>
+      <defs>
+        <linearGradient id="cu_grad1" x1="2" y1="16" x2="17.5" y2="21" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#8930FD"/>
+          <stop offset="1" stopColor="#49CCF9"/>
+        </linearGradient>
+        <linearGradient id="cu_grad2" x1="4.1" y1="2.786" x2="15.376" y2="10.253" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#FF02F0"/>
+          <stop offset="1" stopColor="#FFC800"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  ),
+  'Nano Banana': (
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+      <path d="M5 8c0-1 .5-3 3-4.5S14 2 17 3c1 .4 1.5 1 1 2-.5.8-1.5.5-2.5.2C13 4.5 10 5 8.5 7.5 7 10 7.5 13 9 15s3.5 3 6 2.5c1-.2 2 .2 2 1.2s-1 1.8-3 2C9 21 5 17 5 8z" fill="#FFD700" stroke="#F59E0B" strokeWidth="0.5"/>
+    </svg>
+  ),
+  'Ubersuggest': (
+    <svg viewBox="0 0 24 24" width="22" height="22">
+      <rect width="24" height="24" rx="5" fill="#FF4B00"/>
+      <path d="M7 7v6.5a5 5 0 0 0 10 0V7h-2.5v6.5a2.5 2.5 0 0 1-5 0V7H7z" fill="#fff"/>
+    </svg>
+  ),
+}
 
 export default function Tools() {
   return (
@@ -23,6 +117,57 @@ export default function Tools() {
           </div>
         </FadeIn>
 
+        {/* Highlight Tools */}
+        <FadeIn delay={0.1}>
+          <div
+            className="mb-12 p-6 rounded-[18px]"
+            style={{
+              background: 'linear-gradient(135deg, rgba(124,58,237,0.08), rgba(6,182,212,0.05))',
+              border: '1px solid rgba(124,58,237,0.2)',
+            }}
+          >
+            <h4
+              className="text-[0.78rem] font-bold uppercase tracking-widest mb-5 text-center"
+              style={{ color: '#9b5af5' }}
+            >
+              Highlight Tools
+            </h4>
+            <div className="flex flex-wrap gap-3 justify-center">
+              {highlightTools.map((tool) => (
+                <div
+                  key={tool.name}
+                  className="flex items-center gap-3 px-6 py-3.5 rounded-[14px] text-[1.05rem] font-semibold text-[#e2e2f0] transition-transform duration-300 hover:-translate-y-0.5 cursor-default animate-glow-pulse"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(124,58,237,0.18), rgba(6,182,212,0.1))',
+                    border: '1px solid rgba(124,58,237,0.4)',
+                  }}
+                >
+                  {toolIcons[tool.name] && (
+                    <span className="flex-shrink-0" style={{ transform: 'scale(1.25)', transformOrigin: 'center' }}>
+                      {toolIcons[tool.name]}
+                    </span>
+                  )}
+                  {tool.name}
+                </div>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.2}>
+          <div
+            className="text-center mb-8"
+            style={{ borderTop: '1px solid rgba(255,255,255,0.07)', paddingTop: '2rem' }}
+          >
+            <h3
+              className="text-[1.15rem] font-bold text-[#e2e2f0]"
+              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+            >
+              More Tools in My Stack
+            </h3>
+          </div>
+        </FadeIn>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {toolCategories.map((cat, i) => (
             <FadeIn key={cat.title} delay={i * 0.08}>
@@ -37,13 +182,12 @@ export default function Tools() {
                   {cat.tools.map((tool) => (
                     <div
                       key={tool.name}
-                      className="flex items-center gap-2 px-4 py-2.5 rounded-[10px] text-[0.85rem] font-medium text-[#e2e2f0] transition-all duration-300 hover:text-[#9b5af5] hover:-translate-y-0.5 cursor-default"
+                      className="px-4 py-2.5 rounded-[10px] text-[0.85rem] font-medium text-[#e2e2f0] transition-all duration-300 hover:text-[#9b5af5] hover:-translate-y-0.5 cursor-default"
                       style={{
                         background: '#12121f',
                         border: '1px solid rgba(255,255,255,0.07)',
                       }}
                     >
-                      <span>{tool.icon}</span>
                       {tool.name}
                     </div>
                   ))}

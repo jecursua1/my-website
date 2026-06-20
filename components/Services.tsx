@@ -69,6 +69,24 @@ export default function Services() {
             </FadeIn>
           ))}
         </div>
+
+        <FadeIn delay={0.5}>
+          <div className="text-center mt-14">
+            <p className="text-[#7070a0] text-[0.97rem] mb-5">
+              Ready to bring in a results-driven operations and growth expert?
+            </p>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-[10px] text-[0.95rem] font-semibold text-white transition-all duration-300 hover:-translate-y-0.5"
+              style={{
+                background: 'linear-gradient(135deg, #7c3aed, #06b6d4)',
+                boxShadow: '0 4px 24px rgba(124,58,237,0.4)',
+              }}
+            >
+              Let&apos;s Work Together &#8594;
+            </a>
+          </div>
+        </FadeIn>
       </div>
     </section>
   )

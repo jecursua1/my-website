@@ -21,7 +21,7 @@ export const services = [
     icon: '🏢',
     title: 'Chief of Staff & Operations',
     description:
-      'Strategic operations leadership — driving cross-functional execution, team alignment, and agency-wide efficiency.',
+      'Strategic operations leadership that drives cross-functional execution, keeps teams aligned, and builds the systems that make an agency run at its best.',
     items: [
       'Cross-Functional Coordination',
       'Executive Liaison & Stakeholder Management',
@@ -31,23 +31,10 @@ export const services = [
     featured: true,
   },
   {
-    icon: '👥',
-    title: 'HR & Recruitment',
-    description:
-      'End-to-end hiring solutions — from sourcing and screening to onboarding your next great hire.',
-    items: [
-      'End-to-End Recruitment',
-      'ATS Management (Jobma, CVViZ)',
-      'Payroll Processing & Timekeeping',
-      'Employee Onboarding & Relations',
-    ],
-    featured: false,
-  },
-  {
     icon: '🔍',
     title: 'SEO Strategy',
     description:
-      'Data-driven SEO that increases organic visibility, drives qualified traffic, and grows your business.',
+      'Data-driven SEO built to grow your organic presence, attract the right audience, and turn search rankings into real business results.',
     items: [
       'Technical SEO Audits',
       'Keyword Research & Strategy',
@@ -57,15 +44,28 @@ export const services = [
     featured: false,
   },
   {
-    icon: '💻',
-    title: 'Web & Technical Development',
+    icon: '👥',
+    title: 'HR & People Operations',
     description:
-      'End-to-end web operations — from Next.js development to deployment management and blog system architecture.',
+      'Full-cycle HR management covering the entire employee lifecycle, from sourcing and hiring to payroll, training, records, and everything in between.',
+    items: [
+      'Full-Cycle Recruitment & Onboarding',
+      'Payroll Processing & Timekeeping',
+      'Training & Development Programs',
+      'Records Management & HR Compliance',
+    ],
+    featured: false,
+  },
+  {
+    icon: '💻',
+    title: 'Web & System Development',
+    description:
+      'End-to-end web and internal system development, from Next.js websites and deployment pipelines to custom tools that help your team work smarter.',
     items: [
       'Next.js Website Development',
+      'Internal System & Tool Development',
       'GitHub Branch & Deployment Management',
-      'Vercel & DNS Configuration',
-      'Blog System Architecture',
+      'Vercel, DNS & Blog Architecture',
     ],
     featured: false,
   },
@@ -73,7 +73,7 @@ export const services = [
     icon: '🤖',
     title: 'Automation & Workflow',
     description:
-      'Streamline operations with intelligent automation — reduce manual tasks and improve team efficiency.',
+      'Intelligent automation that eliminates repetitive manual work, connects your tools, and keeps operations running without constant oversight.',
     items: [
       'Zapier & Make Workflow Automation',
       'GoHighLevel Setup & Management',
@@ -83,15 +83,15 @@ export const services = [
     featured: false,
   },
   {
-    icon: '📱',
-    title: 'Social Media Management',
+    icon: '✨',
+    title: 'AI Integration & Prompting',
     description:
-      'Consistent brand presence across platforms — from content scheduling to performance tracking.',
+      'Proficient in leveraging frontier AI tools like Claude and Perplexity to accelerate research, generate content, and embed intelligent workflows across operations.',
     items: [
-      'Multi-Brand Content Operations',
-      'YouTube & Instagram Management',
-      'Buffer & Metricool Scheduling',
-      'Engagement Tracking & Reporting',
+      'Prompt Engineering & Optimization',
+      'AI-Powered Research & Analysis',
+      'Content Generation & Editing',
+      'AI Tool Evaluation & Adoption',
     ],
     featured: false,
   },
@@ -134,16 +134,16 @@ export const experiences: Experience[] = [
         type: 'Full-time',
         title: 'Chief of Staff',
         description:
-          'Promoted to Chief of Staff, driving SEO strategy across all clients, managing full-cycle payroll, leading Next.js web operations and GitHub deployments, overseeing multi-brand content pipelines, and serving as primary liaison between the owner and all teams.',
-        tags: ['Operations', 'SEO', 'Next.js', 'Payroll', 'Leadership'],
+          'Promoted to Chief of Staff, managing end-to-end recruitment, driving SEO strategy, leading Next.js web operations and system development including bug fixes and client feature requests, building Claude AI skills, overseeing multi-brand content pipelines, and serving as primary liaison between the founders and all teams.',
+        tags: ['Operations', 'SEO', 'Next.js', 'Claude Skills', 'Leadership'],
       },
       {
         period: 'June 2024 – Dec 2025',
         type: 'Full-time',
         title: 'HR & Executive Assistant',
         description:
-          'Managed end-to-end recruitment, administered GoHighLevel CRM with email lifecycle workflows, automated internal processes using Zapier and Make, and provided executive support including calendar management and SOP development.',
-        tags: ['HR', 'GoHighLevel', 'Zapier', 'Make', 'Recruitment'],
+          'Managed end-to-end internal recruitment and sourced candidates on behalf of clients, automated internal processes using Zapier, and provided executive support including email management, calendar management, and SOP development.',
+        tags: ['HR', 'GoHighLevel', 'Zapier', 'Notion', 'Recruitment'],
       },
     ],
   },
@@ -154,8 +154,8 @@ export const experiences: Experience[] = [
     company: 'Lead Distro AI',
     location: 'Remote · United States',
     description:
-      'Supporting a SaaS pay-per-lead platform — managing GoHighLevel email lifecycle workflows, overseeing cold email infrastructure across 6 lookalike domains, coordinating external partnerships, and leading G2 profile optimization efforts.',
-    tags: ['GoHighLevel', 'DNS', 'Email Deliverability', 'Partnerships', 'G2'],
+      'Supporting a SaaS pay-per-lead platform by managing GoHighLevel email lifecycle workflows, overseeing cold email infrastructure, driving SEO strategy, and coordinating external partnerships.',
+    tags: ['GoHighLevel', 'SEO', 'Email Deliverability', 'Partnerships', 'DNS'],
   },
   {
     grouped: true,
@@ -167,15 +167,15 @@ export const experiences: Experience[] = [
         type: 'Full-time',
         title: 'SEO Project Manager',
         description:
-          'Promoted to SEO Project Manager, overseeing end-to-end SEO campaign delivery across multiple accounts — managing keyword strategy, content planning, link building, and performance tracking using SE Ranking, Ahrefs, and SEMRush.',
-        tags: ['SEO', 'Project Management', 'Ahrefs', 'SE Ranking', 'Link Building'],
+          'Promoted to SEO Project Manager, executing keyword research, on-page and off-page optimization, data benchmarking, link building, and blog and page optimization across multiple client accounts using SE Ranking, Ahrefs, and SEMRush.',
+        tags: ['SEO', 'Project Management', 'SEMRush', 'Link Building', 'Page Optimization'],
       },
       {
         period: 'July 2023 – Dec 2024',
         type: 'Full-time',
         title: 'Virtual SEO Assistant',
         description:
-          'Executed email marketing campaigns, conducted lead generation using Seamless.ai and Apollo.io, managed client outreach tracking, and provided comprehensive performance analytics and reporting.',
+          'Executed email marketing campaigns, conducted lead generation using Seamless.ai and Apollo.io, built links for client accounts, managed client outreach tracking, and provided comprehensive performance analytics and reporting.',
         tags: ['SEO', 'Email Marketing', 'Lead Generation', 'Apollo.io', 'Seamless.ai'],
       },
     ],
@@ -217,8 +217,8 @@ export const experiences: Experience[] = [
     company: 'Strongbiz Marketing Corp.',
     location: 'On-Site · Philippines',
     description:
-      'Led end-to-end recruitment, processed payroll and timekeeping reports, created and implemented SOPs, designed social media advertisements using Photoshop and Canva, and managed travel arrangements.',
-    tags: ['HR', 'Payroll', 'Recruitment', 'SOPs', 'Canva'],
+      'Led end-to-end recruitment, processed payroll and timekeeping reports, created and implemented SOPs, designed ad creatives for social media, and handled purchasing and procurement.',
+    tags: ['HR', 'Payroll', 'Recruitment', 'SOPs', 'Purchasing'],
   },
   {
     period: 'Nov 2019 – Apr 2020',
@@ -227,8 +227,8 @@ export const experiences: Experience[] = [
     company: 'Puregold Price Club Inc.',
     location: 'On-Site · Philippines',
     description:
-      'Provided HR and administrative support across multiple departments, maintained employee records, processed payroll, managed IVRs, and led end-to-end recruitment efforts.',
-    tags: ['HR', 'Payroll', 'Recruitment', 'Admin', 'Compliance'],
+      'Handled end-to-end recruitment, processed payroll, maintained employee records, managed training and development programs, and ensured labor law compliance across departments.',
+    tags: ['HR', 'Payroll', 'Recruitment', 'Records Management', 'Labor Law'],
   },
 ]
 
@@ -330,98 +330,141 @@ export const testimonials = [
   },
 ]
 
+export const highlightTools = [
+  { name: 'GoHighLevel' },
+  { name: 'Claude AI' },
+  { name: 'SEMRush' },
+  { name: 'Zapier' },
+  { name: 'Notion' },
+  { name: 'Next.js' },
+  { name: 'Slack' },
+  { name: 'G-Suite' },
+  { name: 'Vercel' },
+  { name: 'ClickUp' },
+  { name: 'Nano Banana' },
+  { name: 'Ubersuggest' },
+]
+
 export const toolCategories = [
   {
-    title: 'Productivity & PM',
+    title: 'Productivity & Project Management',
     tools: [
-      { name: 'G-Suite', icon: '📧' },
-      { name: 'Office 365', icon: '💼' },
-      { name: 'Notion', icon: '📝' },
-      { name: 'ClickUp', icon: '✅' },
-      { name: 'Asana', icon: '🎯' },
-      { name: 'Trello', icon: '📋' },
-      { name: 'Calendly', icon: '📅' },
-      { name: 'Miro', icon: '🗂️' },
+      { name: 'Office 365' },
+      { name: 'Asana' },
+      { name: 'Trello' },
+      { name: 'Calendly' },
+      { name: 'Miro' },
+      { name: 'PandaDoc' },
+      { name: 'Skool' },
+      { name: 'Typeform' },
+      { name: 'Fillout' },
     ],
   },
   {
     title: 'CRM & Automation',
     tools: [
-      { name: 'GoHighLevel', icon: '⚡' },
-      { name: 'Zapier', icon: '🔄' },
-      { name: 'Make', icon: '🔧' },
-      { name: 'HubSpot', icon: '🟠' },
-      { name: 'Instantly.ai', icon: '📨' },
-      { name: 'InboxKit', icon: '📥' },
-      { name: 'PandaDoc', icon: '📃' },
+      { name: 'Make' },
+      { name: 'HubSpot' },
+      { name: 'Instantly.ai' },
+      { name: 'InboxKit' },
+      { name: 'Seamless.ai' },
+    ],
+  },
+  {
+    title: 'Human Resources',
+    tools: [
+      { name: 'Jobma' },
+      { name: 'CVViZ' },
+      { name: 'BambooHR' },
+      { name: 'HRIS' },
+      { name: 'Gusto' },
+      { name: 'HR.my' },
+      { name: 'Hubstaff' },
+      { name: 'Time Doctor' },
+      { name: 'Wise' },
     ],
   },
   {
     title: 'Web & Development',
     tools: [
-      { name: 'Next.js', icon: '▲' },
-      { name: 'GitHub', icon: '🐙' },
-      { name: 'Vercel', icon: '🚀' },
-      { name: 'Cloudflare', icon: '🌐' },
-      { name: 'WordPress', icon: '📰' },
-      { name: 'Shopify', icon: '🛍️' },
-      { name: 'VS Code', icon: '💻' },
+      { name: 'GitHub' },
+      { name: 'Cloudflare' },
+      { name: 'WordPress' },
+      { name: 'Shopify' },
+      { name: 'Squarespace' },
+      { name: 'Namecheap' },
+      { name: 'GoDaddy' },
+      { name: 'VS Code' },
     ],
   },
   {
-    title: 'Marketing & SEO',
+    title: 'SEO & Marketing',
     tools: [
-      { name: 'SE Ranking', icon: '📊' },
-      { name: 'Ahrefs', icon: '🔗' },
-      { name: 'SEMRush', icon: '🔍' },
-      { name: 'Google Analytics', icon: '📈' },
-      { name: 'Google Search Console', icon: '🔎' },
-      { name: 'Buffer', icon: '📱' },
-      { name: 'Metricool', icon: '📉' },
-      { name: 'Apollo.io', icon: '🚀' },
+      { name: 'Ahrefs' },
+      { name: 'SE Ranking' },
+      { name: 'Google Analytics' },
+      { name: 'Google Search Console' },
+      { name: 'Apollo.io' },
+      { name: 'Buffer' },
+      { name: 'Metricool' },
+    ],
+  },
+  {
+    title: 'Finance & Payments',
+    tools: [
+      { name: 'Stripe' },
+      { name: 'QuickBooks' },
+    ],
+  },
+  {
+    title: 'Security',
+    tools: [
+      { name: '1Password' },
+      { name: 'Bitwarden' },
+    ],
+  },
+  {
+    title: 'AI Tools',
+    tools: [
+      { name: 'Perplexity' },
+      { name: 'ChatGPT' },
+      { name: 'Midjourney' },
     ],
   },
   {
     title: 'Design & Communication',
     tools: [
-      { name: 'Canva', icon: '🎨' },
-      { name: 'Photoshop', icon: '🖼️' },
-      { name: 'Premiere Pro', icon: '🎬' },
-      { name: 'CapCut', icon: '✂️' },
-      { name: 'Slack', icon: '💬' },
-      { name: 'Discord', icon: '🎮' },
-      { name: 'RingCentral', icon: '📞' },
-      { name: 'Frame.io', icon: '🎥' },
+      { name: 'Canva' },
+      { name: 'Photoshop' },
+      { name: 'Discord' },
+      { name: 'RingCentral' },
+      { name: 'Frame.io' },
     ],
   },
 ]
 
 export const technicalSkills = [
   { name: 'Chief of Staff & Operations', level: 95 },
-  { name: 'HR & Recruitment', level: 95 },
   { name: 'SEO Strategy', level: 90 },
-  { name: 'Workflow Automation', level: 88 },
-  { name: 'Web Development (Next.js)', level: 82 },
-  { name: 'Social Media Management', level: 85 },
+  { name: 'HR & People Operations', level: 95 },
+  { name: 'Web & System Development', level: 82 },
+  { name: 'Automation & Workflow', level: 88 },
+  { name: 'AI Integration & Prompting', level: 85 },
 ]
 
 export const professionalSkills = [
   { name: 'Communication', level: 95 },
   { name: 'Attention to Detail', level: 94 },
   { name: 'Problem Solving', level: 92 },
+  { name: 'Leadership & Team Management', level: 91 },
   { name: 'Team Collaboration', level: 90 },
   { name: 'Project Management', level: 90 },
 ]
 
 export const badgeGroups = [
   {
-    label: 'HR Tools',
-    items: ['Jobma', 'CVViZ', 'HR.my', 'Hubstaff', 'Time Doctor'],
-    highlight: false,
-  },
-  {
-    label: 'SEO Tools',
-    items: ['Ahrefs', 'SEMRush', 'SE Ranking', 'Google Analytics'],
+    label: 'Highlight Tools',
+    items: ['GoHighLevel', 'SEMRush', 'Ahrefs', 'Jobma', 'CVViZ', 'Zapier', 'Notion', 'Claude AI', 'Perplexity'],
     highlight: false,
   },
   {

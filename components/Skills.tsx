@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import FadeIn from '@/components/FadeIn'
-import { technicalSkills, professionalSkills, badgeGroups } from '@/lib/data'
+import { technicalSkills, professionalSkills } from '@/lib/data'
 
 function SkillBar({ name, level, accent }: { name: string; level: number; accent?: boolean }) {
   const barRef = useRef<HTMLDivElement>(null)
@@ -62,7 +62,7 @@ export default function Skills() {
               Skills &amp; Proficiency
             </h2>
             <p className="text-[#7070a0] max-w-[520px] mx-auto text-[1.05rem]">
-              A snapshot of my professional and technical capabilities
+              Built through 6+ years of real-world experience across HR, SEO, operations, and technology
             </p>
           </div>
         </FadeIn>
@@ -73,7 +73,7 @@ export default function Skills() {
               className="text-[1rem] font-bold text-[#e2e2f0] mb-6"
               style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
-              Core Services
+              Core Competencies
             </h4>
             <div className="flex flex-col gap-4">
               {technicalSkills.map((skill) => (
@@ -97,40 +97,6 @@ export default function Skills() {
           </FadeIn>
         </div>
 
-        {/* Badges */}
-        <FadeIn>
-          <div
-            className="flex flex-col gap-6 pt-8"
-            style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}
-          >
-            {badgeGroups.map((group) => (
-              <div key={group.label} className="flex flex-wrap items-center gap-3">
-                <h5 className="text-[0.78rem] font-bold uppercase tracking-widest text-[#7070a0] min-w-[110px]">
-                  {group.label}
-                </h5>
-                <div className="flex flex-wrap gap-2">
-                  {group.items.map((item) => (
-                    <span
-                      key={item}
-                      className="text-[0.82rem] px-3.5 py-1.5 rounded-lg"
-                      style={{
-                        background: group.highlight
-                          ? 'rgba(6,182,212,0.1)'
-                          : 'rgba(255,255,255,0.05)',
-                        border: group.highlight
-                          ? '1px solid rgba(6,182,212,0.3)'
-                          : '1px solid rgba(255,255,255,0.07)',
-                        color: group.highlight ? '#22d3ee' : '#e2e2f0',
-                      }}
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </FadeIn>
       </div>
     </section>
   )
