@@ -145,7 +145,7 @@ function SingleBody({ exp, align = 'left' }: { exp: SingleExperience; align?: 'l
   const isRight = align === 'right'
   return (
     <div
-      className="p-6 rounded-[14px] w-full transition-all duration-300 hover:scale-[1.025] hover:-translate-y-1 cursor-default"
+      className="w-full rounded-[14px] overflow-hidden transition-all duration-300 hover:scale-[1.025] hover:-translate-y-1 cursor-default"
       style={{
         background: '#12121f',
         border: '1px solid rgba(255,255,255,0.07)',
@@ -154,28 +154,43 @@ function SingleBody({ exp, align = 'left' }: { exp: SingleExperience; align?: 'l
       onMouseEnter={e => (e.currentTarget.style.border = '1px solid rgba(124,58,237,0.4)')}
       onMouseLeave={e => (e.currentTarget.style.border = '1px solid rgba(255,255,255,0.07)')}
     >
-      <div className={`flex items-center gap-2.5 mb-2.5 flex-wrap ${isRight ? 'justify-end' : ''}`}>
-        <span className="text-xs font-semibold text-[#9b5af5]">{exp.period}</span>
-        <span
-          className="text-[0.72rem] px-2.5 py-0.5 rounded-full"
-          style={{
-            background: 'rgba(6,182,212,0.12)',
-            border: '1px solid rgba(6,182,212,0.25)',
-            color: '#22d3ee',
-          }}
-        >
-          {exp.type}
-        </span>
-      </div>
-      <h3
-        className="text-[1.05rem] font-bold text-[#e2e2f0] mb-1"
-        style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+      {/* Company header */}
+      <div
+        className="px-6 py-3 flex items-center gap-2 flex-wrap"
+        style={{
+          background: 'linear-gradient(135deg, rgba(124,58,237,0.12), rgba(6,182,212,0.06))',
+          borderBottom: '1px solid rgba(255,255,255,0.07)',
+          justifyContent: isRight ? 'flex-end' : 'flex-start',
+        }}
       >
-        {exp.title}
-      </h3>
-      <p className="text-xs text-[#9b5af5] mb-2.5">{exp.company} · {exp.location}</p>
-      <p className="text-[0.87rem] text-[#7070a0] mb-3.5">{exp.description}</p>
-      <TagList tags={exp.tags} align={align} />
+        <span className="text-[0.85rem] font-bold" style={{ color: '#9b5af5' }}>{exp.company}</span>
+        <span className="text-[0.75rem] text-[#7070a0]">· {exp.location}</span>
+      </div>
+
+      {/* Role content */}
+      <div className="px-6 py-5">
+        <div className={`flex items-center gap-2.5 mb-2.5 flex-wrap ${isRight ? 'justify-end' : ''}`}>
+          <span className="text-xs font-semibold text-[#9b5af5]">{exp.period}</span>
+          <span
+            className="text-[0.72rem] px-2.5 py-0.5 rounded-full"
+            style={{
+              background: 'rgba(6,182,212,0.12)',
+              border: '1px solid rgba(6,182,212,0.25)',
+              color: '#22d3ee',
+            }}
+          >
+            {exp.type}
+          </span>
+        </div>
+        <h3
+          className="text-[1.05rem] font-bold text-[#e2e2f0] mb-2"
+          style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+        >
+          {exp.title}
+        </h3>
+        <p className="text-[0.87rem] text-[#7070a0] mb-3.5">{exp.description}</p>
+        <TagList tags={exp.tags} align={align} />
+      </div>
     </div>
   )
 }
