@@ -55,39 +55,44 @@ export default function Navbar() {
           className="flex items-center gap-3 group"
           style={{ textDecoration: 'none' }}
         >
-          {/* Monogram badge */}
-          <div
-            className="relative w-[44px] h-[44px] rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:shadow-[0_0_22px_rgba(124,58,237,0.6)]"
-            style={{
-              background: 'linear-gradient(145deg, #140826, #0b1828)',
-              border: '1.5px solid rgba(124,58,237,0.5)',
-            }}
+          {/* Monogram oval badge */}
+          <svg
+            width="62" height="50"
+            viewBox="0 0 62 50"
+            fill="none"
+            className="flex-shrink-0 transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(167,139,250,0.6)]"
           >
-            {/* JU ligature: U shape + J hook extending below U's base */}
-            <svg width="24" height="28" viewBox="0 0 24 28" fill="none">
-              {/* U: left stroke → bottom curve → right stroke (shared with J) */}
-              <path
-                d="M 3 2 L 3 16 Q 3 23 12 23 Q 21 23 21 16 L 21 2"
-                stroke="url(#navLogoGrad)"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              {/* J hook: extends from right stroke below U's curve, sweeps left */}
-              <path
-                d="M 21 17 Q 21 28 12 28 Q 5 28 4 23"
-                stroke="url(#navLogoGrad)"
-                strokeWidth="3"
-                strokeLinecap="round"
-              />
-              <defs>
-                <linearGradient id="navLogoGrad" x1="0" y1="0" x2="24" y2="28" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="#c084fc" />
-                  <stop offset="100%" stopColor="#38bdf8" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
+            {/* Dark navy oval background */}
+            <ellipse cx="31" cy="25" rx="30" ry="24" fill="#0e0820"/>
+            {/* Oval border */}
+            <ellipse cx="31" cy="25" rx="30" ry="24" stroke="url(#navOvalGrad)" strokeWidth="1.6"/>
+            {/* J — serif, bold, left side */}
+            <text
+              x="13" y="36"
+              fontFamily="Georgia, 'Times New Roman', 'Palatino Linotype', serif"
+              fontWeight="bold"
+              fontSize="30"
+              fill="url(#navLetterGrad)"
+            >J</text>
+            {/* U — serif, bold, right side, slightly overlapping J */}
+            <text
+              x="27" y="36"
+              fontFamily="Georgia, 'Times New Roman', 'Palatino Linotype', serif"
+              fontWeight="bold"
+              fontSize="30"
+              fill="url(#navLetterGrad)"
+            >U</text>
+            <defs>
+              <linearGradient id="navOvalGrad" x1="0" y1="0" x2="62" y2="50" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#a78bfa"/>
+                <stop offset="100%" stopColor="#38bdf8"/>
+              </linearGradient>
+              <linearGradient id="navLetterGrad" x1="0" y1="0" x2="62" y2="50" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#c4b5fd"/>
+                <stop offset="100%" stopColor="#67e8f9"/>
+              </linearGradient>
+            </defs>
+          </svg>
           {/* Name */}
           <div className="flex flex-col leading-none gap-[3px]">
             <span

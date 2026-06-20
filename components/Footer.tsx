@@ -75,35 +75,22 @@ export default function Footer() {
               href="#home"
               className="flex items-center gap-3 mb-4 w-fit group"
             >
-              <div
-                className="relative w-[44px] h-[44px] rounded-full flex items-center justify-center flex-shrink-0"
-                style={{
-                  background: 'linear-gradient(145deg, #140826, #0b1828)',
-                  border: '1.5px solid rgba(124,58,237,0.5)',
-                }}
-              >
-                <svg width="24" height="28" viewBox="0 0 24 28" fill="none">
-                  <path
-                    d="M 3 2 L 3 16 Q 3 23 12 23 Q 21 23 21 16 L 21 2"
-                    stroke="url(#footerLogoGrad)"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M 21 17 Q 21 28 12 28 Q 5 28 4 23"
-                    stroke="url(#footerLogoGrad)"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                  />
-                  <defs>
-                    <linearGradient id="footerLogoGrad" x1="0" y1="0" x2="24" y2="28" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stopColor="#c084fc" />
-                      <stop offset="100%" stopColor="#38bdf8" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
+              <svg width="62" height="50" viewBox="0 0 62 50" fill="none" className="flex-shrink-0">
+                <ellipse cx="31" cy="25" rx="30" ry="24" fill="#0e0820"/>
+                <ellipse cx="31" cy="25" rx="30" ry="24" stroke="url(#footerOvalGrad)" strokeWidth="1.6"/>
+                <text x="13" y="36" fontFamily="Georgia, 'Times New Roman', serif" fontWeight="bold" fontSize="30" fill="url(#footerLetterGrad)">J</text>
+                <text x="27" y="36" fontFamily="Georgia, 'Times New Roman', serif" fontWeight="bold" fontSize="30" fill="url(#footerLetterGrad)">U</text>
+                <defs>
+                  <linearGradient id="footerOvalGrad" x1="0" y1="0" x2="62" y2="50" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#a78bfa"/>
+                    <stop offset="100%" stopColor="#38bdf8"/>
+                  </linearGradient>
+                  <linearGradient id="footerLetterGrad" x1="0" y1="0" x2="62" y2="50" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#c4b5fd"/>
+                    <stop offset="100%" stopColor="#67e8f9"/>
+                  </linearGradient>
+                </defs>
+              </svg>
               <div className="flex flex-col leading-none gap-[3px]">
                 <span className="text-[0.58rem] font-bold uppercase tracking-[0.22em] text-[#6060a0]">Jec</span>
                 <span className="text-[1rem] font-black uppercase tracking-[0.1em] text-white" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Ursua</span>
