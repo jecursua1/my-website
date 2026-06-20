@@ -114,7 +114,7 @@ export default function AboutMePage() {
           </p>
           <p>
             Jobless during one of the hardest periods in modern history, I turned to the stock market and became a
-            <strong className="text-white"> day trader</strong> to keep income flowing. It wasn&apos;t easy,
+            <strong className="text-white">day trader</strong> to keep income flowing. It wasn&apos;t easy,
             but it taught me discipline, risk management, and how to think strategically under pressure.
           </p>
         </StoryBlock>
@@ -191,9 +191,7 @@ export default function AboutMePage() {
           }}
         >
           <p className="text-[1.15rem] text-[#e2e2f0] leading-relaxed italic mb-4">
-            &ldquo;If you have the ability to do it, do it. Stop waiting for the right time. Stop waiting for permission.
-            Don&apos;t settle for less than what you know you&apos;re capable of. Aim higher, always.
-            And through all of it, be a good person. God will be with you every step of the way.&rdquo;
+            &ldquo;If you have the ability to do it, do it. Don&apos;t settle for less. Aim higher.&rdquo;
           </p>
           <span className="text-[0.85rem] text-[#7070a0]">— Jec Ursua</span>
         </div>
