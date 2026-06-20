@@ -3,16 +3,16 @@ import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jericoursua.com'),
-  title: 'Jerico Ursua | Chief of Staff & SEO Specialist',
+  title: 'HR, Chief of Staff & SEO Specialist | Jerico Ursua',
   description:
-    'Chief of Staff, HR Specialist & SEO Specialist with 6+ years in HR management, SEO strategy, web development, and AI-powered automation.',
+    'The remote ops leader agencies trust — Chief of Staff, HR Specialist & SEO Strategist with 6+ years scaling teams, driving organic growth, and building AI-powered workflows.',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Jerico Ursua | Chief of Staff & SEO Specialist',
+    title: 'HR, Chief of Staff & SEO Specialist | Jerico Ursua',
     description:
-      'Chief of Staff, HR Specialist & SEO Specialist with 6+ years in HR management, SEO strategy, web development, and AI-powered automation.',
+      'The remote ops leader agencies trust — Chief of Staff, HR Specialist & SEO Strategist with 6+ years scaling teams, driving organic growth, and building AI-powered workflows.',
     type: 'website',
     url: 'https://jericoursua.com',
   },
