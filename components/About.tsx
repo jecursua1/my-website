@@ -15,7 +15,6 @@ export default function About() {
               border: '1px solid rgba(255,255,255,0.07)',
             }}
           >
-            {/* Replace src with your YouTube embed: https://www.youtube.com/embed/YOUR_VIDEO_ID */}
             <iframe
               className="absolute inset-0 w-full h-full"
               src="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -38,21 +37,21 @@ export default function About() {
               fontSize: 'clamp(1.7rem, 3vw, 2.3rem)',
             }}
           >
-            Building Efficient Teams &amp;
+            Operations, People &amp;
             <br />
-            Digital Systems That Work
+            Growth — All in One Role
           </h2>
           <p className="text-[#7070a0] mb-4 text-[0.97rem]">
-            I&apos;m a versatile Chief of Staff and Operations Leader with 6+ years of
-            cross-functional experience across digital marketing agencies, SaaS platforms, and HR
-            operations. My core strengths sit at the intersection of people leadership, technical
-            execution, and strategic SEO.
+            I&apos;m a remote operations specialist with 6+ years of cross-functional experience
+            across digital marketing agencies, SaaS platforms, and HR operations. I sit at the
+            intersection of people leadership, technical execution, and organic search strategy —
+            making me the kind of hire that scales with a business, not just fills a seat.
           </p>
           <p className="text-[#7070a0] mb-6 text-[0.97rem]">
-            At Great Marketing AI, I run full-cycle payroll and recruitment, oversee Next.js web
-            development, and manage multi-platform content operations across three brands
-            simultaneously. Promoted twice in under two years by consistently taking ownership of
-            outcomes and building the systems that make teams run better.
+            I build the systems that keep teams running — from full-cycle recruitment and payroll
+            to SEO campaigns, Next.js web operations, and AI-powered workflow automation. Promoted
+            twice in under two years by consistently taking ownership, solving the right problems,
+            and delivering results that stick.
           </p>
 
           {/* Trait tags */}
@@ -75,19 +74,12 @@ export default function About() {
 
           <div className="flex flex-wrap gap-3">
             <a
-              href="#"
+              href="#contact"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[10px] text-[0.95rem] font-semibold text-white transition-all duration-300 hover:-translate-y-0.5"
               style={{
                 background: 'linear-gradient(135deg, #7c3aed, #06b6d4)',
                 boxShadow: '0 4px 24px rgba(124,58,237,0.4)',
               }}
-            >
-              Download CV
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[10px] text-[0.95rem] font-semibold text-[#e2e2f0] transition-all duration-300 hover:text-[#9b5af5] hover:border-primary-2"
-              style={{ border: '1.5px solid rgba(255,255,255,0.07)' }}
             >
               Get In Touch &#8594;
             </a>
