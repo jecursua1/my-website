@@ -1,5 +1,6 @@
 ﻿'use client'
 
+import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
 const navLinks = [
@@ -72,6 +73,12 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+          <Link
+            href="/about-me"
+            className="text-sm font-medium text-[#7070a0] hover:text-white transition-colors duration-300"
+          >
+            My Story
+          </Link>
           <a
             href="#contact"
             className="text-white text-sm font-semibold px-5 py-2 rounded-lg transition-all duration-300 hover:-translate-y-0.5"
@@ -128,6 +135,13 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+          <Link
+            href="/about-me"
+            onClick={closeMenu}
+            className="text-xl font-medium text-[#e2e2f0] hover:text-white transition-colors"
+          >
+            My Story
+          </Link>
           <a
             href="#contact"
             onClick={closeMenu}

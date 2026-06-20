@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { personalInfo } from '@/lib/data'
 
 const navLinks = [
@@ -104,6 +105,12 @@ export default function Footer() {
                   {link.label}
                 </a>
               ))}
+              <Link
+                href="/about-me"
+                className="text-[0.9rem] text-[#9090b8] hover:text-[#e2e2f0] transition-colors duration-300 w-fit"
+              >
+                My Story
+              </Link>
             </nav>
           </div>
 
