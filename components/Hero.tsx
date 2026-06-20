@@ -76,10 +76,10 @@ function FloatCard({
 }
 
 const cyclingPhrases = [
-  'Rank higher on Google',
-  'Build a team that performs',
-  'Automate your operations',
-  'Scale with AI & smart systems',
+  'Higher rankings. More traffic.',
+  'A team that actually performs',
+  'Operations on autopilot',
+  'Growth powered by AI',
 ]
 
 function CyclingText() {
