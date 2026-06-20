@@ -76,35 +76,34 @@ function FloatCard({
 }
 
 const cyclingPhrases = [
-  'Chief of Staff & Operations Leader',
-  'HR Executive & People Ops Specialist',
-  'SEO Specialist & Growth Strategist',
-  'AI & Automation Expert',
+  'Build a team that performs',
+  'Rank higher on Google',
+  'Automate your operations',
+  'Scale with AI & smart systems',
 ]
 
 function CyclingText() {
   const [index, setIndex] = useState(0)
-  const [visible, setVisible] = useState(true)
+  const [key, setKey] = useState(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setVisible(false)
-      setTimeout(() => {
-        setIndex((i) => (i + 1) % cyclingPhrases.length)
-        setVisible(true)
-      }, 400)
+      setIndex((i) => (i + 1) % cyclingPhrases.length)
+      setKey((k) => k + 1)
     }, 3000)
     return () => clearInterval(interval)
   }, [])
 
   return (
     <span
-      className="grad-text block"
+      key={key}
+      className="grad-text"
       style={{
         display: 'block',
-        opacity: visible ? 1 : 0,
-        transform: visible ? 'translateY(0)' : 'translateY(-12px)',
-        transition: 'opacity 0.4s ease, transform 0.4s ease',
+        fontSize: 'clamp(1.3rem, 2.5vw, 1.9rem)',
+        fontWeight: 700,
+        animation: 'slideDown 0.45s ease forwards',
+        marginTop: '6px',
       }}
     >
       {cyclingPhrases[index]}
