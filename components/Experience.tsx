@@ -1,3 +1,5 @@
+'use client'
+
 import FadeIn from '@/components/FadeIn'
 import { experiences, type GroupedExperience, type SingleExperience } from '@/lib/data'
 
@@ -143,8 +145,14 @@ function SingleBody({ exp, align = 'left' }: { exp: SingleExperience; align?: 'l
   const isRight = align === 'right'
   return (
     <div
-      className="p-6 rounded-[14px] w-full"
-      style={{ background: '#12121f', border: '1px solid rgba(255,255,255,0.07)' }}
+      className="p-6 rounded-[14px] w-full transition-all duration-300 hover:scale-[1.025] hover:-translate-y-1 cursor-default"
+      style={{
+        background: '#12121f',
+        border: '1px solid rgba(255,255,255,0.07)',
+        willChange: 'transform',
+      }}
+      onMouseEnter={e => (e.currentTarget.style.border = '1px solid rgba(124,58,237,0.4)')}
+      onMouseLeave={e => (e.currentTarget.style.border = '1px solid rgba(255,255,255,0.07)')}
     >
       <div className={`flex items-center gap-2.5 mb-2.5 flex-wrap ${isRight ? 'justify-end' : ''}`}>
         <span className="text-xs font-semibold text-[#9b5af5]">{exp.period}</span>
@@ -176,8 +184,14 @@ function GroupedBody({ exp, align = 'left' }: { exp: GroupedExperience; align?: 
   const isRight = align === 'right'
   return (
     <div
-      className="w-full rounded-[14px] overflow-hidden"
-      style={{ background: '#12121f', border: '1px solid rgba(255,255,255,0.07)' }}
+      className="w-full rounded-[14px] overflow-hidden transition-all duration-300 hover:scale-[1.025] hover:-translate-y-1 cursor-default"
+      style={{
+        background: '#12121f',
+        border: '1px solid rgba(255,255,255,0.07)',
+        willChange: 'transform',
+      }}
+      onMouseEnter={e => (e.currentTarget.style.border = '1px solid rgba(124,58,237,0.4)')}
+      onMouseLeave={e => (e.currentTarget.style.border = '1px solid rgba(255,255,255,0.07)')}
     >
       {/* Company header */}
       <div
