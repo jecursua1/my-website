@@ -52,10 +52,59 @@ export default function Navbar() {
         {/* Logo */}
         <a
           href="#home"
-          className="font-display text-2xl font-black text-white"
-          style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+          className="flex items-center gap-3 group"
+          style={{ textDecoration: 'none' }}
         >
-          JU<span className="text-[#7c3aed]">.</span>
+          {/* Monogram badge */}
+          <div
+            className="relative w-[38px] h-[38px] rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:shadow-[0_0_18px_rgba(124,58,237,0.55)]"
+            style={{
+              background: 'linear-gradient(135deg, #1a0a3a, #0d1a2e)',
+              border: '1.5px solid rgba(124,58,237,0.55)',
+            }}
+          >
+            <svg width="22" height="18" viewBox="0 0 22 18" fill="none">
+              {/* J */}
+              <text
+                x="1" y="14"
+                fontFamily="'Plus Jakarta Sans', sans-serif"
+                fontWeight="900"
+                fontSize="13"
+                fill="url(#logoGrad)"
+                letterSpacing="-0.5"
+              >J</text>
+              {/* U */}
+              <text
+                x="9" y="14"
+                fontFamily="'Plus Jakarta Sans', sans-serif"
+                fontWeight="900"
+                fontSize="13"
+                fill="url(#logoGrad)"
+                letterSpacing="-0.5"
+              >U</text>
+              <defs>
+                <linearGradient id="logoGrad" x1="0" y1="0" x2="22" y2="18" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="#c084fc" />
+                  <stop offset="100%" stopColor="#06b6d4" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          {/* Name */}
+          <div className="flex flex-col leading-none">
+            <span
+              className="text-[0.6rem] font-bold uppercase tracking-[0.18em] transition-colors duration-300"
+              style={{ color: '#7070a0' }}
+            >
+              Jec
+            </span>
+            <span
+              className="text-[0.95rem] font-black uppercase tracking-[0.12em] text-white transition-colors duration-300"
+              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+            >
+              Ursua
+            </span>
+          </div>
         </a>
 
         {/* Desktop Nav */}

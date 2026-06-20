@@ -73,10 +73,30 @@ export default function Footer() {
           <div>
             <a
               href="#home"
-              className="font-black text-2xl text-white inline-block mb-4"
-              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+              className="flex items-center gap-3 mb-4 w-fit group"
             >
-              JU<span style={{ color: '#7c3aed' }}>.</span>
+              <div
+                className="relative w-[38px] h-[38px] rounded-full flex items-center justify-center flex-shrink-0"
+                style={{
+                  background: 'linear-gradient(135deg, #1a0a3a, #0d1a2e)',
+                  border: '1.5px solid rgba(124,58,237,0.55)',
+                }}
+              >
+                <svg width="22" height="18" viewBox="0 0 22 18" fill="none">
+                  <text x="1" y="14" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="900" fontSize="13" fill="url(#footerLogoGrad)">J</text>
+                  <text x="9" y="14" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="900" fontSize="13" fill="url(#footerLogoGrad)">U</text>
+                  <defs>
+                    <linearGradient id="footerLogoGrad" x1="0" y1="0" x2="22" y2="18" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="#c084fc" />
+                      <stop offset="100%" stopColor="#06b6d4" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <div className="flex flex-col leading-none">
+                <span className="text-[0.6rem] font-bold uppercase tracking-[0.18em] text-[#7070a0]">Jec</span>
+                <span className="text-[0.95rem] font-black uppercase tracking-[0.12em] text-white" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Ursua</span>
+              </div>
             </a>
             <p className="text-[0.9rem] text-[#7070a0] leading-[1.75] mb-5 max-w-[240px]">
               Chief of Staff, HR Executive &amp; SEO Specialist helping teams hire better, rank higher, and automate smarter.
