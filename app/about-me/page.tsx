@@ -113,8 +113,8 @@ export default function AboutMePage() {
             Then the pandemic hit.
           </p>
           <p>
-            Jobless during one of the hardest periods in modern history, I turned to the stock market and became a
-            <strong className="text-white">day trader</strong> to keep income flowing. It wasn&apos;t easy,
+            Jobless during one of the hardest periods in modern history, I turned to the stock market and became a{' '}
+            <strong className="text-white">day trader</strong>{' '}to keep income flowing. It wasn&apos;t easy,
             but it taught me discipline, risk management, and how to think strategically under pressure.
           </p>
         </StoryBlock>
