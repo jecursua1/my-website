@@ -60,7 +60,7 @@ export default function AboutMePage() {
               <span className="hero-grad-text">the Work</span>
             </h1>
             <p className="text-[#7070a0] text-[1.05rem] leading-relaxed">
-              From an accidental HR career to Chief of Staff at global agencies — this is the real journey of how Jec Ursua got here.
+              From an accidental HR career to Chief of Staff at global agencies. This is the real journey of how Jec Ursua got here.
             </p>
           </div>
         </div>
@@ -98,7 +98,7 @@ export default function AboutMePage() {
             majoring in Human Resource Development Management at Pangasinan State University, San Carlos Campus.
           </p>
           <p>
-            Honestly? HR was never the career I imagined for myself. I didn&apos;t choose it out of passion — I chose it
+            Honestly? HR was never the career I imagined for myself. I didn&apos;t choose it out of passion. I chose it
             without really knowing where it would take me. What I didn&apos;t expect was how much it would shape everything that followed.
           </p>
         </StoryBlock>
@@ -107,14 +107,14 @@ export default function AboutMePage() {
           <p>
             After graduating, I landed my first job as an <strong className="text-white">HR Assistant at a retail company</strong>,
             helping manage over 100 employees. On paper, it was a solid start. But deep down, something felt off.
-            That environment wasn&apos;t where I was meant to be — so after a couple of months, I resigned.
+            That environment wasn&apos;t where I was meant to be. After a couple of months, I resigned.
           </p>
           <p>
             Then the pandemic hit.
           </p>
           <p>
             Jobless during one of the hardest periods in modern history, I turned to the stock market and became a
-            <strong className="text-white"> day trader</strong> to keep some income flowing. It wasn&apos;t easy,
+            <strong className="text-white"> day trader</strong> to keep income flowing. It wasn&apos;t easy,
             but it taught me discipline, risk management, and how to think strategically under pressure.
           </p>
         </StoryBlock>
@@ -123,12 +123,12 @@ export default function AboutMePage() {
           <p>
             I eventually landed another role as an <strong className="text-white">HR Admin at a construction company</strong>.
             I stayed for a year, performed well, but the same feeling crept back in.
-            On-site work, a salary that barely moved the needle no matter how hard I worked — it just wasn&apos;t the life I envisioned.
+            On-site work, a salary that barely moved the needle no matter how hard I worked. It just wasn&apos;t the life I envisioned.
           </p>
           <p>
-            I had a dream. Not just a vague wish — a real, burning desire to become financially free. To buy a car without
-            worrying about the price tag. To treat the people I love without checking my balance first. To buy groceries
-            without doing mental math at the checkout.
+            I had a dream. Not just a vague wish. A real, burning desire to become financially free. To buy anything I want without
+            worrying about the price tag. To treat the people I love without checking my balance first.
+            To live on my own terms, not on what my salary permitted.
           </p>
           <blockquote
             className="my-8 pl-5 italic text-[1.1rem] text-[#e2e2f0] leading-relaxed"
@@ -138,15 +138,15 @@ export default function AboutMePage() {
             <span className="block text-[0.82rem] not-italic text-[#7070a0] mt-2">— Harvey Specter</span>
           </blockquote>
           <p>
-            That quote hit differently when I first heard it. It wasn&apos;t just a line from a TV show —
-            it became a blueprint for how I wanted to live.
+            That quote hit differently when I first heard it. It wasn&apos;t just a line from a TV show.
+            It became a blueprint for how I wanted to live.
           </p>
         </StoryBlock>
 
         <StoryBlock label="The Leap into Freelancing">
           <p>
-            Still employed as an HR Admin, I started researching my options: work abroad, start a business,
-            go all-in on trading — or explore this thing called <strong className="text-white">remote freelancing</strong>.
+            Still employed as an HR Admin, I started mapping my way out: work abroad, start a business,
+            go all-in on trading, or explore this thing called <strong className="text-white">remote freelancing</strong>.
           </p>
           <p>
             I went deep. I studied how it worked, who was doing it, and what skills I already had that could translate.
@@ -158,14 +158,14 @@ export default function AboutMePage() {
         <StoryBlock label="Where It Led">
           <p>
             The journey wasn&apos;t overnight, but it was worth every uncomfortable moment. Today, I work as
-            <strong className="text-white"> Chief of Staff</strong> for powerful digital marketing agencies — including
+            <strong className="text-white"> Chief of Staff</strong> for powerful digital marketing agencies, including
             teams that serve clients like <strong className="text-white">Neil Patel</strong>. I handle operations,
             recruitment, SEO, web development, AI automation, and everything in between.
           </p>
           <p>
-            The life I once dreamed about? I&apos;m living it. Brand new car.
-            Businesses I&apos;ve helped build from the ground up. The ability to show up fully for the people I care about.
-            I&apos;m not telling you this to brag — I&apos;m telling you because not long ago, I was jobless during a pandemic,
+            The life I once dreamed about? I&apos;m living it. Brand new car. My own businesses up and running.
+            The freedom to show up fully for the people I care about.
+            I&apos;m not telling you this to brag. I&apos;m telling you because not long ago, I was jobless during a pandemic,
             grinding as a day trader just to stay afloat.
           </p>
         </StoryBlock>
@@ -177,8 +177,8 @@ export default function AboutMePage() {
             the kind of moment that gives you chills just imagining it.
           </p>
           <p>
-            I haven&apos;t given up on that. I never will. Because I&apos;ve learned that timing is everything,
-            and opportunities come to those who keep showing up.
+            I haven&apos;t given up on that. I never will. Timing is everything,
+            and opportunities find the people who never stop showing up.
           </p>
         </StoryBlock>
 
@@ -191,9 +191,9 @@ export default function AboutMePage() {
           }}
         >
           <p className="text-[1.15rem] text-[#e2e2f0] leading-relaxed italic mb-4">
-            &ldquo;Life is short. Live it to the fullest. If you have the ability to do it — do it.
-            Don&apos;t settle for less. Aim higher. Be a good person.
-            God will always be with you no matter where you go or what you do.&rdquo;
+            &ldquo;If you have the ability to do it, do it. Stop waiting for the right time. Stop waiting for permission.
+            Don&apos;t settle for less than what you know you&apos;re capable of. Aim higher, always.
+            And through all of it, be a good person. God will be with you every step of the way.&rdquo;
           </p>
           <span className="text-[0.85rem] text-[#7070a0]">— Jec Ursua</span>
         </div>
