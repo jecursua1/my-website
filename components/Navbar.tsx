@@ -99,7 +99,7 @@ export default function Navbar() {
               className="text-[0.58rem] font-bold uppercase tracking-[0.22em]"
               style={{ color: '#6060a0' }}
             >
-              Jec
+              Jerico
             </span>
             <span
               className="text-[1rem] font-black uppercase tracking-[0.1em] text-white"

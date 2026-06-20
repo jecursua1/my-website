@@ -92,7 +92,7 @@ export default function Footer() {
                 </defs>
               </svg>
               <div className="flex flex-col leading-none gap-[3px]">
-                <span className="text-[0.58rem] font-bold uppercase tracking-[0.22em] text-[#6060a0]">Jec</span>
+                <span className="text-[0.58rem] font-bold uppercase tracking-[0.22em] text-[#6060a0]">Jerico</span>
                 <span className="text-[1rem] font-black uppercase tracking-[0.1em] text-white" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Ursua</span>
               </div>
             </a>
