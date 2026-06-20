@@ -18,7 +18,7 @@ function SkillBar({ name, level, accent }: { name: string; level: number; accent
 
           if (intervalRef.current) clearInterval(intervalRef.current)
           setCount(0)
-          const duration = 1200
+          const duration = 2000
           const steps = 60
           const increment = level / steps
           let current = 0
@@ -57,7 +57,7 @@ function SkillBar({ name, level, accent }: { name: string; level: number; accent
         style={{ background: 'rgba(255,255,255,0.06)' }}
       >
         <div
-          className="h-full rounded-full transition-[width] duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
+          className="h-full rounded-full transition-[width] duration-[2000ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
           style={{
             width: `${width}%`,
             background: accent

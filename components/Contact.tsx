@@ -157,7 +157,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24 bg-[#0e0e1a]">
       <div className="max-w-[1160px] mx-auto px-6">
-        <FadeIn>
+        <FadeIn once={false}>
           <div className="text-center mb-16">
             <div className="section-tag inline-flex">Get In Touch</div>
             <h2
@@ -177,7 +177,7 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr] gap-10 items-start">
           {/* Contact info */}
-          <FadeIn direction="left">
+          <FadeIn direction="left" once={false}>
             <div
               className="flex flex-col gap-5 p-7 rounded-[22px] mb-5"
               style={{ background: '#12121f', border: '1px solid rgba(255,255,255,0.07)' }}
@@ -232,7 +232,7 @@ export default function Contact() {
           </FadeIn>
 
           {/* Form */}
-          <FadeIn direction="right">
+          <FadeIn direction="right" once={false}>
             <form
               onSubmit={handleSubmit}
               className="flex flex-col gap-4 p-9 rounded-[22px]"

@@ -10,6 +10,7 @@ interface FadeInProps {
   direction?: Direction
   delay?: number
   className?: string
+  once?: boolean
 }
 
 export default function FadeIn({
@@ -17,6 +18,7 @@ export default function FadeIn({
   direction = 'up',
   delay = 0,
   className = '',
+  once = true,
 }: FadeInProps) {
   const variants = {
     hidden: {
@@ -35,7 +37,7 @@ export default function FadeIn({
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: '-40px' }}
+      viewport={{ once, margin: '-40px' }}
       variants={variants}
       transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1], delay }}
       className={className}
