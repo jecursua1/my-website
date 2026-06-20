@@ -215,17 +215,6 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10">
-        <div
-          className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full text-sm font-medium text-[#7070a0]"
-          style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}
-        >
-          <span
-            className="w-2 h-2 rounded-full bg-green-500"
-            style={{ display: 'block', animation: 'pulseDot 2s infinite' }}
-          />
-          Available for new projects
-        </div>
-
         <h1
           className="font-black leading-[1.15] mb-3 overflow-hidden"
           style={{
