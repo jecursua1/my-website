@@ -75,21 +75,21 @@ export default function Footer() {
               href="#home"
               className="flex items-center gap-3 mb-4 w-fit group"
             >
-              <svg width="62" height="50" viewBox="0 0 62 50" fill="none" className="flex-shrink-0">
-                <ellipse cx="31" cy="25" rx="30" ry="24" fill="#0e0820"/>
-                <ellipse cx="31" cy="25" rx="30" ry="24" stroke="url(#footerOvalGrad)" strokeWidth="1.6"/>
-                <text x="13" y="36" fontFamily="Georgia, 'Times New Roman', serif" fontWeight="bold" fontSize="30" fill="url(#footerLetterGrad)">J</text>
-                <text x="27" y="36" fontFamily="Georgia, 'Times New Roman', serif" fontWeight="bold" fontSize="30" fill="url(#footerLetterGrad)">U</text>
+              <svg width="66" height="54" viewBox="0 0 66 54" fill="none" className="flex-shrink-0">
                 <defs>
-                  <linearGradient id="footerOvalGrad" x1="0" y1="0" x2="62" y2="50" gradientUnits="userSpaceOnUse">
+                  <linearGradient id="footerOvalGrad" x1="0" y1="0" x2="66" y2="54" gradientUnits="userSpaceOnUse">
                     <stop offset="0%" stopColor="#a78bfa"/>
                     <stop offset="100%" stopColor="#38bdf8"/>
                   </linearGradient>
-                  <linearGradient id="footerLetterGrad" x1="0" y1="0" x2="62" y2="50" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stopColor="#c4b5fd"/>
-                    <stop offset="100%" stopColor="#67e8f9"/>
+                  <linearGradient id="footerLetterGrad" x1="0" y1="0" x2="66" y2="54" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#ddd6fe"/>
+                    <stop offset="100%" stopColor="#a5f3fc"/>
                   </linearGradient>
                 </defs>
+                <ellipse cx="33" cy="27" rx="32" ry="26" fill="#0c0820"/>
+                <ellipse cx="33" cy="27" rx="32" ry="26" stroke="url(#footerOvalGrad)" strokeWidth="1.8"/>
+                <text x="9" y="40" fontFamily="Georgia, 'Times New Roman', serif" fontWeight="bold" fontSize="36" fill="url(#footerLetterGrad)">J</text>
+                <text x="25" y="40" fontFamily="Georgia, 'Times New Roman', serif" fontWeight="bold" fontSize="36" fill="url(#footerLetterGrad)">U</text>
               </svg>
               <div className="flex flex-col leading-none gap-[3px]">
                 <span className="text-[0.58rem] font-bold uppercase tracking-[0.22em] text-[#6060a0]">Jerico</span>

@@ -57,41 +57,45 @@ export default function Navbar() {
         >
           {/* Monogram oval badge */}
           <svg
-            width="62" height="50"
-            viewBox="0 0 62 50"
+            width="66" height="54"
+            viewBox="0 0 66 54"
             fill="none"
-            className="flex-shrink-0 transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(167,139,250,0.6)]"
+            className="flex-shrink-0 transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(167,139,250,0.65)]"
           >
-            {/* Dark navy oval background */}
-            <ellipse cx="31" cy="25" rx="30" ry="24" fill="#0e0820"/>
-            {/* Oval border */}
-            <ellipse cx="31" cy="25" rx="30" ry="24" stroke="url(#navOvalGrad)" strokeWidth="1.6"/>
-            {/* J — serif, bold, left side */}
-            <text
-              x="13" y="36"
-              fontFamily="Georgia, 'Times New Roman', 'Palatino Linotype', serif"
-              fontWeight="bold"
-              fontSize="30"
-              fill="url(#navLetterGrad)"
-            >J</text>
-            {/* U — serif, bold, right side, slightly overlapping J */}
-            <text
-              x="27" y="36"
-              fontFamily="Georgia, 'Times New Roman', 'Palatino Linotype', serif"
-              fontWeight="bold"
-              fontSize="30"
-              fill="url(#navLetterGrad)"
-            >U</text>
             <defs>
-              <linearGradient id="navOvalGrad" x1="0" y1="0" x2="62" y2="50" gradientUnits="userSpaceOnUse">
+              <linearGradient id="navOvalGrad" x1="0" y1="0" x2="66" y2="54" gradientUnits="userSpaceOnUse">
                 <stop offset="0%" stopColor="#a78bfa"/>
                 <stop offset="100%" stopColor="#38bdf8"/>
               </linearGradient>
-              <linearGradient id="navLetterGrad" x1="0" y1="0" x2="62" y2="50" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#c4b5fd"/>
-                <stop offset="100%" stopColor="#67e8f9"/>
+              <linearGradient id="navLetterGrad" x1="0" y1="0" x2="66" y2="54" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#ddd6fe"/>
+                <stop offset="100%" stopColor="#a5f3fc"/>
               </linearGradient>
+              {/* Clip U shape to create "J behind U" effect */}
+              <clipPath id="navUClip">
+                <text x="25" y="40" fontFamily="Georgia, 'Times New Roman', serif" fontWeight="bold" fontSize="36">U</text>
+              </clipPath>
             </defs>
+            {/* Dark navy oval background */}
+            <ellipse cx="33" cy="27" rx="32" ry="26" fill="#0c0820"/>
+            {/* Oval border */}
+            <ellipse cx="33" cy="27" rx="32" ry="26" stroke="url(#navOvalGrad)" strokeWidth="1.8"/>
+            {/* J — rendered first (behind), right side tucks under U */}
+            <text
+              x="9" y="40"
+              fontFamily="Georgia, 'Times New Roman', serif"
+              fontWeight="bold"
+              fontSize="36"
+              fill="url(#navLetterGrad)"
+            >J</text>
+            {/* U — rendered on top of J, overlapping left side covers J's right stroke */}
+            <text
+              x="25" y="40"
+              fontFamily="Georgia, 'Times New Roman', serif"
+              fontWeight="bold"
+              fontSize="36"
+              fill="url(#navLetterGrad)"
+            >U</text>
           </svg>
           {/* Name */}
           <div className="flex flex-col leading-none gap-[3px]">
