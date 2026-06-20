@@ -75,6 +75,43 @@ function FloatCard({
   )
 }
 
+const cyclingPhrases = [
+  'Chief of Staff & Operations Leader',
+  'HR Executive & People Ops Specialist',
+  'SEO Specialist & Growth Strategist',
+  'AI & Automation Expert',
+]
+
+function CyclingText() {
+  const [index, setIndex] = useState(0)
+  const [visible, setVisible] = useState(true)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisible(false)
+      setTimeout(() => {
+        setIndex((i) => (i + 1) % cyclingPhrases.length)
+        setVisible(true)
+      }, 400)
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <span
+      className="grad-text block"
+      style={{
+        display: 'block',
+        opacity: visible ? 1 : 0,
+        transform: visible ? 'translateY(0)' : 'translateY(-12px)',
+        transition: 'opacity 0.4s ease, transform 0.4s ease',
+      }}
+    >
+      {cyclingPhrases[index]}
+    </span>
+  )
+}
+
 function useCounter(target: number, started: boolean) {
   const [count, setCount] = useState(0)
   useEffect(() => {
@@ -190,23 +227,21 @@ export default function Hero() {
         </div>
 
         <h1
-          className="font-black leading-[1.1] mb-5"
+          className="font-black leading-[1.15] mb-5 overflow-hidden"
           style={{
             fontFamily: "'Plus Jakarta Sans', sans-serif",
             fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
           }}
         >
-          Hi, I&apos;m{' '}
-          <span className="grad-text">Jerico Ursua</span>
+          <span className="text-white block">Hi, I&apos;m Jerico Ursua</span>
+          <CyclingText />
         </h1>
 
         <p
           className="text-[#7070a0] mb-4 leading-relaxed"
           style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)' }}
         >
-          Chief of Staff &middot; HR Specialist &middot; SEO Specialist &middot; AI &amp; Automation Expert
-          <br />
-          helping businesses grow and operate smoothly.
+          Helping businesses hire better, rank higher, and automate smarter.
         </p>
 
         <div className="flex flex-wrap gap-3 mt-8">
