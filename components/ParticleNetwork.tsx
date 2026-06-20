@@ -36,8 +36,8 @@ export default function ParticleNetwork() {
       return {
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
+        vx: (Math.random() - 0.5) * 1.4,
+        vy: (Math.random() - 0.5) * 1.4,
         radius: Math.random() * 1.5 + 1,
       }
     }
