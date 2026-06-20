@@ -7,25 +7,43 @@ import { technicalSkills, professionalSkills } from '@/lib/data'
 function SkillBar({ name, level, accent }: { name: string; level: number; accent?: boolean }) {
   const barRef = useRef<HTMLDivElement>(null)
   const [width, setWidth] = useState(0)
+  const [count, setCount] = useState(0)
+  const [triggered, setTriggered] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !triggered) {
+          setTriggered(true)
           setTimeout(() => setWidth(level), 100)
+
+          // Count up animation
+          const duration = 1200
+          const steps = 60
+          const increment = level / steps
+          let current = 0
+          const interval = setInterval(() => {
+            current += increment
+            if (current >= level) {
+              setCount(level)
+              clearInterval(interval)
+            } else {
+              setCount(Math.floor(current))
+            }
+          }, duration / steps)
         }
       },
       { threshold: 0.3 }
     )
     if (barRef.current) observer.observe(barRef.current)
     return () => observer.disconnect()
-  }, [level])
+  }, [level, triggered])
 
   return (
     <div ref={barRef} className="flex flex-col gap-0">
       <div className="flex justify-between text-[0.87rem] font-medium mb-2">
         <span className="text-[#e2e2f0]">{name}</span>
-        <span className="text-[#9b5af5]">{level}%</span>
+        <span className="text-[#9b5af5] tabular-nums">{count}%</span>
       </div>
       <div
         className="h-[7px] rounded-full overflow-hidden"
