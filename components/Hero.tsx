@@ -97,7 +97,7 @@ function CyclingText() {
   return (
     <span
       key={key}
-      className="grad-text"
+      className="hero-grad-text"
       style={{
         display: 'block',
         fontSize: 'clamp(1.3rem, 2.5vw, 1.9rem)',
@@ -224,7 +224,7 @@ export default function Hero() {
         >
           <CyclingText />
           <span className="text-white">Hi, I&apos;m </span>
-          <span className="grad-text">Jerico Ursua</span>
+          <span className="hero-grad-text">Jerico Ursua</span>
         </h1>
 
         <p
