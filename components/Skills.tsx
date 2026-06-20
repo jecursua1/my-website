@@ -8,36 +8,43 @@ function SkillBar({ name, level, accent }: { name: string; level: number; accent
   const barRef = useRef<HTMLDivElement>(null)
   const [width, setWidth] = useState(0)
   const [count, setCount] = useState(0)
-  const [triggered, setTriggered] = useState(false)
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !triggered) {
-          setTriggered(true)
-          setTimeout(() => setWidth(level), 100)
+        if (entry.isIntersecting) {
+          setWidth(level)
 
-          // Count up animation
+          if (intervalRef.current) clearInterval(intervalRef.current)
+          setCount(0)
           const duration = 1200
           const steps = 60
           const increment = level / steps
           let current = 0
-          const interval = setInterval(() => {
+          intervalRef.current = setInterval(() => {
             current += increment
             if (current >= level) {
               setCount(level)
-              clearInterval(interval)
+              clearInterval(intervalRef.current!)
             } else {
               setCount(Math.floor(current))
             }
           }, duration / steps)
+        } else {
+          setWidth(0)
+          setCount(0)
+          if (intervalRef.current) clearInterval(intervalRef.current)
         }
       },
       { threshold: 0.3 }
     )
     if (barRef.current) observer.observe(barRef.current)
-    return () => observer.disconnect()
-  }, [level, triggered])
+    return () => {
+      observer.disconnect()
+      if (intervalRef.current) clearInterval(intervalRef.current)
+    }
+  }, [level])
 
   return (
     <div ref={barRef} className="flex flex-col gap-0">
