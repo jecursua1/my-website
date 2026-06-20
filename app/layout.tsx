@@ -2,14 +2,19 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Jec Ursua — Virtual Assistant · HR Admin · Technical Recruiter',
+  metadataBase: new URL('https://jericoursua.com'),
+  title: 'Jerico Ursua | Chief of Staff & SEO Specialist',
   description:
-    'Experienced Virtual & Executive Assistant, HR Admin, and Technical Recruiter helping businesses grow through efficient operations, talent acquisition, SEO, and automation.',
+    'Chief of Staff, HR Specialist & SEO Specialist with 6+ years in HR management, SEO strategy, web development, and AI-powered automation.',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    title: 'Jec Ursua — Virtual Assistant · HR Admin · Technical Recruiter',
+    title: 'Jerico Ursua | Chief of Staff & SEO Specialist',
     description:
-      'Experienced Virtual & Executive Assistant, HR Admin, and Technical Recruiter helping businesses grow.',
+      'Chief of Staff, HR Specialist & SEO Specialist with 6+ years in HR management, SEO strategy, web development, and AI-powered automation.',
     type: 'website',
+    url: 'https://jericoursua.com',
   },
 }
 

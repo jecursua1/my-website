@@ -12,7 +12,7 @@ export const personalInfo = {
   stats: [
     { value: 6, suffix: '+', label: 'Years Exp.' },
     { value: 20, suffix: '+', label: 'Clients' },
-    { value: 8, suffix: '+', label: 'Companies' },
+    { value: 6, suffix: '+', label: 'Companies' },
   ],
 }
 
@@ -97,16 +97,55 @@ export const services = [
   },
 ]
 
-export const experiences = [
+export type SingleExperience = {
+  grouped?: false
+  period: string
+  type: string
+  title: string
+  company: string
+  location: string
+  description: string
+  tags: string[]
+}
+
+export type GroupedExperience = {
+  grouped: true
+  company: string
+  location: string
+  roles: {
+    period: string
+    type: string
+    title: string
+    description: string
+    tags: string[]
+  }[]
+}
+
+export type Experience = SingleExperience | GroupedExperience
+
+export const experiences: Experience[] = [
   {
-    period: 'Jan 2026 – Present',
-    type: 'Full-time',
-    title: 'Chief of Staff',
+    grouped: true,
     company: 'Great Marketing AI',
     location: 'Remote · United States',
-    description:
-      'Promoted to Chief of Staff, driving SEO strategy across all clients, managing full-cycle payroll, leading Next.js web operations and GitHub deployments, overseeing multi-brand content pipelines, and serving as primary liaison between the owner and all teams.',
-    tags: ['Operations', 'SEO', 'Next.js', 'Payroll', 'Leadership'],
+    roles: [
+      {
+        period: 'Jan 2026 – Present',
+        type: 'Full-time',
+        title: 'Chief of Staff',
+        description:
+          'Promoted to Chief of Staff, driving SEO strategy across all clients, managing full-cycle payroll, leading Next.js web operations and GitHub deployments, overseeing multi-brand content pipelines, and serving as primary liaison between the owner and all teams.',
+        tags: ['Operations', 'SEO', 'Next.js', 'Payroll', 'Leadership'],
+      },
+      {
+        period: 'June 2024 – Dec 2025',
+        type: 'Full-time',
+        title: 'HR & Executive Assistant',
+        description:
+          'Managed end-to-end recruitment, administered GoHighLevel CRM with email lifecycle workflows, automated internal processes using Zapier and Make, and provided executive support including calendar management and SOP development.',
+        tags: ['HR', 'GoHighLevel', 'Zapier', 'Make', 'Recruitment'],
+      },
+    ],
   },
   {
     period: 'Jan 2026 – Present',
@@ -119,34 +158,27 @@ export const experiences = [
     tags: ['GoHighLevel', 'DNS', 'Email Deliverability', 'Partnerships', 'G2'],
   },
   {
-    period: 'Jan 2025 – Present',
-    type: 'Full-time',
-    title: 'SEO Project Manager',
+    grouped: true,
     company: 'Sublime SEO',
     location: 'Remote · Canada',
-    description:
-      'Promoted to SEO Project Manager, overseeing end-to-end SEO campaign delivery across multiple accounts — managing keyword strategy, content planning, link building, and performance tracking using SE Ranking, Ahrefs, and SEMRush.',
-    tags: ['SEO', 'Project Management', 'Ahrefs', 'SE Ranking', 'Link Building'],
-  },
-  {
-    period: 'June 2024 – Dec 2025',
-    type: 'Full-time',
-    title: 'HR & Executive Assistant',
-    company: 'Great Marketing AI',
-    location: 'Remote · United States',
-    description:
-      'Managed end-to-end recruitment, administered GoHighLevel CRM with email lifecycle workflows, automated internal processes using Zapier and Make, and provided executive support including calendar management and SOP development.',
-    tags: ['HR', 'GoHighLevel', 'Zapier', 'Make', 'Recruitment'],
-  },
-  {
-    period: 'July 2023 – Dec 2024',
-    type: 'Full-time',
-    title: 'Virtual SEO Assistant',
-    company: 'Sublime SEO',
-    location: 'Remote · Canada',
-    description:
-      'Executed email marketing campaigns, conducted lead generation using Seamless.ai and Apollo.io, managed client outreach tracking, and provided comprehensive performance analytics and reporting.',
-    tags: ['SEO', 'Email Marketing', 'Lead Generation', 'Apollo.io', 'Seamless.ai'],
+    roles: [
+      {
+        period: 'Jan 2025 – Present',
+        type: 'Full-time',
+        title: 'SEO Project Manager',
+        description:
+          'Promoted to SEO Project Manager, overseeing end-to-end SEO campaign delivery across multiple accounts — managing keyword strategy, content planning, link building, and performance tracking using SE Ranking, Ahrefs, and SEMRush.',
+        tags: ['SEO', 'Project Management', 'Ahrefs', 'SE Ranking', 'Link Building'],
+      },
+      {
+        period: 'July 2023 – Dec 2024',
+        type: 'Full-time',
+        title: 'Virtual SEO Assistant',
+        description:
+          'Executed email marketing campaigns, conducted lead generation using Seamless.ai and Apollo.io, managed client outreach tracking, and provided comprehensive performance analytics and reporting.',
+        tags: ['SEO', 'Email Marketing', 'Lead Generation', 'Apollo.io', 'Seamless.ai'],
+      },
+    ],
   },
   {
     period: 'July 2024 – Sep 2024',
