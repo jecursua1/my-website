@@ -37,18 +37,18 @@ export default function About() {
               fontSize: 'clamp(1.7rem, 3vw, 2.3rem)',
             }}
           >
-            Operations, People &amp;
+            Operations, People &amp; Growth
             <br />
-            Growth — All in One Role
+            All in One Role
           </h2>
           <p className="text-[#7070a0] mb-4 text-[0.97rem]">
             I&apos;m a remote operations specialist with 6+ years of cross-functional experience
             across digital marketing agencies, SaaS platforms, and HR operations. I sit at the
-            intersection of people leadership, technical execution, and organic search strategy —
+            intersection of people leadership, technical execution, and organic search strategy,
             making me the kind of hire that scales with a business, not just fills a seat.
           </p>
           <p className="text-[#7070a0] mb-6 text-[0.97rem]">
-            I build the systems that keep teams running — from full-cycle recruitment and payroll
+            I build the systems that keep teams running, from full-cycle recruitment and payroll
             to SEO campaigns, Next.js web operations, and AI-powered workflow automation. Promoted
             twice in under two years by consistently taking ownership, solving the right problems,
             and delivering results that stick.
@@ -56,20 +56,27 @@ export default function About() {
 
           {/* Trait tags */}
           <div className="flex flex-wrap gap-2.5 mb-7">
-            {['Problem Solver', 'Detail-Oriented', 'Results-Driven', 'Collaborative', 'Adaptable'].map(
-              (trait) => (
-                <span
-                  key={trait}
-                  className="text-[0.83rem] font-medium text-[#e2e2f0] px-3.5 py-1.5 rounded-lg"
-                  style={{
-                    background: 'rgba(255,255,255,0.05)',
-                    border: '1px solid rgba(255,255,255,0.07)',
-                  }}
-                >
-                  {trait}
-                </span>
-              )
-            )}
+            {[
+              'Problem Solver',
+              'Strategic Thinker',
+              'Detail-Oriented',
+              'Results-Driven',
+              'Clear Communicator',
+              'Collaborative',
+              'Adaptable',
+              'Fast Learner',
+            ].map((trait) => (
+              <span
+                key={trait}
+                className="text-[0.83rem] font-medium text-[#e2e2f0] px-3.5 py-1.5 rounded-lg"
+                style={{
+                  background: 'rgba(255,255,255,0.05)',
+                  border: '1px solid rgba(255,255,255,0.07)',
+                }}
+              >
+                {trait}
+              </span>
+            ))}
           </div>
 
           <div className="flex flex-wrap gap-3">
