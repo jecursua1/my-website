@@ -24,37 +24,86 @@ export async function POST(req: NextRequest) {
     }
 
     await resend.emails.send({
-      from: 'Portfolio Contact <onboarding@resend.dev>',
+      from: 'Jerico Ursua Portfolio <onboarding@resend.dev>',
       to: 'jerico.ursua1@gmail.com',
       replyTo: email,
-      subject: `[Portfolio] ${subject}`,
+      subject: `New Inquiry from ${name}: ${subject}`,
       html: `
-        <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #7c3aed;">New Contact Form Submission</h2>
-          <table style="width: 100%; border-collapse: collapse;">
-            <tr>
-              <td style="padding: 8px 0; color: #666; width: 120px;"><strong>Name</strong></td>
-              <td style="padding: 8px 0;">${name}</td>
-            </tr>
-            <tr>
-              <td style="padding: 8px 0; color: #666;"><strong>Email</strong></td>
-              <td style="padding: 8px 0;"><a href="mailto:${email}">${email}</a></td>
-            </tr>
-            ${serviceLabel ? `
-            <tr>
-              <td style="padding: 8px 0; color: #666;"><strong>Service</strong></td>
-              <td style="padding: 8px 0;">${serviceLabel}</td>
-            </tr>` : ''}
-            <tr>
-              <td style="padding: 8px 0; color: #666;"><strong>Subject</strong></td>
-              <td style="padding: 8px 0;">${subject}</td>
-            </tr>
-          </table>
-          <hr style="margin: 16px 0; border: none; border-top: 1px solid #eee;" />
-          <p style="color: #666; font-size: 0.85rem;">Message:</p>
-          <p style="white-space: pre-wrap; background: #f9f9f9; padding: 16px; border-radius: 8px;">${message}</p>
-          <p style="color: #aaa; font-size: 0.8rem; margin-top: 24px;">Sent via jericoursua.com contact form. Reply directly to respond to ${name}.</p>
-        </div>
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"/></head>
+<body style="margin:0;padding:0;background:#f4f4f8;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f8;padding:40px 0;">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
+
+          <!-- Header -->
+          <tr>
+            <td style="background:linear-gradient(135deg,#7c3aed,#06b6d4);border-radius:12px 12px 0 0;padding:32px 40px;text-align:center;">
+              <p style="margin:0;font-size:28px;font-weight:900;color:#fff;letter-spacing:-0.5px;">JU.</p>
+              <p style="margin:8px 0 0;font-size:13px;color:rgba(255,255,255,0.75);letter-spacing:0.1em;text-transform:uppercase;">New Portfolio Inquiry</p>
+            </td>
+          </tr>
+
+          <!-- Body -->
+          <tr>
+            <td style="background:#ffffff;padding:36px 40px;">
+
+              <p style="margin:0 0 24px;font-size:18px;font-weight:700;color:#1a1a2e;">
+                You have a new message from <span style="color:#7c3aed;">${name}</span>
+              </p>
+
+              <!-- Details -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #ebebf5;border-radius:10px;overflow:hidden;margin-bottom:28px;">
+                <tr style="background:#f8f8fc;">
+                  <td style="padding:12px 20px;font-size:12px;font-weight:700;color:#7c3aed;text-transform:uppercase;letter-spacing:0.08em;width:130px;">Name</td>
+                  <td style="padding:12px 20px;font-size:14px;color:#1a1a2e;">${name}</td>
+                </tr>
+                <tr style="border-top:1px solid #ebebf5;">
+                  <td style="padding:12px 20px;font-size:12px;font-weight:700;color:#7c3aed;text-transform:uppercase;letter-spacing:0.08em;">Email</td>
+                  <td style="padding:12px 20px;font-size:14px;"><a href="mailto:${email}" style="color:#06b6d4;text-decoration:none;">${email}</a></td>
+                </tr>
+                ${serviceLabel ? `
+                <tr style="border-top:1px solid #ebebf5;">
+                  <td style="padding:12px 20px;font-size:12px;font-weight:700;color:#7c3aed;text-transform:uppercase;letter-spacing:0.08em;">Service</td>
+                  <td style="padding:12px 20px;font-size:14px;color:#1a1a2e;">${serviceLabel}</td>
+                </tr>` : ''}
+                <tr style="border-top:1px solid #ebebf5;">
+                  <td style="padding:12px 20px;font-size:12px;font-weight:700;color:#7c3aed;text-transform:uppercase;letter-spacing:0.08em;">Subject</td>
+                  <td style="padding:12px 20px;font-size:14px;color:#1a1a2e;">${subject}</td>
+                </tr>
+              </table>
+
+              <!-- Message -->
+              <p style="margin:0 0 10px;font-size:12px;font-weight:700;color:#7c3aed;text-transform:uppercase;letter-spacing:0.08em;">Message</p>
+              <div style="background:#f8f8fc;border-left:3px solid #7c3aed;border-radius:0 8px 8px 0;padding:18px 20px;font-size:15px;color:#333;line-height:1.7;white-space:pre-wrap;">${message}</div>
+
+              <!-- CTA -->
+              <div style="margin-top:28px;text-align:center;">
+                <a href="mailto:${email}" style="display:inline-block;background:linear-gradient(135deg,#7c3aed,#06b6d4);color:#fff;text-decoration:none;font-size:14px;font-weight:600;padding:13px 32px;border-radius:8px;">
+                  Reply to ${name} &rarr;
+                </a>
+              </div>
+
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background:#f8f8fc;border-radius:0 0 12px 12px;padding:20px 40px;text-align:center;border-top:1px solid #ebebf5;">
+              <p style="margin:0;font-size:12px;color:#999;">
+                Sent via <a href="https://jericoursua.com" style="color:#7c3aed;text-decoration:none;">jericoursua.com</a> &mdash; Replying will go directly to ${name}.
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
       `,
     })
 
