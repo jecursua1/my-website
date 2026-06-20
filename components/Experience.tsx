@@ -131,7 +131,7 @@ function TlBody({
         {exp.title}
       </h3>
       <p className="text-xs text-[#9b5af5] mb-2.5">
-        {exp.company} Â· {exp.location}
+        {exp.company} · {exp.location}
       </p>
       <p className="text-[0.87rem] text-[#7070a0] mb-3.5">{exp.description}</p>
       <div className={`flex flex-wrap gap-1.5 ${isRight ? 'justify-end' : ''}`}>

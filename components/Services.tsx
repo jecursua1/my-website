@@ -60,7 +60,7 @@ export default function Services() {
                       key={item}
                       className="text-[0.82rem] text-[#7070a0] pl-3.5 relative"
                     >
-                      <span className="absolute left-0 text-[#9b5af5] text-[0.75rem]">â–¸</span>
+                      <span className="absolute left-0 text-[#9b5af5] text-[0.75rem]">▸</span>
                       {item}
                     </li>
                   ))}

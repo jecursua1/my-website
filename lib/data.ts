@@ -2,31 +2,31 @@ export const personalInfo = {
   name: 'Jerico Ursua',
   nickname: 'Jec',
   initials: 'JU',
-  title: 'Virtual & Executive Assistant · HR Admin · Technical Recruiter',
+  title: 'Chief of Staff · SEO Specialist · Operations Leader',
   email: 'jerico.ursua1@gmail.com',
-  phone: '+639 95 437 5136',
+  phone: '+63 995 437 5136',
   location: 'Basista, Pangasinan, Philippines',
   locationShort: 'Philippines (Remote)',
   availability: 'Mon–Fri, 9AM–6PM PHT',
-  linkedin: 'https://www.linkedin.com/in/jec-ursua-214278255/',
+  linkedin: 'https://www.linkedin.com/in/jec-ursua',
   stats: [
-    { value: 5, suffix: '+', label: 'Years Exp.' },
+    { value: 6, suffix: '+', label: 'Years Exp.' },
     { value: 20, suffix: '+', label: 'Clients' },
-    { value: 7, suffix: '+', label: 'Companies' },
+    { value: 8, suffix: '+', label: 'Companies' },
   ],
 }
 
 export const services = [
   {
-    icon: '🧑‍💼',
-    title: 'Virtual & Executive Assistance',
+    icon: '🏢',
+    title: 'Chief of Staff & Operations',
     description:
-      'Reliable executive support that keeps operations running smoothly — so you can focus on what matters most.',
+      'Strategic operations leadership — driving cross-functional execution, team alignment, and agency-wide efficiency.',
     items: [
-      'Calendar & Email Management',
-      'Travel Planning & Itineraries',
-      'SOP Creation & Documentation',
-      'Meeting Coordination & Minutes',
+      'Cross-Functional Coordination',
+      'Executive Liaison & Stakeholder Management',
+      'SOP Development & Process Optimization',
+      'Team Performance & Accountability',
     ],
     featured: true,
   },
@@ -38,8 +38,8 @@ export const services = [
     items: [
       'End-to-End Recruitment',
       'ATS Management (Jobma, CVViZ)',
-      'Employee Onboarding & Training',
-      'Payroll & Timekeeping Support',
+      'Payroll Processing & Timekeeping',
+      'Employee Onboarding & Relations',
     ],
     featured: false,
   },
@@ -51,8 +51,21 @@ export const services = [
     items: [
       'Technical SEO Audits',
       'Keyword Research & Strategy',
-      'On-Page Optimization',
-      'Link Building Campaigns',
+      'On-Page & Off-Page Optimization',
+      'Google Search Console & Analytics',
+    ],
+    featured: false,
+  },
+  {
+    icon: '💻',
+    title: 'Web & Technical Development',
+    description:
+      'End-to-end web operations — from Next.js development to deployment management and blog system architecture.',
+    items: [
+      'Next.js Website Development',
+      'GitHub Branch & Deployment Management',
+      'Vercel & DNS Configuration',
+      'Blog System Architecture',
     ],
     featured: false,
   },
@@ -62,10 +75,10 @@ export const services = [
     description:
       'Streamline operations with intelligent automation — reduce manual tasks and improve team efficiency.',
     items: [
-      'Zapier Workflow Automation',
+      'Zapier & Make Workflow Automation',
       'GoHighLevel Setup & Management',
-      'CRM Optimization',
-      'API Integrations',
+      'CRM Engineering & Optimization',
+      'Webhook & API Integrations',
     ],
     featured: false,
   },
@@ -75,23 +88,10 @@ export const services = [
     description:
       'Consistent brand presence across platforms — from content scheduling to performance tracking.',
     items: [
-      'Content Scheduling & Monitoring',
+      'Multi-Brand Content Operations',
       'YouTube & Instagram Management',
-      'Buffer & Metricool',
+      'Buffer & Metricool Scheduling',
       'Engagement Tracking & Reporting',
-    ],
-    featured: false,
-  },
-  {
-    icon: '🎨',
-    title: 'Graphic Design & Video',
-    description:
-      'Visual content that captures attention and communicates your brand effectively across all channels.',
-    items: [
-      'Canva Design & Branding',
-      'Social Media Graphics & Ads',
-      'Video Editing (Premiere, CapCut)',
-      'Poster & Promotional Materials',
     ],
     featured: false,
   },
@@ -99,14 +99,54 @@ export const services = [
 
 export const experiences = [
   {
-    period: 'June 2024 – Present',
+    period: 'Jan 2026 – Present',
+    type: 'Full-time',
+    title: 'Chief of Staff',
+    company: 'Great Marketing AI',
+    location: 'Remote · United States',
+    description:
+      'Promoted to Chief of Staff, driving SEO strategy across all clients, managing full-cycle payroll, leading Next.js web operations and GitHub deployments, overseeing multi-brand content pipelines, and serving as primary liaison between the owner and all teams.',
+    tags: ['Operations', 'SEO', 'Next.js', 'Payroll', 'Leadership'],
+  },
+  {
+    period: 'Jan 2026 – Present',
+    type: 'Full-time',
+    title: 'Executive Assistant',
+    company: 'Lead Distro AI',
+    location: 'Remote · United States',
+    description:
+      'Supporting a SaaS pay-per-lead platform — managing GoHighLevel email lifecycle workflows, overseeing cold email infrastructure across 6 lookalike domains, coordinating external partnerships, and leading G2 profile optimization efforts.',
+    tags: ['GoHighLevel', 'DNS', 'Email Deliverability', 'Partnerships', 'G2'],
+  },
+  {
+    period: 'Jan 2025 – Present',
+    type: 'Full-time',
+    title: 'SEO Project Manager',
+    company: 'Sublime SEO',
+    location: 'Remote · Canada',
+    description:
+      'Promoted to SEO Project Manager, overseeing end-to-end SEO campaign delivery across multiple accounts — managing keyword strategy, content planning, link building, and performance tracking using SE Ranking, Ahrefs, and SEMRush.',
+    tags: ['SEO', 'Project Management', 'Ahrefs', 'SE Ranking', 'Link Building'],
+  },
+  {
+    period: 'June 2024 – Dec 2025',
     type: 'Full-time',
     title: 'HR & Executive Assistant',
     company: 'Great Marketing AI',
     location: 'Remote · United States',
     description:
-      'Led end-to-end recruitment, managed executive calendars and email, developed SOPs, automated workflows using Zapier, and managed GoHighLevel for newsletters, forms, and contracts.',
-    tags: ['HR', 'GoHighLevel', 'Zapier', 'Recruitment', 'SEO'],
+      'Managed end-to-end recruitment, administered GoHighLevel CRM with email lifecycle workflows, automated internal processes using Zapier and Make, and provided executive support including calendar management and SOP development.',
+    tags: ['HR', 'GoHighLevel', 'Zapier', 'Make', 'Recruitment'],
+  },
+  {
+    period: 'July 2023 – Dec 2024',
+    type: 'Full-time',
+    title: 'Virtual SEO Assistant',
+    company: 'Sublime SEO',
+    location: 'Remote · Canada',
+    description:
+      'Executed email marketing campaigns, conducted lead generation using Seamless.ai and Apollo.io, managed client outreach tracking, and provided comprehensive performance analytics and reporting.',
+    tags: ['SEO', 'Email Marketing', 'Lead Generation', 'Apollo.io', 'Seamless.ai'],
   },
   {
     period: 'July 2024 – Sep 2024',
@@ -115,18 +155,8 @@ export const experiences = [
     company: 'Leadevo Inc.',
     location: 'Remote · United States',
     description:
-      'Planned and executed email marketing campaigns, conducted lead generation using Seamless.ai and Apollo.io, and provided comprehensive outreach analytics and reporting.',
-    tags: ['Lead Generation', 'Email Marketing', 'Apollo.io', 'Seamless.ai'],
-  },
-  {
-    period: 'July 2023 – Present',
-    type: 'Full-time',
-    title: 'Virtual Executive & SEO Assistant',
-    company: 'Sublime SEO',
-    location: 'Remote · Canada',
-    description:
-      'Conducted end-to-end recruitment for Technical and Digital Marketing roles, managed ATS systems (Jobma, CVViZ), and sourced top candidates via LinkedIn and social media.',
-    tags: ['SEO', 'Recruitment', 'LinkedIn', 'ATS', 'Jobma'],
+      'Maintained booking records, designed and developed WordPress websites using BeTheme, configured Shopify eCommerce platforms, and collaborated with clients to translate business needs into digital solutions.',
+    tags: ['WordPress', 'Shopify', 'Web Design', 'BeTheme'],
   },
   {
     period: 'Dec 2022 – June 2023',
@@ -135,7 +165,7 @@ export const experiences = [
     company: 'Remote Office',
     location: 'Remote · Australia',
     description:
-      'Managed end-to-end recruitment — including sourcing, screening, and conducting phone/video interviews — for Technical and Digital Marketing roles across multiple clients.',
+      'Conducted end-to-end recruitment for Technical and Digital Marketing roles, managed ATS and job postings, conducted phone/video interviews, and initiated meetings with prospective clients.',
     tags: ['Recruitment', 'Screening', 'LinkedIn', 'Interviewing'],
   },
   {
@@ -145,7 +175,7 @@ export const experiences = [
     company: 'ZK Limited Holding',
     location: 'Remote · Hong Kong',
     description:
-      'Provided high-level executive support, conducted market research, prepared business reports and presentations, and managed professional client communications.',
+      'Provided high-level executive support to the Board of Directors, conducted market research on emerging tools and platforms, and prepared business reports, presentations, and proposals.',
     tags: ['Executive Support', 'Research', 'Reporting', 'Client Relations'],
   },
   {
@@ -155,8 +185,8 @@ export const experiences = [
     company: 'Strongbiz Marketing Corp.',
     location: 'On-Site · Philippines',
     description:
-      'Implemented SEO strategies including guest posting and social bookmarking, managed WordPress site content, and provided direct administrative support to the Board of Directors.',
-    tags: ['SEO', 'WordPress', 'HR Admin', 'Executive Support'],
+      'Led end-to-end recruitment, processed payroll and timekeeping reports, created and implemented SOPs, designed social media advertisements using Photoshop and Canva, and managed travel arrangements.',
+    tags: ['HR', 'Payroll', 'Recruitment', 'SOPs', 'Canva'],
   },
   {
     period: 'Nov 2019 – Apr 2020',
@@ -165,60 +195,60 @@ export const experiences = [
     company: 'Puregold Price Club Inc.',
     location: 'On-Site · Philippines',
     description:
-      'Led end-to-end recruitment, processed payroll and timekeeping reports, designed social media ads using Photoshop and Canva, and created Standard Operating Procedures.',
-    tags: ['HR', 'Payroll', 'Recruitment', 'Canva', 'Photoshop'],
+      'Provided HR and administrative support across multiple departments, maintained employee records, processed payroll, managed IVRs, and led end-to-end recruitment efforts.',
+    tags: ['HR', 'Payroll', 'Recruitment', 'Admin', 'Compliance'],
   },
 ]
 
 export const projects = [
   {
     id: 1,
-    category: 'hr',
-    title: 'End-to-End Recruitment System',
+    category: 'operations',
+    title: 'Internal Platform Development',
     description:
-      'Built and managed a full recruitment pipeline for Technical and Digital Marketing roles across multiple companies, from sourcing to onboarding.',
-    tags: ['Jobma', 'CVViZ', 'LinkedIn', 'ATS'],
-    colorClass: 'from-indigo-950 to-indigo-900',
-    wide: false,
+      'Leading the development of Next.js internal platforms at Great Marketing AI — including an HRIS, ATS, Payroll System, and content scheduling platform to streamline agency operations.',
+    tags: ['Next.js', 'GitHub', 'Vercel', 'TypeScript'],
+    colorClass: 'from-violet-950 to-purple-900',
+    wide: true,
   },
   {
     id: 2,
     category: 'seo',
-    title: 'SEO Optimization Campaigns',
+    title: 'SEO Campaign Management',
     description:
-      'Implemented comprehensive SEO strategies including technical audits, keyword research, and on-page optimization — significantly increasing organic visibility for multiple clients.',
-    tags: ['Ahrefs', 'SEMRush', 'SE Ranking', 'WordPress'],
+      'Managing end-to-end SEO campaigns across multiple client accounts — keyword strategy, on-page optimization, content planning, link building, and performance tracking via SE Ranking, Ahrefs, and SEMRush.',
+    tags: ['Ahrefs', 'SEMRush', 'SE Ranking', 'Google Search Console'],
     colorClass: 'from-emerald-950 to-emerald-900',
-    wide: true,
+    wide: false,
   },
   {
     id: 3,
     category: 'automation',
-    title: 'GoHighLevel Workflow Setup',
+    title: 'GoHighLevel Lifecycle Automation',
     description:
-      'Automated newsletter campaigns, contract flows, and client onboarding processes inside GoHighLevel — reducing manual work significantly.',
-    tags: ['GoHighLevel', 'Zapier', 'Fillout.io', 'Automation'],
+      'Built and managed full email lifecycle workflows in GoHighLevel — covering trial, onboarding, and retention sequences — plus automated newsletter campaigns, contract flows, and client onboarding processes.',
+    tags: ['GoHighLevel', 'Zapier', 'Make', 'Automation'],
     colorClass: 'from-purple-950 to-purple-900',
     wide: false,
   },
   {
     id: 4,
-    category: 'hr',
-    title: 'Multi-Channel Talent Sourcing',
+    category: 'operations',
+    title: 'Cold Email Infrastructure',
     description:
-      'Developed a multi-channel sourcing strategy leveraging LinkedIn Sales Navigator, Seamless.ai, and Apollo.io to build robust candidate pipelines.',
-    tags: ['LinkedIn Sales Nav', 'Seamless.ai', 'Apollo.io', 'Sourcing'],
+      'Overseeing cold email infrastructure across 6 lookalike domains via InboxKit and Cloudflare — maintaining DNS configuration, DMARC records, and email deliverability for Lead Distro AI.',
+    tags: ['InboxKit', 'Cloudflare', 'DNS', 'DMARC', 'Deliverability'],
     colorClass: 'from-sky-950 to-sky-900',
     wide: false,
   },
   {
     id: 5,
-    category: 'automation',
-    title: 'Zapier Multi-Step Automations',
+    category: 'hr',
+    title: 'End-to-End Recruitment System',
     description:
-      'Created Zapier workflows that eliminated manual tasks across HR, marketing, and operations — saving the team hours every week.',
-    tags: ['Zapier', 'Slack', 'Notion', 'G-Suite'],
-    colorClass: 'from-violet-950 to-fuchsia-950',
+      'Built and managed full recruitment pipelines for Technical and Digital Marketing roles — from sourcing via LinkedIn Sales Navigator, Seamless.ai, and Apollo.io through to onboarding.',
+    tags: ['Jobma', 'CVViZ', 'LinkedIn Sales Nav', 'Apollo.io'],
+    colorClass: 'from-indigo-950 to-indigo-900',
     wide: false,
   },
   {
@@ -235,8 +265,9 @@ export const projects = [
 
 export const clients = [
   'Great Marketing AI',
-  'Leadevo Inc.',
+  'Lead Distro AI',
   'Sublime SEO',
+  'Leadevo Inc.',
   'Remote Office',
   'ZK Limited',
   'Strongbiz Marketing',
@@ -278,7 +309,7 @@ export const toolCategories = [
       { name: 'Asana', icon: '🎯' },
       { name: 'Trello', icon: '📋' },
       { name: 'Calendly', icon: '📅' },
-      { name: 'Basecamp', icon: '⛺' },
+      { name: 'Miro', icon: '🗂️' },
     ],
   },
   {
@@ -286,11 +317,23 @@ export const toolCategories = [
     tools: [
       { name: 'GoHighLevel', icon: '⚡' },
       { name: 'Zapier', icon: '🔄' },
-      { name: 'Hubstaff', icon: '⏱️' },
-      { name: 'Time Doctor', icon: '⏰' },
-      { name: 'Fillout.io', icon: '📄' },
-      { name: 'Typeform', icon: '📋' },
+      { name: 'Make', icon: '🔧' },
+      { name: 'HubSpot', icon: '🟠' },
+      { name: 'Instantly.ai', icon: '📨' },
+      { name: 'InboxKit', icon: '📥' },
       { name: 'PandaDoc', icon: '📃' },
+    ],
+  },
+  {
+    title: 'Web & Development',
+    tools: [
+      { name: 'Next.js', icon: '▲' },
+      { name: 'GitHub', icon: '🐙' },
+      { name: 'Vercel', icon: '🚀' },
+      { name: 'Cloudflare', icon: '🌐' },
+      { name: 'WordPress', icon: '📰' },
+      { name: 'Shopify', icon: '🛍️' },
+      { name: 'VS Code', icon: '💻' },
     ],
   },
   {
@@ -299,11 +342,11 @@ export const toolCategories = [
       { name: 'SE Ranking', icon: '📊' },
       { name: 'Ahrefs', icon: '🔗' },
       { name: 'SEMRush', icon: '🔍' },
+      { name: 'Google Analytics', icon: '📈' },
+      { name: 'Google Search Console', icon: '🔎' },
       { name: 'Buffer', icon: '📱' },
-      { name: 'Metricool', icon: '📈' },
-      { name: 'Seamless.ai', icon: '🎯' },
+      { name: 'Metricool', icon: '📉' },
       { name: 'Apollo.io', icon: '🚀' },
-      { name: 'LinkedIn Sales Nav', icon: '💼' },
     ],
   },
   {
@@ -313,21 +356,21 @@ export const toolCategories = [
       { name: 'Photoshop', icon: '🖼️' },
       { name: 'Premiere Pro', icon: '🎬' },
       { name: 'CapCut', icon: '✂️' },
-      { name: 'Frame.io', icon: '🎥' },
       { name: 'Slack', icon: '💬' },
       { name: 'Discord', icon: '🎮' },
       { name: 'RingCentral', icon: '📞' },
+      { name: 'Frame.io', icon: '🎥' },
     ],
   },
 ]
 
 export const technicalSkills = [
+  { name: 'Chief of Staff & Operations', level: 95 },
   { name: 'HR & Recruitment', level: 95 },
-  { name: 'Virtual/Executive Assistance', level: 95 },
-  { name: 'SEO Strategy', level: 88 },
-  { name: 'Workflow Automation', level: 85 },
+  { name: 'SEO Strategy', level: 90 },
+  { name: 'Workflow Automation', level: 88 },
+  { name: 'Web Development (Next.js)', level: 82 },
   { name: 'Social Media Management', level: 85 },
-  { name: 'Graphic Design', level: 80 },
 ]
 
 export const professionalSkills = [
@@ -335,13 +378,13 @@ export const professionalSkills = [
   { name: 'Attention to Detail', level: 94 },
   { name: 'Problem Solving', level: 92 },
   { name: 'Team Collaboration', level: 90 },
-  { name: 'Project Management', level: 88 },
+  { name: 'Project Management', level: 90 },
 ]
 
 export const badgeGroups = [
   {
     label: 'HR Tools',
-    items: ['Jobma', 'CVViZ', 'HR.my', 'ATS Management'],
+    items: ['Jobma', 'CVViZ', 'HR.my', 'Hubstaff', 'Time Doctor'],
     highlight: false,
   },
   {

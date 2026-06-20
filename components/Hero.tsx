@@ -91,7 +91,7 @@ export default function Hero() {
           className="text-[#7070a0] mb-4 leading-relaxed"
           style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)' }}
         >
-          Virtual &amp; Executive Assistant Â· HR Admin Â· Technical Recruiter
+          Chief of Staff · SEO Specialist · AI &amp; Automation Expert
           <br />
           helping businesses grow and operate smoothly.
         </p>
@@ -112,7 +112,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[10px] text-[0.95rem] font-semibold text-[#e2e2f0] transition-all duration-300 hover:text-[#9b5af5]"
             style={{ border: '1.5px solid rgba(255,255,255,0.07)' }}
           >
-            Let&apos;s Talk â†’
+            Let&apos;s Talk →
           </a>
         </div>
 
