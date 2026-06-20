@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { personalInfo } from '@/lib/data'
+import ParticleNetwork from '@/components/ParticleNetwork'
 
 const floatCards = [
   { icon: '🎯', title: 'New Client Onboarded', sub: 'Microsoft Corporation' },
@@ -124,13 +125,14 @@ export default function Hero() {
       className="relative overflow-hidden min-h-[680px] grid grid-cols-1 md:grid-cols-2 items-center gap-16 px-6 py-20"
       style={{ paddingLeft: 'clamp(24px, 10vw, 120px)', paddingRight: 'clamp(24px, 10vw, 120px)' }}
     >
+      <ParticleNetwork />
       <div
         className="absolute top-[-100px] right-[-100px] w-[600px] h-[600px] rounded-full pointer-events-none"
-        style={{ background: 'rgba(124,58,237,0.18)', filter: 'blur(120px)' }}
+        style={{ background: 'rgba(124,58,237,0.18)', filter: 'blur(120px)', zIndex: 1 }}
       />
       <div
         className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none"
-        style={{ background: 'rgba(6,182,212,0.12)', filter: 'blur(120px)' }}
+        style={{ background: 'rgba(6,182,212,0.12)', filter: 'blur(120px)', zIndex: 1 }}
       />
 
       {/* Mobile photo — only visible on small screens */}
