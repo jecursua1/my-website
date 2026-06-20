@@ -1,4 +1,4 @@
-﻿import FadeIn from '@/components/FadeIn'
+import FadeIn from '@/components/FadeIn'
 
 export default function About() {
   return (
@@ -19,22 +19,22 @@ export default function About() {
             <iframe
               className="absolute inset-0 w-full h-full"
               src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              title="Jec Ursua â€” Video Introduction"
+              title="Jec Ursua - Video Introduction"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
           </div>
-          <p className="text-center text-xs text-[#7070a0] mt-3">▶ Watch my intro</p>
+          <p className="text-center text-xs text-[#7070a0] mt-3">&#9654; Watch my intro</p>
         </FadeIn>
 
         {/* Copy */}
         <FadeIn direction="right">
           <div className="section-tag">About Me</div>
           <h2
-            className=”font-black leading-snug mb-5”
+            className="font-black leading-snug mb-5"
             style={{
-              fontFamily: “'Plus Jakarta Sans', sans-serif”,
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontSize: 'clamp(1.7rem, 3vw, 2.3rem)',
             }}
           >
@@ -42,13 +42,13 @@ export default function About() {
             <br />
             Digital Systems That Work
           </h2>
-          <p className=”text-[#7070a0] mb-4 text-[0.97rem]”>
+          <p className="text-[#7070a0] mb-4 text-[0.97rem]">
             I&apos;m a versatile Chief of Staff and Operations Leader with 6+ years of
             cross-functional experience across digital marketing agencies, SaaS platforms, and HR
             operations. My core strengths sit at the intersection of people leadership, technical
             execution, and strategic SEO.
           </p>
-          <p className=”text-[#7070a0] mb-6 text-[0.97rem]”>
+          <p className="text-[#7070a0] mb-6 text-[0.97rem]">
             At Great Marketing AI, I run full-cycle payroll and recruitment, oversee Next.js web
             development, and manage multi-platform content operations across three brands
             simultaneously. Promoted twice in under two years by consistently taking ownership of
@@ -89,7 +89,7 @@ export default function About() {
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[10px] text-[0.95rem] font-semibold text-[#e2e2f0] transition-all duration-300 hover:text-[#9b5af5] hover:border-primary-2"
               style={{ border: '1.5px solid rgba(255,255,255,0.07)' }}
             >
-              Get In Touch →
+              Get In Touch &#8594;
             </a>
           </div>
         </FadeIn>
