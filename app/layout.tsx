@@ -5,14 +5,14 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://jericoursua.com'),
   title: 'Jerico Ursua | HR Executive, Chief of Staff & SEO Specialist',
   description:
-    'The remote ops leader agencies trust — Chief of Staff, HR Specialist & SEO Strategist with 6+ years scaling teams, driving organic growth, and building AI-powered workflows.',
+    'Chief of Staff, HR Executive & SEO Specialist with 6+ years helping agencies hire better, rank higher, and automate smarter. Remote-first, results-driven.',
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'Jerico Ursua | HR Executive, Chief of Staff & SEO Specialist',
     description:
-      'The remote ops leader agencies trust — Chief of Staff, HR Specialist & SEO Strategist with 6+ years scaling teams, driving organic growth, and building AI-powered workflows.',
+      'Chief of Staff, HR Executive & SEO Specialist with 6+ years helping agencies hire better, rank higher, and automate smarter. Remote-first, results-driven.',
     type: 'website',
     url: 'https://jericoursua.com',
   },
