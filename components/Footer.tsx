@@ -76,26 +76,37 @@ export default function Footer() {
               className="flex items-center gap-3 mb-4 w-fit group"
             >
               <div
-                className="relative w-[38px] h-[38px] rounded-full flex items-center justify-center flex-shrink-0"
+                className="relative w-[44px] h-[44px] rounded-full flex items-center justify-center flex-shrink-0"
                 style={{
-                  background: 'linear-gradient(135deg, #1a0a3a, #0d1a2e)',
-                  border: '1.5px solid rgba(124,58,237,0.55)',
+                  background: 'linear-gradient(145deg, #140826, #0b1828)',
+                  border: '1.5px solid rgba(124,58,237,0.5)',
                 }}
               >
-                <svg width="22" height="18" viewBox="0 0 22 18" fill="none">
-                  <text x="1" y="14" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="900" fontSize="13" fill="url(#footerLogoGrad)">J</text>
-                  <text x="9" y="14" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="900" fontSize="13" fill="url(#footerLogoGrad)">U</text>
+                <svg width="24" height="28" viewBox="0 0 24 28" fill="none">
+                  <path
+                    d="M 3 2 L 3 16 Q 3 23 12 23 Q 21 23 21 16 L 21 2"
+                    stroke="url(#footerLogoGrad)"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M 21 17 Q 21 28 12 28 Q 5 28 4 23"
+                    stroke="url(#footerLogoGrad)"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                  />
                   <defs>
-                    <linearGradient id="footerLogoGrad" x1="0" y1="0" x2="22" y2="18" gradientUnits="userSpaceOnUse">
+                    <linearGradient id="footerLogoGrad" x1="0" y1="0" x2="24" y2="28" gradientUnits="userSpaceOnUse">
                       <stop offset="0%" stopColor="#c084fc" />
-                      <stop offset="100%" stopColor="#06b6d4" />
+                      <stop offset="100%" stopColor="#38bdf8" />
                     </linearGradient>
                   </defs>
                 </svg>
               </div>
-              <div className="flex flex-col leading-none">
-                <span className="text-[0.6rem] font-bold uppercase tracking-[0.18em] text-[#7070a0]">Jec</span>
-                <span className="text-[0.95rem] font-black uppercase tracking-[0.12em] text-white" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Ursua</span>
+              <div className="flex flex-col leading-none gap-[3px]">
+                <span className="text-[0.58rem] font-bold uppercase tracking-[0.22em] text-[#6060a0]">Jec</span>
+                <span className="text-[1rem] font-black uppercase tracking-[0.1em] text-white" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Ursua</span>
               </div>
             </a>
             <p className="text-[0.9rem] text-[#7070a0] leading-[1.75] mb-5 max-w-[240px]">
