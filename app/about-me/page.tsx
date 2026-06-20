@@ -94,7 +94,7 @@ export default function AboutMePage() {
 
         <StoryBlock label="The Beginning">
           <p>
-            My name is Jerico Ursua — but everyone calls me <strong className="text-white">Jec</strong>. I studied Business Administration
+            My name is Jerico Ursua, but everyone calls me <strong className="text-white">Jec</strong>. I studied Business Administration
             majoring in Human Resource Development Management at Pangasinan State University, San Carlos Campus.
           </p>
           <p>
@@ -173,8 +173,8 @@ export default function AboutMePage() {
         <StoryBlock label="Beyond the Work">
           <p>
             What people don&apos;t always know about me is that my <strong className="text-white">real dream has always been music</strong>.
-            I&apos;m a musician at heart. One day I want to perform on a big stage — crowds singing along with my band,
-            the kind of moment that gives you chills just imagining it.
+            I&apos;m a musician at heart. One day I want to perform on a big stage, with crowds singing along with my band.
+            The kind of moment that gives you chills just imagining it.
           </p>
           <p>
             I haven&apos;t given up on that. I never will. Timing is everything,
