@@ -130,6 +130,23 @@ export default function Hero() {
         style={{ background: 'rgba(6,182,212,0.12)', filter: 'blur(120px)' }}
       />
 
+      {/* Mobile photo — only visible on small screens */}
+      <div className="flex md:hidden justify-center mb-6 relative z-10">
+        <div
+          className="relative w-[180px] h-[180px] rounded-full overflow-hidden flex-shrink-0"
+          style={{ background: 'linear-gradient(135deg, #7c3aed, #06b6d4)' }}
+        >
+          <Image
+            src="/profile.png"
+            alt="Jerico Ursua"
+            fill
+            sizes="180px"
+            className="object-cover object-top scale-[1.18] origin-top"
+            priority
+          />
+        </div>
+      </div>
+
       <div className="relative z-10">
         <div
           className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full text-sm font-medium text-[#7070a0]"

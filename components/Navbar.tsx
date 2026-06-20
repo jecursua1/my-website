@@ -91,17 +91,17 @@ export default function Navbar() {
           aria-label="Toggle menu"
         >
           <span
-            className={`block w-6 h-0.5 bg-fg rounded transition-all duration-300 ${
+            className={`block w-6 h-0.5 bg-white rounded transition-all duration-300 ${
               menuOpen ? 'translate-y-2 rotate-45' : ''
             }`}
           />
           <span
-            className={`block w-6 h-0.5 bg-fg rounded transition-all duration-300 ${
+            className={`block w-6 h-0.5 bg-white rounded transition-all duration-300 ${
               menuOpen ? 'opacity-0' : ''
             }`}
           />
           <span
-            className={`block w-6 h-0.5 bg-fg rounded transition-all duration-300 ${
+            className={`block w-6 h-0.5 bg-white rounded transition-all duration-300 ${
               menuOpen ? '-translate-y-2 -rotate-45' : ''
             }`}
           />
