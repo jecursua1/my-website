@@ -24,10 +24,12 @@ function FloatCard({
   startIdx,
   position,
   animClass,
+  posOverride,
 }: {
   startIdx: number
   position: 'top' | 'bottom'
   animClass: string
+  posOverride?: string
 }) {
   const [idx, setIdx] = useState(startIdx)
   const [show, setShow] = useState(true)
@@ -44,10 +46,11 @@ function FloatCard({
   }, [])
 
   const card = floatCards[idx]
-  const posClass =
+  const posClass = posOverride ?? (
     position === 'top'
       ? 'absolute top-[10%] left-[-5%]'
       : 'absolute bottom-[12%] right-[-5%]'
+  )
 
   return (
     <div
@@ -59,7 +62,7 @@ function FloatCard({
         boxShadow: '0 8px 32px rgba(0,0,0,0.45)',
         opacity: show ? 1 : 0,
         transition: `opacity ${FADE}ms ease`,
-        minWidth: '210px',
+        minWidth: '180px',
       }}
     >
       <span className="text-2xl">{card.icon}</span>
@@ -131,18 +134,43 @@ export default function Hero() {
       />
 
       {/* Mobile photo — only visible on small screens */}
-      <div className="flex md:hidden justify-center mb-6 relative z-10">
-        <div
-          className="relative w-[180px] h-[180px] rounded-full overflow-hidden flex-shrink-0"
-          style={{ background: 'linear-gradient(135deg, #7c3aed, #06b6d4)' }}
-        >
-          <Image
-            src="/profile.png"
-            alt="Jerico Ursua"
-            fill
-            sizes="180px"
-            className="object-cover object-top scale-[1.18] origin-top"
-            priority
+      <div className="flex md:hidden justify-center mb-8 relative z-10" style={{ minHeight: '280px' }}>
+        <div className="relative w-full flex items-center justify-center">
+          {/* Spinning rings */}
+          <div
+            className="absolute w-[210px] h-[210px] rounded-full animate-spin-slow pointer-events-none"
+            style={{ border: '1.5px solid rgba(124,58,237,0.25)' }}
+          />
+          <div
+            className="absolute w-[250px] h-[250px] rounded-full animate-spin-slower pointer-events-none"
+            style={{ border: '1.5px solid rgba(124,58,237,0.15)' }}
+          />
+          {/* Photo */}
+          <div
+            className="relative w-[180px] h-[180px] rounded-full overflow-hidden flex-shrink-0 z-10"
+            style={{ background: 'linear-gradient(135deg, #7c3aed, #06b6d4)' }}
+          >
+            <Image
+              src="/profile.png"
+              alt="Jerico Ursua"
+              fill
+              sizes="180px"
+              className="object-cover object-top scale-[1.18] origin-top"
+              priority
+            />
+          </div>
+          {/* Float cards — repositioned for mobile */}
+          <FloatCard
+            startIdx={0}
+            position="top"
+            animClass="animate-float"
+            posOverride="absolute top-0 left-0 z-20"
+          />
+          <FloatCard
+            startIdx={5}
+            position="bottom"
+            animClass="animate-float-delayed"
+            posOverride="absolute bottom-0 right-0 z-20"
           />
         </div>
       </div>
