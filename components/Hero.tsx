@@ -103,7 +103,8 @@ function CyclingText() {
         fontSize: 'clamp(1.3rem, 2.5vw, 1.9rem)',
         fontWeight: 700,
         animation: 'slideDown 0.45s ease forwards',
-        marginTop: '10px',
+        marginTop: '16px',
+        marginBottom: '8px',
       }}
     >
       {cyclingPhrases[index]}
@@ -238,7 +239,7 @@ export default function Hero() {
         </h1>
 
         <p
-          className="text-[#7070a0] mb-4 leading-relaxed mt-5"
+          className="text-[#7070a0] mb-4 leading-relaxed mt-8"
           style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)' }}
         >
           Chief of Staff &middot; HR Specialist &middot; SEO Specialist &middot; AI &amp; Automation Expert
