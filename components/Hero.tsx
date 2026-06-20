@@ -102,7 +102,7 @@ function CyclingText() {
         display: 'block',
         fontSize: 'clamp(1.3rem, 2.5vw, 1.9rem)',
         fontWeight: 700,
-        animation: 'slideDown 0.45s ease forwards',
+        animation: 'slideUp 0.45s ease forwards',
         marginTop: '16px',
         marginBottom: '8px',
       }}
