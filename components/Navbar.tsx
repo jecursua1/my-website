@@ -55,47 +55,38 @@ export default function Navbar() {
           className="flex items-center gap-3 group"
           style={{ textDecoration: 'none' }}
         >
-          {/* Monogram oval badge */}
+          {/* Monogram circle badge */}
           <svg
-            width="66" height="54"
-            viewBox="0 0 66 54"
+            width="52" height="52"
+            viewBox="0 0 52 52"
             fill="none"
             className="flex-shrink-0 transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(167,139,250,0.65)]"
           >
             <defs>
-              <linearGradient id="navOvalGrad" x1="0" y1="0" x2="66" y2="54" gradientUnits="userSpaceOnUse">
+              <linearGradient id="navCircleGrad" x1="0" y1="0" x2="52" y2="52" gradientUnits="userSpaceOnUse">
                 <stop offset="0%" stopColor="#a78bfa"/>
                 <stop offset="100%" stopColor="#38bdf8"/>
               </linearGradient>
-              <linearGradient id="navLetterGrad" x1="0" y1="0" x2="66" y2="54" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#ddd6fe"/>
-                <stop offset="100%" stopColor="#a5f3fc"/>
+              <linearGradient id="navLetterGrad" x1="0" y1="0" x2="52" y2="52" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#ede9fe"/>
+                <stop offset="100%" stopColor="#bfdbfe"/>
               </linearGradient>
-              {/* Clip U shape to create "J behind U" effect */}
-              <clipPath id="navUClip">
-                <text x="25" y="40" fontFamily="Georgia, 'Times New Roman', serif" fontWeight="bold" fontSize="36">U</text>
-              </clipPath>
             </defs>
-            {/* Dark navy oval background */}
-            <ellipse cx="33" cy="27" rx="32" ry="26" fill="#0c0820"/>
-            {/* Oval border */}
-            <ellipse cx="33" cy="27" rx="32" ry="26" stroke="url(#navOvalGrad)" strokeWidth="1.8"/>
-            {/* J — rendered first (behind), right side tucks under U */}
+            {/* Dark navy circle background */}
+            <circle cx="26" cy="26" r="25" fill="#0c0820"/>
+            {/* Circle border */}
+            <circle cx="26" cy="26" r="25" stroke="url(#navCircleGrad)" strokeWidth="1.8"/>
+            {/* JU merged — U pulled left with negative dx so it overlaps J */}
             <text
-              x="9" y="40"
+              x="7" y="39"
               fontFamily="Georgia, 'Times New Roman', serif"
               fontWeight="bold"
               fontSize="36"
               fill="url(#navLetterGrad)"
-            >J</text>
-            {/* U — rendered on top of J, overlapping left side covers J's right stroke */}
-            <text
-              x="25" y="40"
-              fontFamily="Georgia, 'Times New Roman', serif"
-              fontWeight="bold"
-              fontSize="36"
-              fill="url(#navLetterGrad)"
-            >U</text>
+            >
+              <tspan>J</tspan>
+              <tspan dx="-10">U</tspan>
+            </text>
           </svg>
           {/* Name */}
           <div className="flex flex-col leading-none gap-[3px]">
