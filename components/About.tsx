@@ -17,7 +17,7 @@ export default function About() {
           >
             <iframe
               className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              src="https://www.youtube.com/embed/rzV6uzHE9AA"
               title="Jec Ursua - Video Introduction"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

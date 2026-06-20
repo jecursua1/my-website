@@ -6,8 +6,8 @@ export const personalInfo = {
   email: 'jerico.ursua1@gmail.com',
   phone: '+63 995 437 5136',
   location: 'Basista, Pangasinan, Philippines',
-  locationShort: 'Philippines (Remote)',
-  availability: 'Mon–Fri, 9AM–6PM PHT',
+  locationShort: 'Pangasinan, Philippines',
+  availability: 'Mon–Fri, 4AM–9PM PHT',
   linkedin: 'https://www.linkedin.com/in/jec-ursua',
   stats: [
     { value: 6, suffix: '+', label: 'Years Exp.' },
@@ -429,6 +429,7 @@ export const toolCategories = [
       { name: 'Perplexity' },
       { name: 'ChatGPT' },
       { name: 'Midjourney' },
+      { name: 'Gemini' },
     ],
   },
   {
@@ -436,6 +437,8 @@ export const toolCategories = [
     tools: [
       { name: 'Canva' },
       { name: 'Photoshop' },
+      { name: 'Premiere Pro' },
+      { name: 'Freepik' },
       { name: 'Discord' },
       { name: 'RingCentral' },
       { name: 'Frame.io' },
