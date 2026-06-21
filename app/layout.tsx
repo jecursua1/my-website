@@ -15,7 +15,29 @@ export const metadata: Metadata = {
       'Chief of Staff, HR Executive & SEO Specialist with 6+ years helping agencies hire better, rank higher, and automate smarter. Remote-first, results-driven.',
     type: 'website',
     url: 'https://jericoursua.com',
+    siteName: 'Jerico Ursua',
   },
+}
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Jerico Ursua',
+  url: 'https://jericoursua.com',
+  description:
+    'Chief of Staff, HR Executive & SEO Specialist with 6+ years helping agencies hire better, rank higher, and automate smarter.',
+}
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Jerico Ursua',
+  url: 'https://jericoursua.com',
+  jobTitle: 'Chief of Staff & SEO Specialist',
+  sameAs: [
+    'https://www.linkedin.com/in/jec-ursua/',
+    'https://www.upwork.com/freelancers/~01004a0946b64b5972',
+  ],
 }
 
 export default function RootLayout({
@@ -31,6 +53,14 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
           rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
       </head>
       <body>{children}</body>
