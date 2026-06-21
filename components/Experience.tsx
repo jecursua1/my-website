@@ -1,5 +1,6 @@
 'use client'
 
+import { Fragment } from 'react'
 import FadeIn from '@/components/FadeIn'
 import { experiences, type GroupedExperience, type SingleExperience } from '@/lib/data'
 
@@ -27,62 +28,62 @@ export default function Experience() {
 
         {/* Timeline */}
         <div className="relative max-w-[820px] mx-auto">
-          {/* Vertical line — hidden on mobile */}
+          {/* Desktop center line */}
           <div
-            className="absolute left-3.5 md:left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 hidden md:block"
+            className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 hidden md:block"
             style={{ background: 'rgba(255,255,255,0.07)' }}
           />
-          {/* Mobile vertical line */}
+          {/* Mobile left line */}
           <div
             className="absolute left-3.5 top-0 bottom-0 w-0.5 md:hidden"
             style={{ background: 'rgba(255,255,255,0.07)' }}
           />
 
-          <div className="flex flex-col gap-12">
+          {/*
+            Each experience renders ONCE — no duplicate DOM nodes.
+            Mobile: flex row with inline dot on left.
+            Desktop: 3-col grid, odd=left col, even=right col, dot in center col.
+          */}
+          <div className="flex flex-col gap-12 md:grid md:grid-cols-[1fr_28px_1fr] md:gap-x-6 md:gap-y-12">
             {experiences.map((exp, i) => {
               const isOdd = i % 2 === 0
               const key = exp.grouped ? exp.company : `${exp.company}-${exp.period}`
-              return (
-                <FadeIn key={key} direction={isOdd ? 'left' : 'right'} delay={0.05}>
-                  {/* Mobile layout — aria-hidden to avoid duplicate headings for SEO */}
-                  <div className="md:hidden flex gap-6 items-start" aria-hidden="true">
-                    <div
-                      className="w-7 h-7 rounded-full flex-shrink-0 mt-1"
-                      style={{
-                        background: 'linear-gradient(135deg, #7c3aed, #06b6d4)',
-                        boxShadow: '0 0 0 4px rgba(124,58,237,0.2)',
-                      }}
-                    />
-                    {exp.grouped
-                      ? <GroupedBody exp={exp} align="left" />
-                      : <SingleBody exp={exp} align="left" />}
-                  </div>
+              const card = exp.grouped
+                ? <GroupedBody exp={exp} align={isOdd ? 'right' : 'left'} />
+                : <SingleBody exp={exp} align={isOdd ? 'right' : 'left'} />
 
-                  {/* Desktop alternating layout */}
-                  <div className="hidden md:grid grid-cols-[1fr_28px_1fr] gap-x-6 items-start">
-                    {isOdd ? (
-                      <>
-                        <div className="text-right">
-                          {exp.grouped
-                            ? <GroupedBody exp={exp} align="right" />
-                            : <SingleBody exp={exp} align="right" />}
+              return (
+                <Fragment key={key}>
+                  {isOdd ? (
+                    <>
+                      {/* Col 1 — card (mobile: flex with inline dot) */}
+                      <FadeIn direction="left" delay={0.05}>
+                        <div className="flex gap-6 items-start md:block">
+                          <InlineDot />
+                          <div className="flex-1 min-w-0">{card}</div>
                         </div>
-                        <TlDot />
-                        <div />
-                      </>
-                    ) : (
-                      <>
-                        <div />
-                        <TlDot />
-                        <div>
-                          {exp.grouped
-                            ? <GroupedBody exp={exp} align="left" />
-                            : <SingleBody exp={exp} align="left" />}
+                      </FadeIn>
+                      {/* Col 2 — center dot, desktop only */}
+                      <CenterDot />
+                      {/* Col 3 — empty spacer */}
+                      <div className="hidden md:block" />
+                    </>
+                  ) : (
+                    <>
+                      {/* Col 1 — empty spacer */}
+                      <div className="hidden md:block" />
+                      {/* Col 2 — center dot, desktop only */}
+                      <CenterDot />
+                      {/* Col 3 — card (mobile: flex with inline dot) */}
+                      <FadeIn direction="right" delay={0.05}>
+                        <div className="flex gap-6 items-start md:block">
+                          <InlineDot />
+                          <div className="flex-1 min-w-0">{card}</div>
                         </div>
-                      </>
-                    )}
-                  </div>
-                </FadeIn>
+                      </FadeIn>
+                    </>
+                  )}
+                </Fragment>
               )
             })}
           </div>
@@ -110,10 +111,11 @@ export default function Experience() {
   )
 }
 
-function TlDot() {
+/** Dot shown inline on mobile (hidden on desktop) */
+function InlineDot() {
   return (
     <div
-      className="w-7 h-7 rounded-full justify-self-center mt-1 flex-shrink-0"
+      className="md:hidden w-7 h-7 rounded-full flex-shrink-0 mt-1"
       style={{
         background: 'linear-gradient(135deg, #7c3aed, #06b6d4)',
         boxShadow: '0 0 0 4px rgba(124,58,237,0.2)',
@@ -122,9 +124,24 @@ function TlDot() {
   )
 }
 
+/** Dot in the center grid column on desktop (hidden on mobile) */
+function CenterDot() {
+  return (
+    <div className="hidden md:flex justify-center items-start pt-1">
+      <div
+        className="w-7 h-7 rounded-full flex-shrink-0"
+        style={{
+          background: 'linear-gradient(135deg, #7c3aed, #06b6d4)',
+          boxShadow: '0 0 0 4px rgba(124,58,237,0.2)',
+        }}
+      />
+    </div>
+  )
+}
+
 function TagList({ tags, align }: { tags: string[]; align: 'left' | 'right' }) {
   return (
-    <div className={`flex flex-wrap gap-1.5 ${align === 'right' ? 'justify-end' : ''}`}>
+    <div className={`flex flex-wrap gap-1.5 ${align === 'right' ? 'md:justify-end' : ''}`}>
       {tags.map((tag) => (
         <span
           key={tag}
@@ -156,11 +173,10 @@ function SingleBody({ exp, align = 'left' }: { exp: SingleExperience; align?: 'l
     >
       {/* Company header */}
       <div
-        className="px-6 py-3 flex items-center gap-2 flex-wrap"
+        className={`px-6 py-3 flex items-center gap-2 flex-wrap ${isRight ? 'md:justify-end' : ''}`}
         style={{
           background: 'linear-gradient(135deg, rgba(124,58,237,0.12), rgba(6,182,212,0.06))',
           borderBottom: '1px solid rgba(255,255,255,0.07)',
-          justifyContent: isRight ? 'flex-end' : 'flex-start',
         }}
       >
         <span className="text-[0.85rem] font-bold" style={{ color: '#9b5af5' }}>{exp.company}</span>
@@ -169,7 +185,7 @@ function SingleBody({ exp, align = 'left' }: { exp: SingleExperience; align?: 'l
 
       {/* Role content */}
       <div className="px-6 py-5">
-        <div className={`flex items-center gap-2.5 mb-2.5 flex-wrap ${isRight ? 'justify-end' : ''}`}>
+        <div className={`flex items-center gap-2.5 mb-2.5 flex-wrap ${isRight ? 'md:justify-end' : ''}`}>
           <span className="text-xs font-semibold text-[#9b5af5]">{exp.period}</span>
           <span
             className="text-[0.72rem] px-2.5 py-0.5 rounded-full"
@@ -210,19 +226,13 @@ function GroupedBody({ exp, align = 'left' }: { exp: GroupedExperience; align?: 
     >
       {/* Company header */}
       <div
-        className="px-6 py-3 flex items-center gap-2 flex-wrap"
+        className={`px-6 py-3 flex items-center gap-2 flex-wrap ${isRight ? 'md:justify-end' : ''}`}
         style={{
           background: 'linear-gradient(135deg, rgba(124,58,237,0.12), rgba(6,182,212,0.06))',
           borderBottom: '1px solid rgba(255,255,255,0.07)',
-          justifyContent: isRight ? 'flex-end' : 'flex-start',
         }}
       >
-        <span
-          className="text-[0.85rem] font-bold"
-          style={{ color: '#9b5af5' }}
-        >
-          {exp.company}
-        </span>
+        <span className="text-[0.85rem] font-bold" style={{ color: '#9b5af5' }}>{exp.company}</span>
         <span className="text-[0.75rem] text-[#7070a0]">· {exp.location}</span>
       </div>
 
@@ -232,40 +242,21 @@ function GroupedBody({ exp, align = 'left' }: { exp: GroupedExperience; align?: 
           <div
             key={role.title}
             className="px-6 py-5"
-            style={{
-              borderTop: i > 0 ? '1px solid rgba(255,255,255,0.05)' : undefined,
-            }}
+            style={{ borderTop: i > 0 ? '1px solid rgba(255,255,255,0.05)' : undefined }}
           >
-            {/* Promotion badge on non-first roles */}
-            {i > 0 && (
-              <div className={`flex mb-2 ${isRight ? 'justify-end' : ''}`}>
-                <span
-                  className="text-[0.68rem] px-2 py-0.5 rounded-full font-medium"
-                  style={{
-                    background: 'rgba(124,58,237,0.15)',
-                    border: '1px solid rgba(124,58,237,0.3)',
-                    color: '#a78bfa',
-                  }}
-                >
-                  Previous Role
-                </span>
-              </div>
-            )}
-            {i === 0 && (
-              <div className={`flex mb-2 ${isRight ? 'justify-end' : ''}`}>
-                <span
-                  className="text-[0.68rem] px-2 py-0.5 rounded-full font-medium"
-                  style={{
-                    background: 'rgba(6,182,212,0.12)',
-                    border: '1px solid rgba(6,182,212,0.3)',
-                    color: '#22d3ee',
-                  }}
-                >
-                  Current Role
-                </span>
-              </div>
-            )}
-            <div className={`flex items-center gap-2.5 mb-1.5 flex-wrap ${isRight ? 'justify-end' : ''}`}>
+            <div className={`flex mb-2 ${isRight ? 'md:justify-end' : ''}`}>
+              <span
+                className="text-[0.68rem] px-2 py-0.5 rounded-full font-medium"
+                style={
+                  i === 0
+                    ? { background: 'rgba(6,182,212,0.12)', border: '1px solid rgba(6,182,212,0.3)', color: '#22d3ee' }
+                    : { background: 'rgba(124,58,237,0.15)', border: '1px solid rgba(124,58,237,0.3)', color: '#a78bfa' }
+                }
+              >
+                {i === 0 ? 'Current Role' : 'Previous Role'}
+              </span>
+            </div>
+            <div className={`flex items-center gap-2.5 mb-1.5 flex-wrap ${isRight ? 'md:justify-end' : ''}`}>
               <span className="text-xs font-semibold text-[#9b5af5]">{role.period}</span>
               <span
                 className="text-[0.72rem] px-2.5 py-0.5 rounded-full"
