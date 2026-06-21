@@ -44,8 +44,8 @@ export default function Experience() {
               const key = exp.grouped ? exp.company : `${exp.company}-${exp.period}`
               return (
                 <FadeIn key={key} direction={isOdd ? 'left' : 'right'} delay={0.05}>
-                  {/* Mobile layout */}
-                  <div className="md:hidden flex gap-6 items-start">
+                  {/* Mobile layout — aria-hidden to avoid duplicate headings for SEO */}
+                  <div className="md:hidden flex gap-6 items-start" aria-hidden="true">
                     <div
                       className="w-7 h-7 rounded-full flex-shrink-0 mt-1"
                       style={{
