@@ -55,39 +55,36 @@ export default function Navbar() {
           className="flex items-center gap-3 group"
           style={{ textDecoration: 'none' }}
         >
-          {/* Monogram badge — J small behind, U large in front, oval border */}
+          {/* JU Monogram — perfect circle, J behind U */}
           <svg
-            width="82" height="58"
-            viewBox="0 0 82 58"
+            width="56" height="56"
+            viewBox="0 0 56 56"
             fill="none"
             className="flex-shrink-0 transition-all duration-300 group-hover:drop-shadow-[0_0_14px_rgba(167,139,250,0.6)]"
           >
             <defs>
-              <linearGradient id="navBorderGrad" x1="0" y1="0" x2="82" y2="58" gradientUnits="userSpaceOnUse">
+              <linearGradient id="navBorderGrad" x1="0" y1="0" x2="56" y2="56" gradientUnits="userSpaceOnUse">
                 <stop offset="0%" stopColor="#a78bfa"/>
                 <stop offset="100%" stopColor="#38bdf8"/>
               </linearGradient>
-              <linearGradient id="navLetterGrad" x1="0" y1="0" x2="82" y2="58" gradientUnits="userSpaceOnUse">
+              <linearGradient id="navLetterGrad" x1="0" y1="0" x2="56" y2="56" gradientUnits="userSpaceOnUse">
                 <stop offset="0%" stopColor="#ede9fe"/>
-                <stop offset="50%" stopColor="#c4b5fd"/>
-                <stop offset="100%" stopColor="#a5f3fc"/>
+                <stop offset="100%" stopColor="#c4b5fd"/>
               </linearGradient>
             </defs>
-            {/* Oval background */}
-            <ellipse cx="41" cy="29" rx="40" ry="27.5" fill="#0c0820"/>
-            {/* Oval border */}
-            <ellipse cx="41" cy="29" rx="40" ry="27.5" stroke="url(#navBorderGrad)" strokeWidth="1.8"/>
-            {/* J — small, rendered first (behind U), same baseline */}
+            <circle cx="28" cy="28" r="27" fill="#0c0820"/>
+            <circle cx="28" cy="28" r="27" stroke="url(#navBorderGrad)" strokeWidth="2"/>
+            {/* J — rendered first (behind), slightly smaller */}
             <text
-              x="16" y="46"
+              x="5" y="44"
               fontFamily="Georgia, 'Times New Roman', serif"
               fontWeight="bold"
-              fontSize="26"
+              fontSize="34"
               fill="url(#navLetterGrad)"
             >J</text>
-            {/* U — large, rendered on top of J, left edge overlaps J's right side */}
+            {/* U — rendered on top, larger, left side overlaps J's right */}
             <text
-              x="26" y="46"
+              x="17" y="45"
               fontFamily="Georgia, 'Times New Roman', serif"
               fontWeight="bold"
               fontSize="40"
