@@ -55,38 +55,44 @@ export default function Navbar() {
           className="flex items-center gap-3 group"
           style={{ textDecoration: 'none' }}
         >
-          {/* Monogram circle badge */}
+          {/* Monogram badge — J small behind, U large in front, oval border */}
           <svg
-            width="52" height="52"
-            viewBox="0 0 52 52"
+            width="82" height="58"
+            viewBox="0 0 82 58"
             fill="none"
-            className="flex-shrink-0 transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(167,139,250,0.65)]"
+            className="flex-shrink-0 transition-all duration-300 group-hover:drop-shadow-[0_0_14px_rgba(167,139,250,0.6)]"
           >
             <defs>
-              <linearGradient id="navCircleGrad" x1="0" y1="0" x2="52" y2="52" gradientUnits="userSpaceOnUse">
+              <linearGradient id="navBorderGrad" x1="0" y1="0" x2="82" y2="58" gradientUnits="userSpaceOnUse">
                 <stop offset="0%" stopColor="#a78bfa"/>
                 <stop offset="100%" stopColor="#38bdf8"/>
               </linearGradient>
-              <linearGradient id="navLetterGrad" x1="0" y1="0" x2="52" y2="52" gradientUnits="userSpaceOnUse">
+              <linearGradient id="navLetterGrad" x1="0" y1="0" x2="82" y2="58" gradientUnits="userSpaceOnUse">
                 <stop offset="0%" stopColor="#ede9fe"/>
-                <stop offset="100%" stopColor="#bfdbfe"/>
+                <stop offset="50%" stopColor="#c4b5fd"/>
+                <stop offset="100%" stopColor="#a5f3fc"/>
               </linearGradient>
             </defs>
-            {/* Dark navy circle background */}
-            <circle cx="26" cy="26" r="25" fill="#0c0820"/>
-            {/* Circle border */}
-            <circle cx="26" cy="26" r="25" stroke="url(#navCircleGrad)" strokeWidth="1.8"/>
-            {/* JU merged — U pulled left with negative dx so it overlaps J */}
+            {/* Oval background */}
+            <ellipse cx="41" cy="29" rx="40" ry="27.5" fill="#0c0820"/>
+            {/* Oval border */}
+            <ellipse cx="41" cy="29" rx="40" ry="27.5" stroke="url(#navBorderGrad)" strokeWidth="1.8"/>
+            {/* J — small, rendered first (behind U), same baseline */}
             <text
-              x="7" y="39"
+              x="16" y="46"
               fontFamily="Georgia, 'Times New Roman', serif"
               fontWeight="bold"
-              fontSize="36"
+              fontSize="26"
               fill="url(#navLetterGrad)"
-            >
-              <tspan>J</tspan>
-              <tspan dx="-10">U</tspan>
-            </text>
+            >J</text>
+            {/* U — large, rendered on top of J, left edge overlaps J's right side */}
+            <text
+              x="26" y="46"
+              fontFamily="Georgia, 'Times New Roman', serif"
+              fontWeight="bold"
+              fontSize="40"
+              fill="url(#navLetterGrad)"
+            >U</text>
           </svg>
           {/* Name */}
           <div className="flex flex-col leading-none gap-[3px]">
