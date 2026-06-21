@@ -115,7 +115,10 @@ function CyclingText() {
 function useCounter(target: number, started: boolean) {
   const [count, setCount] = useState(0)
   useEffect(() => {
-    if (!started) return
+    if (!started) {
+      setCount(0)
+      return
+    }
     let current = 0
     const step = target / 80
     const timer = setInterval(() => {
@@ -135,7 +138,13 @@ function StatCounter({ value, suffix, label }: { value: number; suffix: string; 
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setStarted(true) },
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStarted(true)
+        } else {
+          setStarted(false)
+        }
+      },
       { threshold: 0.5 }
     )
     if (ref.current) observer.observe(ref.current)
