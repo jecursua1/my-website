@@ -79,8 +79,8 @@ export default function Footer() {
               <Image
                 src="/jec-logo.png"
                 alt="Jerico Ursua Logo"
-                width={80}
-                height={80}
+                width={120}
+                height={120}
                 className="flex-shrink-0"
               />
             </a>
