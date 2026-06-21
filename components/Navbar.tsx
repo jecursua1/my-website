@@ -59,26 +59,11 @@ export default function Navbar() {
           <Image
             src="/jec-logo.png"
             alt="Jerico Ursua Logo"
-            width={48}
-            height={48}
+            width={64}
+            height={64}
             className="flex-shrink-0 transition-all duration-300 group-hover:drop-shadow-[0_0_14px_rgba(167,139,250,0.6)]"
             priority
           />
-          {/* Name */}
-          <div className="flex flex-col leading-none gap-[3px]">
-            <span
-              className="text-[0.58rem] font-bold uppercase tracking-[0.22em]"
-              style={{ color: '#6060a0' }}
-            >
-              Jerico
-            </span>
-            <span
-              className="text-[1rem] font-black uppercase tracking-[0.1em] text-white"
-              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
-            >
-              Ursua
-            </span>
-          </div>
         </a>
 
         {/* Desktop Nav */}

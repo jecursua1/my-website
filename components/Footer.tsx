@@ -79,14 +79,10 @@ export default function Footer() {
               <Image
                 src="/jec-logo.png"
                 alt="Jerico Ursua Logo"
-                width={48}
-                height={48}
+                width={64}
+                height={64}
                 className="flex-shrink-0"
               />
-              <div className="flex flex-col leading-none gap-[3px]">
-                <span className="text-[0.58rem] font-bold uppercase tracking-[0.22em] text-[#6060a0]">Jerico</span>
-                <span className="text-[1rem] font-black uppercase tracking-[0.1em] text-white" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Ursua</span>
-              </div>
             </a>
             <p className="text-[0.9rem] text-[#7070a0] leading-[1.75] mb-5 max-w-[240px]">
               Chief of Staff, HR Executive &amp; SEO Specialist helping teams hire better, rank higher, and automate smarter.
