@@ -1,5 +1,6 @@
 ﻿'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
@@ -55,42 +56,14 @@ export default function Navbar() {
           className="flex items-center gap-3 group"
           style={{ textDecoration: 'none' }}
         >
-          {/* JU Monogram — perfect circle, J behind U */}
-          <svg
-            width="56" height="56"
-            viewBox="0 0 56 56"
-            fill="none"
+          <Image
+            src="/jec-logo.png"
+            alt="Jerico Ursua Logo"
+            width={48}
+            height={48}
             className="flex-shrink-0 transition-all duration-300 group-hover:drop-shadow-[0_0_14px_rgba(167,139,250,0.6)]"
-          >
-            <defs>
-              <linearGradient id="navBorderGrad" x1="0" y1="0" x2="56" y2="56" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#a78bfa"/>
-                <stop offset="100%" stopColor="#38bdf8"/>
-              </linearGradient>
-              <linearGradient id="navLetterGrad" x1="0" y1="0" x2="56" y2="56" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#ede9fe"/>
-                <stop offset="100%" stopColor="#c4b5fd"/>
-              </linearGradient>
-            </defs>
-            <circle cx="28" cy="28" r="27" fill="#0c0820"/>
-            <circle cx="28" cy="28" r="27" stroke="url(#navBorderGrad)" strokeWidth="2"/>
-            {/* J — rendered first (behind), slightly smaller */}
-            <text
-              x="5" y="44"
-              fontFamily="Georgia, 'Times New Roman', serif"
-              fontWeight="bold"
-              fontSize="34"
-              fill="url(#navLetterGrad)"
-            >J</text>
-            {/* U — rendered on top, larger, left side overlaps J's right */}
-            <text
-              x="17" y="45"
-              fontFamily="Georgia, 'Times New Roman', serif"
-              fontWeight="bold"
-              fontSize="40"
-              fill="url(#navLetterGrad)"
-            >U</text>
-          </svg>
+            priority
+          />
           {/* Name */}
           <div className="flex flex-col leading-none gap-[3px]">
             <span

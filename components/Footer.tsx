@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { personalInfo } from '@/lib/data'
 
@@ -75,22 +76,13 @@ export default function Footer() {
               href="#home"
               className="flex items-center gap-3 mb-4 w-fit group"
             >
-              <svg width="56" height="56" viewBox="0 0 56 56" fill="none" className="flex-shrink-0">
-                <defs>
-                  <linearGradient id="footerBorderGrad" x1="0" y1="0" x2="56" y2="56" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stopColor="#a78bfa"/>
-                    <stop offset="100%" stopColor="#38bdf8"/>
-                  </linearGradient>
-                  <linearGradient id="footerLetterGrad" x1="0" y1="0" x2="56" y2="56" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stopColor="#ede9fe"/>
-                    <stop offset="100%" stopColor="#c4b5fd"/>
-                  </linearGradient>
-                </defs>
-                <circle cx="28" cy="28" r="27" fill="#0c0820"/>
-                <circle cx="28" cy="28" r="27" stroke="url(#footerBorderGrad)" strokeWidth="2"/>
-                <text x="5" y="44" fontFamily="Georgia, 'Times New Roman', serif" fontWeight="bold" fontSize="34" fill="url(#footerLetterGrad)">J</text>
-                <text x="17" y="45" fontFamily="Georgia, 'Times New Roman', serif" fontWeight="bold" fontSize="40" fill="url(#footerLetterGrad)">U</text>
-              </svg>
+              <Image
+                src="/jec-logo.png"
+                alt="Jerico Ursua Logo"
+                width={48}
+                height={48}
+                className="flex-shrink-0"
+              />
               <div className="flex flex-col leading-none gap-[3px]">
                 <span className="text-[0.58rem] font-bold uppercase tracking-[0.22em] text-[#6060a0]">Jerico</span>
                 <span className="text-[1rem] font-black uppercase tracking-[0.1em] text-white" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Ursua</span>
