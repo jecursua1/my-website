@@ -59,8 +59,8 @@ export default function Navbar() {
           <Image
             src="/jec-logo.png"
             alt="Jerico Ursua Logo"
-            width={120}
-            height={120}
+            width={160}
+            height={160}
             className="flex-shrink-0 transition-all duration-300 group-hover:drop-shadow-[0_0_14px_rgba(167,139,250,0.6)]"
             priority
           />
