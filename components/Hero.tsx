@@ -95,11 +95,10 @@ function CyclingText() {
   }, [])
 
   return (
-    <span
+    <p
       key={key}
       className="hero-grad-text"
       style={{
-        display: 'block',
         fontSize: 'clamp(1.3rem, 2.5vw, 1.9rem)',
         fontWeight: 700,
         animation: 'slideUp 0.45s ease forwards',
@@ -108,7 +107,7 @@ function CyclingText() {
       }}
     >
       {cyclingPhrases[index]}
-    </span>
+    </p>
   )
 }
 
@@ -224,6 +223,7 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10">
+        <CyclingText />
         <h1
           className="font-black leading-[1.15] mb-2"
           style={{
@@ -231,7 +231,6 @@ export default function Hero() {
             fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
           }}
         >
-          <CyclingText />
           <span className="text-white">Hi, I&apos;m </span>
           <span className="hero-grad-text">Jerico Ursua</span>
         </h1>
