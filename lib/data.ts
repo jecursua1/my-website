@@ -347,11 +347,18 @@ export const highlightTools = [
 
 export const toolCategories = [
   {
-    title: 'Productivity & Project Management',
+    title: 'Project Management',
     tools: [
-      { name: 'Office 365' },
       { name: 'Asana' },
       { name: 'Trello' },
+      { name: 'Basecamp' },
+      { name: 'Monday.com' },
+    ],
+  },
+  {
+    title: 'Productivity',
+    tools: [
+      { name: 'Office 365' },
       { name: 'Calendly' },
       { name: 'Miro' },
       { name: 'PandaDoc' },
