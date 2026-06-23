@@ -242,6 +242,7 @@ export const projects = [
     tags: ['Next.js', 'GitHub', 'Vercel', 'TypeScript'],
     colorClass: 'from-violet-950 to-purple-900',
     wide: true,
+    images: ['/projects/notion-hris.webp'],
   },
   {
     id: 2,
@@ -252,6 +253,7 @@ export const projects = [
     tags: ['Ahrefs', 'SEMRush', 'SE Ranking', 'Google Search Console'],
     colorClass: 'from-emerald-950 to-emerald-900',
     wide: false,
+    images: ['/projects/seo-skills.webp'],
   },
   {
     id: 3,
@@ -262,6 +264,7 @@ export const projects = [
     tags: ['GoHighLevel', 'Zapier', 'Make', 'Automation'],
     colorClass: 'from-purple-950 to-purple-900',
     wide: false,
+    images: ['/projects/hiring-zap-automations.webp'],
   },
   {
     id: 4,
@@ -272,6 +275,7 @@ export const projects = [
     tags: ['InboxKit', 'Cloudflare', 'DNS', 'DMARC', 'Deliverability'],
     colorClass: 'from-sky-950 to-sky-900',
     wide: false,
+    images: ['/projects/inboxkit-domains-and-mailboxes.webp'],
   },
   {
     id: 5,
@@ -282,6 +286,11 @@ export const projects = [
     tags: ['Jobma', 'CVViZ', 'LinkedIn Sales Nav', 'Apollo.io'],
     colorClass: 'from-indigo-950 to-indigo-900',
     wide: false,
+    images: [
+      '/projects/recruitment-automation.webp',
+      '/projects/recruitment-automation2.webp',
+      '/projects/recruitment-automation3.webp',
+    ],
   },
   {
     id: 6,
@@ -292,6 +301,7 @@ export const projects = [
     tags: ['WordPress', 'SE Ranking', 'Ahrefs', 'Content Writing'],
     colorClass: 'from-stone-900 to-stone-800',
     wide: false,
+    images: ['/projects/greatmarketing.ai-website.webp'],
   },
 ]
 
