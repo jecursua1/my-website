@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import FadeIn from '@/components/FadeIn'
 import { projects } from '@/lib/data'
@@ -13,19 +13,146 @@ const filters = [
   { key: 'operations', label: 'Operations' },
 ]
 
-function ProjectImage({ images, title, height }: { images: string[]; title: string; height: string }) {
+// ── Lightbox ──────────────────────────────────────────────────────────────────
+
+function Lightbox({
+  images,
+  title,
+  startIdx,
+  onClose,
+}: {
+  images: string[]
+  title: string
+  startIdx: number
+  onClose: () => void
+}) {
+  const [idx, setIdx] = useState(startIdx)
+
+  const prev = useCallback(() => setIdx((i) => (i - 1 + images.length) % images.length), [images.length])
+  const next = useCallback(() => setIdx((i) => (i + 1) % images.length), [images.length])
+
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose()
+      if (e.key === 'ArrowLeft') prev()
+      if (e.key === 'ArrowRight') next()
+    }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [onClose, prev, next])
+
+  // Prevent body scroll
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'
+    return () => { document.body.style.overflow = '' }
+  }, [])
+
+  return (
+    <div
+      className="fixed inset-0 z-[200] flex items-center justify-center"
+      style={{ background: 'rgba(0,0,0,0.92)', backdropFilter: 'blur(8px)' }}
+      onClick={onClose}
+    >
+      {/* Close */}
+      <button
+        className="absolute top-5 right-5 w-10 h-10 rounded-full flex items-center justify-center text-white transition-all duration-200 hover:bg-white/10 z-10"
+        onClick={onClose}
+        aria-label="Close"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+
+      {/* Image container — stop propagation so clicking image doesn't close */}
+      <div
+        className="relative w-full max-w-5xl mx-6"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="relative w-full rounded-[16px] overflow-hidden" style={{ aspectRatio: '16/9' }}>
+          {images.map((src, i) => (
+            <Image
+              key={src}
+              src={src}
+              alt={`${title} screenshot ${i + 1}`}
+              fill
+              sizes="(max-width: 1280px) 95vw, 1024px"
+              className="object-cover object-top transition-opacity duration-500"
+              style={{ opacity: i === idx ? 1 : 0 }}
+              priority
+            />
+          ))}
+        </div>
+
+        {/* Title */}
+        <p className="text-center text-white/70 text-sm mt-3">{title}{images.length > 1 ? ` · ${idx + 1} / ${images.length}` : ''}</p>
+
+        {/* Prev / Next arrows */}
+        {images.length > 1 && (
+          <>
+            <button
+              className="absolute left-[-52px] top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center text-white transition-all duration-200 hover:bg-white/10"
+              onClick={prev}
+              aria-label="Previous"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <button
+              className="absolute right-[-52px] top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center text-white transition-all duration-200 hover:bg-white/10"
+              onClick={next}
+              aria-label="Next"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+            {/* Dots */}
+            <div className="flex justify-center gap-2 mt-3">
+              {images.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setIdx(i)}
+                  className="w-2 h-2 rounded-full transition-all duration-300"
+                  style={{ background: i === idx ? '#fff' : 'rgba(255,255,255,0.3)', transform: i === idx ? 'scale(1.3)' : 'scale(1)' }}
+                />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  )
+}
+
+// ── ProjectImage (card thumbnail with cycling) ────────────────────────────────
+
+function ProjectImage({
+  images,
+  title,
+  height,
+  onImageClick,
+}: {
+  images: string[]
+  title: string
+  height: string
+  onImageClick: (idx: number) => void
+}) {
   const [idx, setIdx] = useState(0)
 
   useEffect(() => {
     if (images.length <= 1) return
-    const timer = setInterval(() => {
-      setIdx((i) => (i + 1) % images.length)
-    }, 3000)
+    const timer = setInterval(() => setIdx((i) => (i + 1) % images.length), 3000)
     return () => clearInterval(timer)
   }, [images.length])
 
   return (
-    <div className={`relative overflow-hidden ${height}`}>
+    <div
+      className={`relative overflow-hidden ${height} cursor-zoom-in group`}
+      onClick={() => onImageClick(idx)}
+    >
       {images.map((src, i) => (
         <Image
           key={src}
@@ -38,19 +165,31 @@ function ProjectImage({ images, title, height }: { images: string[]; title: stri
           priority={i === 0}
         />
       ))}
-      {/* Dot indicators for multi-image */}
+
+      {/* Zoom hint overlay */}
+      <div
+        className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        style={{ background: 'rgba(0,0,0,0.45)' }}
+      >
+        <div className="flex items-center gap-2 px-4 py-2 rounded-lg text-white text-sm font-semibold" style={{ border: '1.5px solid rgba(255,255,255,0.5)' }}>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+            <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+            <line x1="11" y1="8" x2="11" y2="14" /><line x1="8" y1="11" x2="14" y2="11" />
+          </svg>
+          View larger
+        </div>
+      </div>
+
+      {/* Dot indicators */}
       {images.length > 1 && (
         <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
           {images.map((_, i) => (
             <button
               key={i}
-              onClick={() => setIdx(i)}
+              onClick={(e) => { e.stopPropagation(); setIdx(i) }}
               className="w-1.5 h-1.5 rounded-full transition-all duration-300"
-              style={{
-                background: i === idx ? '#fff' : 'rgba(255,255,255,0.35)',
-                transform: i === idx ? 'scale(1.3)' : 'scale(1)',
-              }}
-              aria-label={`View screenshot ${i + 1}`}
+              style={{ background: i === idx ? '#fff' : 'rgba(255,255,255,0.35)', transform: i === idx ? 'scale(1.3)' : 'scale(1)' }}
+              aria-label={`Screenshot ${i + 1}`}
             />
           ))}
         </div>
@@ -59,10 +198,15 @@ function ProjectImage({ images, title, height }: { images: string[]; title: stri
   )
 }
 
+// ── Main component ────────────────────────────────────────────────────────────
+
 export default function Projects() {
   const [active, setActive] = useState('all')
+  const [lightbox, setLightbox] = useState<{ images: string[]; title: string; idx: number } | null>(null)
 
-  const filtered = projects.filter((p) => active === 'all' || p.category === active)
+  const filtered = active === 'all'
+    ? projects.filter((p) => p.featured)
+    : projects.filter((p) => p.category === active)
 
   return (
     <section id="projects" className="py-24 bg-[#0e0e1a]">
@@ -126,14 +270,13 @@ export default function Projects() {
                 onMouseEnter={e => (e.currentTarget.style.border = '1px solid rgba(124,58,237,0.4)')}
                 onMouseLeave={e => (e.currentTarget.style.border = '1px solid rgba(255,255,255,0.07)')}
               >
-                {/* Screenshot */}
                 <ProjectImage
                   images={proj.images}
                   title={proj.title}
                   height={proj.wide ? 'h-[260px]' : 'h-[200px]'}
+                  onImageClick={(idx) => setLightbox({ images: proj.images, title: proj.title, idx })}
                 />
 
-                {/* Info */}
                 <div className="p-5">
                   <div className="flex flex-wrap gap-1.5 mb-3">
                     {proj.tags.map((tag) => (
@@ -162,6 +305,16 @@ export default function Projects() {
           ))}
         </div>
       </div>
+
+      {/* Lightbox */}
+      {lightbox && (
+        <Lightbox
+          images={lightbox.images}
+          title={lightbox.title}
+          startIdx={lightbox.idx}
+          onClose={() => setLightbox(null)}
+        />
+      )}
     </section>
   )
 }

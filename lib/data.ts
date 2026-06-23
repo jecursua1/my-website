@@ -242,6 +242,7 @@ export const projects = [
     tags: ['Next.js', 'GitHub', 'Vercel', 'TypeScript'],
     colorClass: 'from-violet-950 to-purple-900',
     wide: true,
+    featured: true,
     images: ['/projects/notion-hris.webp'],
   },
   {
@@ -253,6 +254,7 @@ export const projects = [
     tags: ['Ahrefs', 'SEMRush', 'SE Ranking', 'Google Search Console'],
     colorClass: 'from-emerald-950 to-emerald-900',
     wide: false,
+    featured: true,
     images: ['/projects/seo-skills.webp'],
   },
   {
@@ -264,6 +266,7 @@ export const projects = [
     tags: ['GoHighLevel', 'Zapier', 'Make', 'Automation'],
     colorClass: 'from-purple-950 to-purple-900',
     wide: false,
+    featured: true,
     images: ['/projects/hiring-zap-automations.webp'],
   },
   {
@@ -301,6 +304,7 @@ export const projects = [
     tags: ['WordPress', 'SE Ranking', 'Ahrefs', 'Content Writing'],
     colorClass: 'from-stone-900 to-stone-800',
     wide: false,
+    featured: false,
     images: ['/projects/greatmarketing.ai-website.webp'],
   },
   {
@@ -312,6 +316,7 @@ export const projects = [
     tags: ['Next.js', 'AI', 'Operations', 'Platform'],
     colorClass: 'from-violet-950 to-indigo-900',
     wide: true,
+    featured: true,
     images: ['/projects/great-team-ai.webp'],
   },
   {
