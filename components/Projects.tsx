@@ -10,6 +10,7 @@ const filters = [
   { key: 'hr', label: 'HR & Recruitment' },
   { key: 'seo', label: 'SEO' },
   { key: 'automation', label: 'Automation' },
+  { key: 'operations', label: 'Operations' },
 ]
 
 function ProjectImage({ images, title, height }: { images: string[]; title: string; height: string }) {

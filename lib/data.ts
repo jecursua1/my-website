@@ -303,6 +303,90 @@ export const projects = [
     wide: false,
     images: ['/projects/greatmarketing.ai-website.webp'],
   },
+  {
+    id: 7,
+    category: 'operations',
+    title: 'Great Team AI Platform',
+    description:
+      'Oversaw operations and platform development for Great Team AI — coordinating product builds, managing cross-functional teams, and ensuring smooth delivery of AI-powered team management tools.',
+    tags: ['Next.js', 'AI', 'Operations', 'Platform'],
+    colorClass: 'from-violet-950 to-indigo-900',
+    wide: true,
+    images: ['/projects/great-team-ai.webp'],
+  },
+  {
+    id: 8,
+    category: 'hr',
+    title: 'Applicant Tracking System',
+    description:
+      'Built custom ATS solutions in both Notion and Google Sheets — enabling structured candidate tracking, interview pipeline management, and hiring status reporting across multiple open roles.',
+    tags: ['Notion', 'Google Sheets', 'ATS', 'Recruitment'],
+    colorClass: 'from-indigo-950 to-blue-900',
+    wide: false,
+    images: [
+      '/projects/notion-applicant-tracking-system.webp',
+      '/projects/ats-google-sheet.webp',
+    ],
+  },
+  {
+    id: 9,
+    category: 'automation',
+    title: 'Slack Automation Suite',
+    description:
+      'Built a suite of Slack bots and workflow automations — including a task creator bot, automated Slack workflows for team notifications, and a Stripe-to-Slack integration for payment event alerts.',
+    tags: ['Slack', 'Zapier', 'Stripe', 'Bots'],
+    colorClass: 'from-purple-950 to-violet-900',
+    wide: false,
+    images: [
+      '/projects/slack-task-creator.webp',
+      '/projects/slack-workflows.webp',
+      '/projects/stripe-slack-automation.webp',
+    ],
+  },
+  {
+    id: 10,
+    category: 'operations',
+    title: 'Lead Distro AI Website',
+    description:
+      'Managed and maintained the Lead Distro AI web presence — overseeing content updates, technical performance, and alignment with the company\'s cold email and lead generation positioning.',
+    tags: ['Web Management', 'Content', 'Operations'],
+    colorClass: 'from-cyan-950 to-sky-900',
+    wide: false,
+    images: ['/projects/leaddistro.ai-website.webp'],
+  },
+  {
+    id: 11,
+    category: 'seo',
+    title: 'Aeris MD SEO & Website',
+    description:
+      'Managed Aeris MD\'s website SEO and content strategy — optimizing pages for local and organic search, publishing targeted content, and tracking keyword performance to grow online visibility.',
+    tags: ['SEO', 'WordPress', 'Content Strategy', 'SE Ranking'],
+    colorClass: 'from-teal-950 to-emerald-900',
+    wide: false,
+    images: ['/projects/aerismd-website.webp'],
+  },
+  {
+    id: 12,
+    category: 'hr',
+    title: 'Employee Onboarding Program',
+    description:
+      'Designed and implemented a structured new employee orientation program — building onboarding slide decks, creating SOPs for each department, and ensuring a smooth first-week experience for new hires.',
+    tags: ['HR', 'Onboarding', 'SOPs', 'Google Slides'],
+    colorClass: 'from-rose-950 to-pink-900',
+    wide: false,
+    images: ['/projects/new-employee-orientation-program-slide-presentation.webp'],
+  },
+  {
+    id: 13,
+    category: 'automation',
+    title: 'Zapier Workflow Automations',
+    description:
+      'Built and maintained a library of Zapier automations connecting CRMs, email tools, Slack, and Google Workspace — eliminating manual handoffs and keeping data in sync across the entire tech stack.',
+    tags: ['Zapier', 'Automation', 'CRM', 'Google Workspace'],
+    colorClass: 'from-orange-950 to-amber-900',
+    wide: false,
+    images: ['/projects/zap-automations.webp'],
+  },
 ]
 
 export const clients = [
