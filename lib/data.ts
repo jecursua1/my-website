@@ -254,7 +254,7 @@ export const projects = [
     tags: ['Ahrefs', 'SEMRush', 'SE Ranking', 'Google Search Console'],
     colorClass: 'from-emerald-950 to-emerald-900',
     wide: false,
-    featured: true,
+    featured: false,
     images: ['/projects/seo-skills.webp'],
   },
   {
@@ -266,7 +266,7 @@ export const projects = [
     tags: ['GoHighLevel', 'Zapier', 'Make', 'Automation'],
     colorClass: 'from-purple-950 to-purple-900',
     wide: false,
-    featured: true,
+    featured: false,
     images: ['/projects/hiring-zap-automations.webp'],
   },
   {
@@ -304,7 +304,7 @@ export const projects = [
     tags: ['WordPress', 'SE Ranking', 'Ahrefs', 'Content Writing'],
     colorClass: 'from-stone-900 to-stone-800',
     wide: false,
-    featured: false,
+    featured: true,
     images: ['/projects/greatmarketing.ai-website.webp'],
   },
   {
@@ -342,6 +342,7 @@ export const projects = [
     tags: ['Slack', 'Zapier', 'Stripe', 'Bots'],
     colorClass: 'from-purple-950 to-violet-900',
     wide: false,
+    featured: true,
     images: [
       '/projects/slack-task-creator.webp',
       '/projects/slack-workflows.webp',
