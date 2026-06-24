@@ -312,8 +312,8 @@ export const projects = [
     category: 'operations',
     title: 'Great Team AI Platform',
     description:
-      'Oversaw operations and platform development for Great Team AI — coordinating product builds, managing cross-functional teams, and ensuring smooth delivery of AI-powered team management tools.',
-    tags: ['Next.js', 'AI', 'Operations', 'Platform'],
+      'Built an all-in-one internal HR tool for our team — combining an ATS database for tracking applicants, an HRIS for managing employee records, and a form builder for HR workflows, all in a single platform.',
+    tags: ['Next.js', 'ATS', 'HRIS', 'Form Builder', 'HR'],
     colorClass: 'from-violet-950 to-indigo-900',
     wide: true,
     featured: true,
