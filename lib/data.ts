@@ -508,6 +508,7 @@ export const toolCategories = [
     title: 'Design & Communication',
     tools: [
       { name: 'Canva' },
+      { name: 'Figma' },
       { name: 'Photoshop' },
       { name: 'Premiere Pro' },
       { name: 'Freepik' },
