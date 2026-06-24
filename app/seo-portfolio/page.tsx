@@ -4,26 +4,25 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'SEO Client Portfolio | Jerico Ursua',
-  description: 'A portfolio of 24+ websites I have managed SEO for — covering on-page, off-page, technical SEO, keyword research, and data benchmarking.',
+  description: 'Real clients we helped grow at Sublime SEO, covering on-page optimization, off-page, technical SEO, keyword research, and data benchmarking.',
 }
 
 const clients = [
   { slug: 'anodyneshoes-com',       name: 'Anodyne Shoes',        url: 'https://www.anodyneshoes.com/' },
-  { slug: 'armaghpos-com',          name: 'Armaghpos',            url: 'https://armaghpos.com/' },
+  { slug: 'armaghpos-com',          name: 'Armagh POS Solutions',  url: 'https://armaghpos.com/' },
   { slug: 'scienciaconsulting-com', name: 'Sciencia Consulting',  url: 'https://scienciaconsulting.com/' },
   { slug: 'eduardobessermd-com',    name: 'Eduardo Besser MD',    url: 'https://www.eduardobessermd.com/' },
   { slug: '414eyes-com',            name: '414 Eyes',             url: 'https://414eyes.com/' },
-  { slug: 'hireremoteraven-com',    name: 'Hire Remote Raven',    url: 'https://hireremoteraven.com/' },
-  { slug: 'nenawellness-com',       name: 'Nena Wellness',        url: 'https://www.nenawellness.com/' },
+  { slug: 'hireremoteraven-com',    name: 'Remote Raven',          url: 'https://hireremoteraven.com/' },
+  { slug: 'nenawellness-com',       name: 'Nena Wellness & Recovery', url: 'https://www.nenawellness.com/' },
   { slug: 'centerpointerecovery-com', name: 'Centerpoint Recovery', url: 'https://centerpointerecovery.com/' },
-  { slug: 'milcasastore-com',       name: 'Mil Casa Store',       url: 'https://milcasastore.com/' },
+  { slug: 'milcasastore-com',       name: 'Milcasa Store',         url: 'https://milcasastore.com/' },
   { slug: 'whattheputt-com-au',     name: 'What The Putt',        url: 'https://www.whattheputt.com.au/' },
   { slug: 'laketravisdentistry-com',name: 'Lake Travis Dentistry',url: 'https://laketravisdentistry.com/' },
   { slug: '2cabinetgirls-com',      name: '2 Cabinet Girls',      url: 'https://www.2cabinetgirls.com/' },
   { slug: 'yourequity-ca',          name: 'Your Equity',          url: 'https://yourequity.ca/' },
   { slug: 'sublimeseo-ca',          name: 'Sublime SEO',          url: 'https://sublimeseo.ca/' },
   { slug: 'southwelllaw-com',       name: 'Southwell Law',        url: 'https://southwelllaw.com/' },
-  { slug: 'annuitygator-com',       name: 'Annuity Gator',        url: 'https://www.annuitygator.com/' },
   { slug: 'fayedigital-com',        name: 'Faye Digital',         url: 'https://fayedigital.com/' },
   { slug: 'safeseal-net',           name: 'Safe Seal',            url: 'https://safeseal.net/' },
   { slug: 'superfresh-co',          name: 'Super Fresh',          url: 'https://www.superfresh.co/' },
@@ -49,13 +48,22 @@ export default function SeoPortfolioPage() {
 
       {/* Header */}
       <div
-        className="relative overflow-hidden py-20 px-6"
-        style={{ background: 'linear-gradient(180deg, rgba(124,58,237,0.14) 0%, rgba(8,8,16,0) 100%)' }}
+        className="relative overflow-hidden px-6 pt-12 pb-16"
+        style={{ background: 'linear-gradient(180deg, rgba(124,58,237,0.16) 0%, rgba(8,8,16,0) 100%)' }}
       >
-        <div className="max-w-[1160px] mx-auto">
+        {/* Subtle grid background */}
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
+            backgroundSize: '48px 48px',
+          }}
+        />
+
+        <div className="max-w-[1160px] mx-auto relative">
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-2 text-sm text-[#7070a0] hover:text-white transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-sm text-[#7070a0] hover:text-white transition-colors mb-10"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="15 18 9 12 15 6" />
@@ -64,25 +72,44 @@ export default function SeoPortfolioPage() {
           </Link>
 
           <h1
-            className="font-black mb-4"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 'clamp(2rem, 4vw, 3rem)' }}
+            className="font-black mb-4 leading-tight max-w-[700px]"
+            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 'clamp(2.2rem, 4vw, 3.2rem)' }}
           >
             SEO Client Work
           </h1>
-          <p className="text-[#7070a0] max-w-[560px] text-[1.05rem] mb-8">
-            A collection of {clients.length} websites I have managed SEO for across various industries — from e-commerce and healthcare to law firms and SaaS.
+          <p className="text-[#7070a0] text-[1.05rem] mb-8 leading-relaxed max-w-[580px]">
+            Real clients we helped grow at Sublime SEO. From on-page optimization and technical audits to keyword strategy and link building, these are websites we actively managed and improved.
           </p>
 
           {/* Services tags */}
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 mb-12">
             {services.map(s => (
               <span
                 key={s}
-                className="text-xs font-medium px-3 py-1 rounded-full"
-                style={{ background: 'rgba(6,182,212,0.1)', border: '1px solid rgba(6,182,212,0.25)', color: '#22d3ee' }}
+                className="text-xs font-medium px-3 py-1.5 rounded-full"
+                style={{ background: 'rgba(6,182,212,0.08)', border: '1px solid rgba(6,182,212,0.2)', color: '#22d3ee' }}
               >
                 {s}
               </span>
+            ))}
+          </div>
+
+          {/* Stats */}
+          <div className="flex gap-8 sm:gap-12">
+            {[
+              { value: '20+', label: 'Websites Managed' },
+              { value: '6', label: 'SEO Services' },
+              { value: '5+', label: 'Industries Served' },
+            ].map(({ value, label }) => (
+              <div key={label}>
+                <div
+                  className="font-black mb-1"
+                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 'clamp(2rem, 3vw, 2.6rem)', background: 'linear-gradient(135deg, #a78bfa, #22d3ee)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+                >
+                  {value}
+                </div>
+                <div className="text-xs text-[#7070a0] font-medium">{label}</div>
+              </div>
             ))}
           </div>
         </div>

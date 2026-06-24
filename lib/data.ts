@@ -234,60 +234,6 @@ export const experiences: Experience[] = [
 
 export const projects = [
   {
-    id: 0,
-    category: 'seo',
-    title: 'SEO Client Portfolio',
-    description:
-      'Managed SEO for 24+ websites across healthcare, e-commerce, legal, SaaS, and more. Services include on-page and off-page optimization, technical SEO, keyword research, site audits, and data benchmarking.',
-    tags: ['Ubersuggest', 'SEMRush', 'GSC', 'GA4', 'Screaming Frog'],
-    colorClass: 'from-emerald-950 to-teal-900',
-    wide: true,
-    featured: true,
-    link: '/seo-portfolio',
-    images: [
-      '/seo-portfolio/anodyneshoes-com.webp',
-      '/seo-portfolio/sweatblock-com.webp',
-      '/seo-portfolio/laketravisdentistry-com.webp',
-      '/seo-portfolio/temporarytattoos-com.webp',
-    ],
-  },
-  {
-    id: 1,
-    category: 'hr',
-    title: 'HR Headquarters',
-    description:
-      'Built a centralized HR Headquarters in Notion for Great Marketing AI, serving as the single source of truth for all HR operations. Everything lives here: SOPs, 201 files, ATS, team directory, payroll references, onboarding materials, and HR policies.',
-    tags: ['Notion'],
-    colorClass: 'from-violet-950 to-purple-900',
-    wide: true,
-    featured: true,
-    images: ['/projects/notion-hris.webp'],
-  },
-  {
-    id: 2,
-    category: 'seo',
-    title: 'SEO Skills Suite',
-    description:
-      'Built a suite of SEO skills using Claude Code, each with a unique capability to improve website search performance. Skills cover keyword research, on-page optimization, content strategy, link building, and performance tracking.',
-    tags: ['Claude Code', 'Claude API'],
-    colorClass: 'from-emerald-950 to-emerald-900',
-    wide: false,
-    featured: false,
-    images: ['/projects/seo-skills.webp'],
-  },
-  {
-    id: 3,
-    category: 'automation',
-    title: 'HR & Ops Automation Suite',
-    description:
-      'Built a full suite of automations for HR and operations. When a candidate submits via Typeform, their application routes automatically to the ATS and Slack, with an AI screening step that checks candidate fit. Includes additional automations for recruitment workflows and day-to-day ops.',
-    tags: ['Zapier', 'Make', 'Typeform', 'Slack'],
-    colorClass: 'from-purple-950 to-purple-900',
-    wide: false,
-    featured: false,
-    images: ['/projects/hiring-zap-automations.webp', '/projects/zap-automations.webp'],
-  },
-  {
     id: 6,
     category: 'seo',
     title: 'Great Marketing AI Website',
@@ -300,32 +246,88 @@ export const projects = [
     images: ['/projects/greatmarketing.ai-website.webp'],
   },
   {
+    id: 1,
+    category: 'hr',
+    title: 'HR Headquarters',
+    description:
+      'Built a centralized HR Headquarters in Notion for Great Marketing AI, serving as the single source of truth for all HR operations. Everything lives here: SOPs, 201 files, ATS, team directory, payroll references, onboarding materials, and HR policies.',
+    tags: ['Notion'],
+    colorClass: 'from-violet-950 to-purple-900',
+    wide: true,
+    featured: false,
+    images: ['/projects/notion-hris.webp'],
+  },
+  {
+    id: 2,
+    category: 'seo',
+    title: 'SEO Skills Suite',
+    description:
+      'Built a suite of SEO skills using Claude Code, each with a unique capability to improve website search performance. Skills cover keyword research, on-page optimization, content strategy, link building, and performance tracking.',
+    tags: ['Claude Code', 'Claude API'],
+    colorClass: 'from-emerald-950 to-emerald-900',
+    wide: false,
+    featured: false,
+    images: ['/projects/seo-skills-ai.webp', '/projects/seo-skills.webp'],
+  },
+  {
+    id: 4,
+    category: 'hr',
+    title: 'GHL Recruitment Automation',
+    description:
+      'Built automated recruitment email workflows in GoHighLevel. When a candidate\'s status is updated in the ATS, the right email fires automatically: rejection, interview invite, job offer, tech test, and more. No manual follow-up needed.',
+    tags: ['GoHighLevel', 'Notion', 'Gmail', 'Typeform', 'Zapier', 'Slack'],
+    colorClass: 'from-orange-950 to-amber-900',
+    wide: false,
+    featured: false,
+    images: [
+      '/projects/ghl-recruitment-ai.webp',
+      '/projects/recruitment-automation.webp',
+      '/projects/recruitment-automation2.webp',
+      '/projects/recruitment-automation3.webp',
+    ],
+  },
+  {
+    id: 3,
+    category: 'automation',
+    title: 'HR & Ops Automation Suite',
+    description:
+      'Built a full suite of automations for HR and operations. When a candidate submits via Typeform, their application routes automatically to the ATS and Slack, with an AI screening step that checks candidate fit. Includes additional automations for recruitment workflows and day-to-day ops.',
+    tags: ['Zapier', 'Make', 'Typeform', 'Slack'],
+    colorClass: 'from-purple-950 to-purple-900',
+    wide: false,
+    featured: false,
+    images: ['/projects/hr-ops-ai.webp', '/projects/hiring-zap-automations.webp', '/projects/zap-automations.webp'],
+  },
+  {
+    id: 0,
+    category: 'seo',
+    title: 'SEO Client Portfolio',
+    description:
+      'Managed SEO for 20+ websites across healthcare, e-commerce, legal, SaaS, and more. Services include on-page and off-page optimization, technical SEO, keyword research, site audits, and data benchmarking.',
+    tags: ['Ubersuggest', 'SEMRush', 'GSC', 'GA4', 'Screaming Frog', 'Claude Code', 'Ahrefs', 'SE Ranking', 'WordPress', 'Shopify'],
+    colorClass: 'from-emerald-950 to-teal-900',
+    wide: true,
+    featured: true,
+    cycling: true,
+    link: '/seo-portfolio',
+    images: [
+      '/seo-portfolio/anodyneshoes-com.webp',
+      '/seo-portfolio/sweatblock-com.webp',
+      '/seo-portfolio/laketravisdentistry-com.webp',
+      '/seo-portfolio/temporarytattoos-com.webp',
+    ],
+  },
+  {
     id: 7,
     category: 'operations',
     title: 'Great Team AI Platform',
     description:
       'Built an all-in-one internal HR platform for the team. Combines an ATS for applicant tracking, an HRIS for employee records, and a form builder for HR workflows, giving the team everything they need for HR in a single tool.',
-    tags: ['Next.js', 'TypeScript', 'Vercel'],
+    tags: ['Next.js', 'TypeScript', 'Vercel', 'Claude Code', 'GitHub', 'Supabase', 'VS Code'],
     colorClass: 'from-violet-950 to-indigo-900',
     wide: true,
     featured: true,
     images: ['/projects/great-team-ai.webp'],
-  },
-  {
-    id: 9,
-    category: 'automation',
-    title: 'Slack Automation Suite',
-    description:
-      'Built a suite of Slack automations using Make.com and Stripe. Includes a subscription notification bot that alerts the team whenever someone subscribes to the monthly plan, a custom Slack bot for internal use, and a set of automated workflows for day-to-day team operations.',
-    tags: ['Slack', 'Make.com', 'Stripe'],
-    colorClass: 'from-purple-950 to-violet-900',
-    wide: false,
-    featured: true,
-    images: [
-      '/projects/slack-task-creator.webp',
-      '/projects/slack-workflows.webp',
-      '/projects/stripe-slack-automation.webp',
-    ],
   },
   {
     id: 10,
@@ -336,7 +338,25 @@ export const projects = [
     tags: ['Ubersuggest', 'SEMRush', 'GSC', 'GA4', 'Screaming Frog', 'Claude Code'],
     colorClass: 'from-cyan-950 to-sky-900',
     wide: false,
+    featured: true,
     images: ['/projects/leaddistro.ai-website.webp'],
+  },
+  {
+    id: 9,
+    category: 'automation',
+    title: 'Slack Automation Suite',
+    description:
+      'Built a suite of Slack automations using Make.com and Stripe. Includes a subscription notification bot that alerts the team whenever someone subscribes to the monthly plan, a custom Slack bot for internal use, and a set of automated workflows for day-to-day team operations.',
+    tags: ['Slack', 'Make.com', 'Stripe'],
+    colorClass: 'from-purple-950 to-violet-900',
+    wide: false,
+    featured: false,
+    images: [
+      '/projects/slack-automation-ai.webp',
+      '/projects/slack-task-creator.webp',
+      '/projects/slack-workflows.webp',
+      '/projects/stripe-slack-automation.webp',
+    ],
   },
 ]
 

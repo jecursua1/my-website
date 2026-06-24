@@ -155,7 +155,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 bg-[#0e0e1a]">
+    <section id="contact" className="py-24 bg-[#080810]">
       <div className="max-w-[1160px] mx-auto px-6">
         <FadeIn once={false}>
           <div className="text-center mb-16">

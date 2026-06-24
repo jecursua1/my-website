@@ -78,7 +78,8 @@ function Lightbox({
               src={src}
               alt={`${title} screenshot ${i + 1}`}
               fill
-              sizes="(max-width: 1280px) 95vw, 1024px"
+              unoptimized
+          sizes="(max-width: 1280px) 95vw, 1024px"
               className="object-cover object-top transition-opacity duration-500"
               style={{ opacity: i === idx ? 1 : 0 }}
               priority
@@ -160,6 +161,7 @@ function ProjectImage({
           src={src}
           alt={title}
           fill
+          unoptimized
           sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover object-top transition-opacity duration-700"
           style={{ opacity: i === idx ? 1 : 0 }}
@@ -207,7 +209,7 @@ export default function Projects() {
 
   const filtered = active === 'all'
     ? projects.filter((p) => p.featured)
-    : projects.filter((p) => p.category === active)
+    : projects.filter((p) => p.category === active).sort((a, b) => (a.wide ? 1 : 0) - (b.wide ? 1 : 0))
 
   return (
     <section id="projects" className="py-24 bg-[#0e0e1a]">
@@ -272,10 +274,10 @@ export default function Projects() {
                 onMouseLeave={e => (e.currentTarget.style.border = '1px solid rgba(255,255,255,0.07)')}
               >
                 <ProjectImage
-                  images={proj.images}
+                  images={'cycling' in proj && proj.cycling ? proj.images : [proj.images[0]]}
                   title={proj.title}
                   height={proj.wide ? 'h-[260px]' : 'h-[200px]'}
-                  onImageClick={(idx) => setLightbox({ images: proj.images, title: proj.title, idx })}
+                  onImageClick={(idx) => setLightbox({ images: proj.images, title: proj.title, idx: 'cycling' in proj && proj.cycling ? idx : 0 })}
                 />
 
                 <div className="p-5">
@@ -306,7 +308,7 @@ export default function Projects() {
                       className="inline-flex items-center gap-1.5 text-xs font-semibold transition-colors duration-200"
                       style={{ color: '#9b5af5' }}
                     >
-                      View All 24 Sites &#8594;
+                      View All 20+ Sites &#8594;
                     </Link>
                   )}
                 </div>

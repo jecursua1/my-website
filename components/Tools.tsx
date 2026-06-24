@@ -97,7 +97,7 @@ const toolIcons: Record<string, React.ReactNode> = {
 
 export default function Tools() {
   return (
-    <section id="tools" className="py-24 bg-[#0e0e1a]">
+    <section id="tools" className="py-24 bg-[#080810]">
       <div className="max-w-[1160px] mx-auto px-6">
         <FadeIn>
           <div className="text-center mb-16">
