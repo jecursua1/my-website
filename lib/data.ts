@@ -270,32 +270,6 @@ export const projects = [
     images: ['/projects/hiring-zap-automations.webp', '/projects/zap-automations.webp'],
   },
   {
-    id: 4,
-    category: 'operations',
-    title: 'Domain & Mailbox Management',
-    description:
-      'Managed all domains and mailboxes for cold email campaigns and employee emails. Handled DNS configuration, DMARC setup, and deliverability across Cloudflare, GoDaddy, Namecheap, and Squarespace, with mailboxes maintained through InboxKit and Google Workspace.',
-    tags: ['InboxKit', 'Google Workspace', 'Cloudflare', 'GoDaddy', 'Namecheap'],
-    colorClass: 'from-sky-950 to-sky-900',
-    wide: false,
-    images: ['/projects/inboxkit-domains-and-mailboxes.webp'],
-  },
-  {
-    id: 5,
-    category: 'hr',
-    title: 'Recruitment Email Automation',
-    description:
-      'Built a GoHighLevel automation that sends the right email the moment an applicant status is updated in the ATS. Covers rejection notices, interview approvals, tech test invitations, and job offers, all triggered automatically with no manual sending required.',
-    tags: ['GoHighLevel'],
-    colorClass: 'from-indigo-950 to-indigo-900',
-    wide: false,
-    images: [
-      '/projects/recruitment-automation.webp',
-      '/projects/recruitment-automation2.webp',
-      '/projects/recruitment-automation3.webp',
-    ],
-  },
-  {
     id: 6,
     category: 'seo',
     title: 'Great Marketing AI Website',
@@ -318,20 +292,6 @@ export const projects = [
     wide: true,
     featured: true,
     images: ['/projects/great-team-ai.webp'],
-  },
-  {
-    id: 8,
-    category: 'hr',
-    title: 'Applicant Tracking System',
-    description:
-      'Built ATS solutions in both Notion and Google Sheets for structured candidate tracking. Gives the team a clear view of the full hiring pipeline, from first contact through to offer, across all open roles.',
-    tags: ['Notion', 'Google Sheets'],
-    colorClass: 'from-indigo-950 to-blue-900',
-    wide: false,
-    images: [
-      '/projects/notion-applicant-tracking-system.webp',
-      '/projects/ats-google-sheet.webp',
-    ],
   },
   {
     id: 9,
@@ -359,28 +319,6 @@ export const projects = [
     colorClass: 'from-cyan-950 to-sky-900',
     wide: false,
     images: ['/projects/leaddistro.ai-website.webp'],
-  },
-  {
-    id: 11,
-    category: 'operations',
-    title: 'Aeris MD Website',
-    description:
-      'Built the Aeris MD website in Framer for a dermatology brand. Focused on delivering a clean, professional design that clearly communicates their services and builds trust with patients.',
-    tags: ['Framer'],
-    colorClass: 'from-teal-950 to-emerald-900',
-    wide: false,
-    images: ['/projects/aerismd-website.webp'],
-  },
-  {
-    id: 12,
-    category: 'hr',
-    title: 'Employee Onboarding Program',
-    description:
-      'Created a structured new employee orientation program using Canva. Built onboarding presentation decks and SOPs for each department so every new hire has a smooth, informed first week from day one.',
-    tags: ['Canva'],
-    colorClass: 'from-rose-950 to-pink-900',
-    wide: false,
-    images: ['/projects/new-employee-orientation-program-slide-presentation.webp'],
   },
 ]
 
