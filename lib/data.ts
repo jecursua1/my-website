@@ -355,7 +355,7 @@ export const projects = [
     title: 'Lead Distro AI SEO',
     description:
       'Handled SEO for Lead Distro AI with a focus on growing organic traffic and improving search visibility. Covered on-page optimization, content improvements, and technical SEO to drive consistent growth in rankings and site visits.',
-    tags: ['Ahrefs', 'SE Ranking'],
+    tags: ['Ubersuggest', 'SEMRush', 'GSC', 'GA4', 'Screaming Frog', 'Claude Code'],
     colorClass: 'from-cyan-950 to-sky-900',
     wide: false,
     images: ['/projects/leaddistro.ai-website.webp'],
