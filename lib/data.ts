@@ -238,8 +238,8 @@ export const projects = [
     category: 'hr',
     title: 'HR Headquarters',
     description:
-      'Built a centralized HR Headquarters in Notion for Great Marketing AI — a single source of truth for all HR operations including SOPs, 201 files, ATS, team directory, payroll references, onboarding materials, and HR policies.',
-    tags: ['Notion', 'SOPs', '201 Files', 'ATS', 'HR Ops'],
+      'Built a centralized HR Headquarters in Notion for Great Marketing AI, serving as the single source of truth for all HR operations. Everything lives here: SOPs, 201 files, ATS, team directory, payroll references, onboarding materials, and HR policies.',
+    tags: ['Notion'],
     colorClass: 'from-violet-950 to-purple-900',
     wide: true,
     featured: true,
@@ -248,10 +248,10 @@ export const projects = [
   {
     id: 2,
     category: 'seo',
-    title: 'SEO Campaign Management',
+    title: 'SEO Skills Suite',
     description:
-      'Managing end-to-end SEO campaigns across multiple client accounts — keyword strategy, on-page optimization, content planning, link building, and performance tracking via SE Ranking, Ahrefs, and SEMRush.',
-    tags: ['Ahrefs', 'SEMRush', 'SE Ranking', 'Google Search Console'],
+      'Built a suite of SEO skills using Claude Code, each with a unique capability to improve website search performance. Skills cover keyword research, on-page optimization, content strategy, link building, and performance tracking.',
+    tags: ['Claude Code', 'Claude API'],
     colorClass: 'from-emerald-950 to-emerald-900',
     wide: false,
     featured: false,
@@ -260,22 +260,22 @@ export const projects = [
   {
     id: 3,
     category: 'automation',
-    title: 'GoHighLevel Lifecycle Automation',
+    title: 'HR & Ops Automation Suite',
     description:
-      'Built and managed full email lifecycle workflows in GoHighLevel — covering trial, onboarding, and retention sequences — plus automated newsletter campaigns, contract flows, and client onboarding processes.',
-    tags: ['GoHighLevel', 'Zapier', 'Make', 'Automation'],
+      'Built a full suite of automations for HR and operations. When a candidate submits via Typeform, their application routes automatically to the ATS and Slack, with an AI screening step that checks candidate fit. Includes additional automations for recruitment workflows and day-to-day ops.',
+    tags: ['Zapier', 'Make', 'Typeform', 'Slack'],
     colorClass: 'from-purple-950 to-purple-900',
     wide: false,
     featured: false,
-    images: ['/projects/hiring-zap-automations.webp'],
+    images: ['/projects/hiring-zap-automations.webp', '/projects/zap-automations.webp'],
   },
   {
     id: 4,
     category: 'operations',
-    title: 'Cold Email Infrastructure',
+    title: 'Domain & Mailbox Management',
     description:
-      'Overseeing cold email infrastructure across 6 lookalike domains via InboxKit and Cloudflare — maintaining DNS configuration, DMARC records, and email deliverability for Lead Distro AI.',
-    tags: ['InboxKit', 'Cloudflare', 'DNS', 'DMARC', 'Deliverability'],
+      'Managed all domains and mailboxes for cold email campaigns and employee emails. Handled DNS configuration, DMARC setup, and deliverability across Cloudflare, GoDaddy, Namecheap, and Squarespace, with mailboxes maintained through InboxKit and Google Workspace.',
+    tags: ['InboxKit', 'Google Workspace', 'Cloudflare', 'GoDaddy', 'Namecheap'],
     colorClass: 'from-sky-950 to-sky-900',
     wide: false,
     images: ['/projects/inboxkit-domains-and-mailboxes.webp'],
@@ -283,10 +283,10 @@ export const projects = [
   {
     id: 5,
     category: 'hr',
-    title: 'End-to-End Recruitment System',
+    title: 'Recruitment Email Automation',
     description:
-      'Built and managed full recruitment pipelines for Technical and Digital Marketing roles — from sourcing via LinkedIn Sales Navigator, Seamless.ai, and Apollo.io through to onboarding.',
-    tags: ['Jobma', 'CVViZ', 'LinkedIn Sales Nav', 'Apollo.io'],
+      'Built a GoHighLevel automation that sends the right email the moment an applicant status is updated in the ATS. Covers rejection notices, interview approvals, tech test invitations, and job offers, all triggered automatically with no manual sending required.',
+    tags: ['GoHighLevel'],
     colorClass: 'from-indigo-950 to-indigo-900',
     wide: false,
     images: [
@@ -297,11 +297,11 @@ export const projects = [
   },
   {
     id: 6,
-    category: 'operations',
+    category: 'seo',
     title: 'Great Marketing AI Website',
     description:
-      'Migrated the Great Marketing AI website from Framer to Next.js — rebuilding the full site in a custom Next.js codebase deployed on Vercel for better performance, scalability, and developer control.',
-    tags: ['Next.js', 'Framer', 'Vercel', 'TypeScript'],
+      'Migrated the Great Marketing AI website from Framer to Next.js, then owned all SEO from the ground up. Handled on-page, off-page, and technical SEO, keyword research, and data benchmarking to track and grow organic performance.',
+    tags: ['Next.js', 'Framer', 'GitHub', 'Ubersuggest', 'GA4', 'GSC', 'Screaming Frog'],
     colorClass: 'from-stone-900 to-stone-800',
     wide: false,
     featured: true,
@@ -312,8 +312,8 @@ export const projects = [
     category: 'operations',
     title: 'Great Team AI Platform',
     description:
-      'Built an all-in-one internal HR tool for our team — combining an ATS database for tracking applicants, an HRIS for managing employee records, and a form builder for HR workflows, all in a single platform.',
-    tags: ['Next.js', 'ATS', 'HRIS', 'Form Builder', 'HR'],
+      'Built an all-in-one internal HR platform for the team. Combines an ATS for applicant tracking, an HRIS for employee records, and a form builder for HR workflows, giving the team everything they need for HR in a single tool.',
+    tags: ['Next.js', 'TypeScript', 'Vercel'],
     colorClass: 'from-violet-950 to-indigo-900',
     wide: true,
     featured: true,
@@ -324,8 +324,8 @@ export const projects = [
     category: 'hr',
     title: 'Applicant Tracking System',
     description:
-      'Built custom ATS solutions in both Notion and Google Sheets — enabling structured candidate tracking, interview pipeline management, and hiring status reporting across multiple open roles.',
-    tags: ['Notion', 'Google Sheets', 'ATS', 'Recruitment'],
+      'Built ATS solutions in both Notion and Google Sheets for structured candidate tracking. Gives the team a clear view of the full hiring pipeline, from first contact through to offer, across all open roles.',
+    tags: ['Notion', 'Google Sheets'],
     colorClass: 'from-indigo-950 to-blue-900',
     wide: false,
     images: [
@@ -338,8 +338,8 @@ export const projects = [
     category: 'automation',
     title: 'Slack Automation Suite',
     description:
-      'Built a suite of Slack bots and workflow automations — including a task creator bot, automated Slack workflows for team notifications, and a Stripe-to-Slack integration for payment event alerts.',
-    tags: ['Slack', 'Zapier', 'Stripe', 'Bots'],
+      'Built a suite of Slack automations using Make.com and Stripe. Includes a subscription notification bot that alerts the team whenever someone subscribes to the monthly plan, a custom Slack bot for internal use, and a set of automated workflows for day-to-day team operations.',
+    tags: ['Slack', 'Make.com', 'Stripe'],
     colorClass: 'from-purple-950 to-violet-900',
     wide: false,
     featured: true,
@@ -351,22 +351,22 @@ export const projects = [
   },
   {
     id: 10,
-    category: 'operations',
-    title: 'Lead Distro AI Website',
+    category: 'seo',
+    title: 'Lead Distro AI SEO',
     description:
-      'Managed and maintained the Lead Distro AI web presence — overseeing content updates, technical performance, and alignment with the company\'s cold email and lead generation positioning.',
-    tags: ['Web Management', 'Content', 'Operations'],
+      'Handled SEO for Lead Distro AI with a focus on growing organic traffic and improving search visibility. Covered on-page optimization, content improvements, and technical SEO to drive consistent growth in rankings and site visits.',
+    tags: ['Ahrefs', 'SE Ranking'],
     colorClass: 'from-cyan-950 to-sky-900',
     wide: false,
     images: ['/projects/leaddistro.ai-website.webp'],
   },
   {
     id: 11,
-    category: 'seo',
-    title: 'Aeris MD SEO & Website',
+    category: 'operations',
+    title: 'Aeris MD Website',
     description:
-      'Managed Aeris MD\'s website SEO and content strategy — optimizing pages for local and organic search, publishing targeted content, and tracking keyword performance to grow online visibility.',
-    tags: ['SEO', 'WordPress', 'Content Strategy', 'SE Ranking'],
+      'Built the Aeris MD website in Framer for a dermatology brand. Focused on delivering a clean, professional design that clearly communicates their services and builds trust with patients.',
+    tags: ['Framer'],
     colorClass: 'from-teal-950 to-emerald-900',
     wide: false,
     images: ['/projects/aerismd-website.webp'],
@@ -376,22 +376,11 @@ export const projects = [
     category: 'hr',
     title: 'Employee Onboarding Program',
     description:
-      'Designed and implemented a structured new employee orientation program — building onboarding slide decks, creating SOPs for each department, and ensuring a smooth first-week experience for new hires.',
-    tags: ['HR', 'Onboarding', 'SOPs', 'Google Slides'],
+      'Created a structured new employee orientation program using Canva. Built onboarding presentation decks and SOPs for each department so every new hire has a smooth, informed first week from day one.',
+    tags: ['Canva'],
     colorClass: 'from-rose-950 to-pink-900',
     wide: false,
     images: ['/projects/new-employee-orientation-program-slide-presentation.webp'],
-  },
-  {
-    id: 13,
-    category: 'automation',
-    title: 'Zapier Workflow Automations',
-    description:
-      'Built and maintained a library of Zapier automations connecting CRMs, email tools, Slack, and Google Workspace — eliminating manual handoffs and keeping data in sync across the entire tech stack.',
-    tags: ['Zapier', 'Automation', 'CRM', 'Google Workspace'],
-    colorClass: 'from-orange-950 to-amber-900',
-    wide: false,
-    images: ['/projects/zap-automations.webp'],
   },
 ]
 
