@@ -297,11 +297,11 @@ export const projects = [
   },
   {
     id: 6,
-    category: 'seo',
-    title: 'WordPress SEO & Content Strategy',
+    category: 'operations',
+    title: 'Great Marketing AI Website',
     description:
-      'Developed and maintained WordPress site content, optimizing pages for search rankings, writing SEO blog posts, and tracking performance with Ahrefs and SE Ranking.',
-    tags: ['WordPress', 'SE Ranking', 'Ahrefs', 'Content Writing'],
+      'Migrated the Great Marketing AI website from Framer to Next.js — rebuilding the full site in a custom Next.js codebase deployed on Vercel for better performance, scalability, and developer control.',
+    tags: ['Next.js', 'Framer', 'Vercel', 'TypeScript'],
     colorClass: 'from-stone-900 to-stone-800',
     wide: false,
     featured: true,
