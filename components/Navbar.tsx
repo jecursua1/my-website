@@ -5,13 +5,20 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#services', label: 'Services' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#clients', label: 'Clients' },
-  { href: '#skills', label: 'Skills' },
+  { id: 'about', label: 'About' },
+  { id: 'services', label: 'Services' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'skills', label: 'Skills' },
 ]
+
+function scrollTo(id: string) {
+  const el = document.getElementById(id)
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' })
+    window.history.replaceState(null, '', '/')
+  }
+}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -51,10 +58,10 @@ export default function Navbar() {
     >
       <div className="max-w-[1160px] mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a
-          href="#home"
+        <button
+          onClick={() => scrollTo('home')}
           className="flex items-center gap-3 group"
-          style={{ textDecoration: 'none' }}
+          style={{ textDecoration: 'none', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
         >
           <Image
             src="/jec-logo.png"
@@ -64,22 +71,22 @@ export default function Navbar() {
             className="flex-shrink-0 transition-all duration-300 group-hover:drop-shadow-[0_0_14px_rgba(167,139,250,0.6)]"
             priority
           />
-        </a>
+        </button>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={`text-sm font-medium transition-colors duration-300 ${
-                activeSection === link.href.slice(1)
+            <button
+              key={link.id}
+              onClick={() => scrollTo(link.id)}
+              className={`text-sm font-medium transition-colors duration-300 bg-transparent border-none cursor-pointer ${
+                activeSection === link.id
                   ? 'text-white'
                   : 'text-[#7070a0] hover:text-white'
               }`}
             >
               {link.label}
-            </a>
+            </button>
           ))}
           <Link
             href="/about-me"
@@ -87,16 +94,16 @@ export default function Navbar() {
           >
             My Story
           </Link>
-          <a
-            href="#contact"
-            className="text-white text-sm font-semibold px-5 py-2 rounded-lg transition-all duration-300 hover:-translate-y-0.5"
+          <button
+            onClick={() => scrollTo('contact')}
+            className="text-white text-sm font-semibold px-5 py-2 rounded-lg transition-all duration-300 hover:-translate-y-0.5 cursor-pointer border-none"
             style={{
               background: 'linear-gradient(135deg, #7c3aed, #06b6d4)',
               boxShadow: '0 4px 16px rgba(124,58,237,0.35)',
             }}
           >
             Hire Me
-          </a>
+          </button>
         </div>
 
         {/* Mobile Hamburger */}
@@ -134,14 +141,13 @@ export default function Navbar() {
           }}
         >
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={closeMenu}
-              className="text-xl font-medium text-[#e2e2f0] hover:text-white transition-colors"
+            <button
+              key={link.id}
+              onClick={() => { scrollTo(link.id); closeMenu() }}
+              className="text-xl font-medium text-[#e2e2f0] hover:text-white transition-colors bg-transparent border-none cursor-pointer"
             >
               {link.label}
-            </a>
+            </button>
           ))}
           <Link
             href="/about-me"
@@ -150,14 +156,13 @@ export default function Navbar() {
           >
             My Story
           </Link>
-          <a
-            href="#contact"
-            onClick={closeMenu}
-            className="text-white font-semibold px-6 py-3 rounded-lg"
+          <button
+            onClick={() => { scrollTo('contact'); closeMenu() }}
+            className="text-white font-semibold px-6 py-3 rounded-lg border-none cursor-pointer"
             style={{ background: 'linear-gradient(135deg, #7c3aed, #06b6d4)' }}
           >
             Hire Me
-          </a>
+          </button>
         </div>
       )}
     </nav>
