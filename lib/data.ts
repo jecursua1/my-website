@@ -235,11 +235,11 @@ export const experiences: Experience[] = [
 export const projects = [
   {
     id: 1,
-    category: 'operations',
-    title: 'Internal Platform Development',
+    category: 'hr',
+    title: 'HR Headquarters',
     description:
-      'Leading the development of Next.js internal platforms at Great Marketing AI — including an HRIS, ATS, Payroll System, and content scheduling platform to streamline agency operations.',
-    tags: ['Next.js', 'GitHub', 'Vercel', 'TypeScript'],
+      'Built a centralized HR Headquarters in Notion for Great Marketing AI — a single source of truth for all HR operations including SOPs, 201 files, ATS, team directory, payroll references, onboarding materials, and HR policies.',
+    tags: ['Notion', 'SOPs', '201 Files', 'ATS', 'HR Ops'],
     colorClass: 'from-violet-950 to-purple-900',
     wide: true,
     featured: true,
