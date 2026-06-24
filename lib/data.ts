@@ -234,6 +234,24 @@ export const experiences: Experience[] = [
 
 export const projects = [
   {
+    id: 0,
+    category: 'seo',
+    title: 'SEO Client Portfolio',
+    description:
+      'Managed SEO for 24+ websites across healthcare, e-commerce, legal, SaaS, and more. Services include on-page and off-page optimization, technical SEO, keyword research, site audits, and data benchmarking.',
+    tags: ['Ubersuggest', 'SEMRush', 'GSC', 'GA4', 'Screaming Frog'],
+    colorClass: 'from-emerald-950 to-teal-900',
+    wide: true,
+    featured: true,
+    link: '/seo-portfolio',
+    images: [
+      '/seo-portfolio/anodyneshoes-com.webp',
+      '/seo-portfolio/sweatblock-com.webp',
+      '/seo-portfolio/laketravisdentistry-com.webp',
+      '/seo-portfolio/temporarytattoos-com.webp',
+    ],
+  },
+  {
     id: 1,
     category: 'hr',
     title: 'HR Headquarters',

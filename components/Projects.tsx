@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import FadeIn from '@/components/FadeIn'
 import { projects } from '@/lib/data'
 
@@ -298,7 +299,16 @@ export default function Projects() {
                   >
                     {proj.title}
                   </h3>
-                  <p className="text-[0.85rem] text-[#7070a0]">{proj.description}</p>
+                  <p className="text-[0.85rem] text-[#7070a0] mb-3">{proj.description}</p>
+                  {'link' in proj && proj.link && (
+                    <Link
+                      href={proj.link}
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold transition-colors duration-200"
+                      style={{ color: '#9b5af5' }}
+                    >
+                      View All 24 Sites &#8594;
+                    </Link>
+                  )}
                 </div>
               </div>
             </FadeIn>
