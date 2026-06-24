@@ -50,7 +50,7 @@ export default function SeoPortfolioPage() {
       {/* Header */}
       <div
         className="relative overflow-hidden py-20 px-6"
-        style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.12) 0%, rgba(6,182,212,0.06) 100%)', borderBottom: '1px solid rgba(255,255,255,0.07)' }}
+        style={{ background: 'linear-gradient(180deg, rgba(124,58,237,0.14) 0%, rgba(8,8,16,0) 100%)' }}
       >
         <div className="max-w-[1160px] mx-auto">
           <Link
@@ -62,11 +62,6 @@ export default function SeoPortfolioPage() {
             </svg>
             Back to Portfolio
           </Link>
-
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
-            style={{ background: 'rgba(124,58,237,0.15)', border: '1px solid rgba(124,58,237,0.3)', color: '#a78bfa' }}>
-            SEO Portfolio
-          </div>
 
           <h1
             className="font-black mb-4"
@@ -102,14 +97,11 @@ export default function SeoPortfolioPage() {
               href={client.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group rounded-[16px] overflow-hidden transition-all duration-300 hover:-translate-y-1"
+              className="group rounded-[16px] overflow-hidden transition-all duration-300 hover:-translate-y-1 border border-white/[0.07] hover:border-purple-600/40"
               style={{
                 background: '#12121f',
-                border: '1px solid rgba(255,255,255,0.07)',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
               }}
-              onMouseEnter={e => (e.currentTarget.style.border = '1px solid rgba(124,58,237,0.4)')}
-              onMouseLeave={e => (e.currentTarget.style.border = '1px solid rgba(255,255,255,0.07)')}
             >
               {/* Screenshot */}
               <div className="relative h-[180px] overflow-hidden">
@@ -117,6 +109,7 @@ export default function SeoPortfolioPage() {
                   src={`/seo-portfolio/${client.slug}.webp`}
                   alt={client.name}
                   fill
+                  unoptimized
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
                 />
