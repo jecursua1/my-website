@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://jericoursua.com'),
+  metadataBase: new URL('https://jerico-ursua.vercel.app'),
   title: 'Jerico Ursua | HR Executive, Chief of Staff & SEO Specialist',
   description:
     'Chief of Staff, HR Executive & SEO Specialist with 6+ years helping agencies hire better, rank higher, and automate smarter. Remote-first, results-driven.',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       'Chief of Staff, HR Executive & SEO Specialist with 6+ years helping agencies hire better, rank higher, and automate smarter. Remote-first, results-driven.',
     type: 'website',
-    url: 'https://jericoursua.com',
+    url: 'https://jerico-ursua.vercel.app',
     siteName: 'Jerico Ursua',
   },
 }
@@ -23,7 +23,7 @@ const websiteJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Jerico Ursua',
-  url: 'https://jericoursua.com',
+  url: 'https://jerico-ursua.vercel.app',
   description:
     'Chief of Staff, HR Executive & SEO Specialist with 6+ years helping agencies hire better, rank higher, and automate smarter.',
 }
@@ -32,7 +32,7 @@ const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Jerico Ursua',
-  url: 'https://jericoursua.com',
+  url: 'https://jerico-ursua.vercel.app',
   jobTitle: 'Chief of Staff & SEO Specialist',
   sameAs: [
     'https://www.linkedin.com/in/jec-ursua/',
