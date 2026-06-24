@@ -16,7 +16,8 @@ function scrollTo(id: string) {
   const el = document.getElementById(id)
   if (el) {
     el.scrollIntoView({ behavior: 'smooth' })
-    window.history.replaceState(null, '', '/')
+    const path = id === 'home' ? '/' : `/${id}`
+    window.history.pushState(null, '', path)
   }
 }
 
@@ -35,7 +36,11 @@ export default function Navbar() {
         const top = el.offsetTop
         const height = el.offsetHeight
         const id = el.getAttribute('id') || ''
-        if (scrollY >= top && scrollY < top + height) setActiveSection(id)
+        if (scrollY >= top && scrollY < top + height) {
+          setActiveSection(id)
+          const path = id === 'home' ? '/' : `/${id}`
+          window.history.replaceState(null, '', path)
+        }
       })
     }
     window.addEventListener('scroll', handleScroll)
