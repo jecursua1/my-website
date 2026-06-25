@@ -72,7 +72,7 @@ function SkillBar({ name, level, accent }: { name: string; level: number; accent
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 bg-[#0e0e1a]">
+    <section id="skills" className="py-24 bg-[#080810]">
       <div className="max-w-[1160px] mx-auto px-6">
         <FadeIn>
           <div className="text-center mb-16">
