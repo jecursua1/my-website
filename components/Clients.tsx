@@ -1,7 +1,31 @@
+'use client'
+
+import { useState, useEffect, useCallback } from 'react'
 import FadeIn from '@/components/FadeIn'
 import { clients, testimonials } from '@/lib/data'
 
 export default function Clients() {
+  const [active, setActive] = useState(0)
+  const [fading, setFading] = useState(false)
+
+  const goTo = useCallback((index: number) => {
+    setFading(true)
+    setTimeout(() => {
+      setActive(index)
+      setFading(false)
+    }, 250)
+  }, [])
+
+  const prev = () => goTo((active - 1 + testimonials.length) % testimonials.length)
+  const next = useCallback(() => goTo((active + 1) % testimonials.length), [active, goTo])
+
+  useEffect(() => {
+    const timer = setInterval(next, 6000)
+    return () => clearInterval(timer)
+  }, [next])
+
+  const t = testimonials[active]
+
   return (
     <section id="clients" className="py-24 bg-[#080810]">
       <div className="max-w-[1160px] mx-auto px-6">
@@ -34,10 +58,7 @@ export default function Clients() {
           >
             <div className="animate-marquee flex gap-20 w-max items-center py-3">
               {[...clients, ...clients].map((client, i) => (
-                <div
-                  key={i}
-                  className="flex-shrink-0 flex items-center justify-center"
-                >
+                <div key={i} className="flex-shrink-0 flex items-center justify-center">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={client.logo}
@@ -51,37 +72,82 @@ export default function Clients() {
           </div>
         </FadeIn>
 
-        {/* Testimonials */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {testimonials.map((t, i) => (
-            <FadeIn key={t.name} delay={i * 0.1}>
-              <div
-                className="p-7 rounded-[22px] transition-all duration-300 hover:-translate-y-0.5 h-full flex flex-col"
-                style={{
-                  background: '#12121f',
-                  border: '1px solid rgba(255,255,255,0.07)',
-                }}
+        {/* Testimonial carousel */}
+        <FadeIn>
+          <div className="max-w-[780px] mx-auto">
+            {/* Card */}
+            <div
+              className="p-8 md:p-10 rounded-[22px] relative"
+              style={{
+                background: '#12121f',
+                border: '1px solid rgba(255,255,255,0.07)',
+                minHeight: '260px',
+              }}
+            >
+              {/* Prev / Next arrows */}
+              <button
+                onClick={prev}
+                aria-label="Previous"
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center text-[#7070a0] hover:text-[#e2e2f0] transition-colors"
+                style={{ background: 'rgba(255,255,255,0.05)' }}
               >
-                <div className="text-amber-400 text-base tracking-[2px] mb-3.5">{'★★★★★'}</div>
-                <p className="text-[0.9rem] text-[#7070a0] italic leading-[1.7] flex-1 mb-5">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M15 18l-6-6 6-6"/>
+                </svg>
+              </button>
+              <button
+                onClick={next}
+                aria-label="Next"
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center text-[#7070a0] hover:text-[#e2e2f0] transition-colors"
+                style={{ background: 'rgba(255,255,255,0.05)' }}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M9 18l6-6-6-6"/>
+                </svg>
+              </button>
+
+              {/* Content */}
+              <div
+                className="px-8 flex flex-col items-center text-center"
+                style={{ opacity: fading ? 0 : 1, transition: 'opacity 0.25s ease' }}
+              >
+                <div className="text-amber-400 text-lg tracking-[3px] mb-5">{'★★★★★'}</div>
+                <p className="text-[0.95rem] text-[#7070a0] italic leading-[1.8] mb-7 max-w-[580px]">
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <div className="flex items-center gap-3">
                   <div
-                    className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-bold text-white"
+                    className="w-11 h-11 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-bold text-white"
                     style={{ background: 'linear-gradient(135deg, #7c3aed, #06b6d4)' }}
                   >
                     {t.initials}
                   </div>
-                  <div>
-                    <strong className="block text-[0.9rem] font-semibold text-[#e2e2f0]">{t.name}</strong>
+                  <div className="text-left">
+                    <strong className="block text-[0.95rem] font-semibold text-[#e2e2f0]">{t.name}</strong>
                     <small className="text-xs text-[#7070a0]">{t.role}</small>
                   </div>
                 </div>
               </div>
-            </FadeIn>
-          ))}
-        </div>
+            </div>
+
+            {/* Dot indicators */}
+            <div className="flex justify-center gap-2 mt-5">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => goTo(i)}
+                  aria-label={`Go to review ${i + 1}`}
+                  className="transition-all duration-300 rounded-full"
+                  style={{
+                    width: i === active ? '24px' : '8px',
+                    height: '8px',
+                    background: i === active ? '#9b5af5' : 'rgba(255,255,255,0.15)',
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        </FadeIn>
       </div>
     </section>
   )
