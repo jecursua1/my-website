@@ -17,10 +17,9 @@ export default function About() {
           >
             <iframe
               className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/rzV6uzHE9AA"
+              src="https://www.loom.com/embed/4a093d72015b47f6a420562b941dda32"
               title="Jec Ursua - Video Introduction"
               frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
           </div>
