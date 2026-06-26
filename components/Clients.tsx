@@ -1,23 +1,29 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import FadeIn from '@/components/FadeIn'
 import { clients, testimonials } from '@/lib/data'
 
 export default function Clients() {
   const [active, setActive] = useState(0)
   const [visible, setVisible] = useState(true)
+  const paused = useRef(false)
 
-  const next = useCallback(() => {
+  const goTo = useCallback((index: number) => {
     setVisible(false)
     setTimeout(() => {
-      setActive(i => (i + 1) % testimonials.length)
+      setActive(index)
       setVisible(true)
     }, 400)
   }, [])
 
+  const prev = () => goTo((active - 1 + testimonials.length) % testimonials.length)
+  const next = useCallback(() => goTo((active + 1) % testimonials.length), [active, goTo])
+
   useEffect(() => {
-    const timer = setInterval(next, 5000)
+    const timer = setInterval(() => {
+      if (!paused.current) next()
+    }, 8000)
     return () => clearInterval(timer)
   }, [next])
 
@@ -73,15 +79,39 @@ export default function Clients() {
         <FadeIn>
           <div className="max-w-[780px] mx-auto">
             <div
-              className="p-8 md:p-10 rounded-[22px]"
+              className="p-8 md:p-10 rounded-[22px] relative"
               style={{
                 background: '#12121f',
                 border: '1px solid rgba(255,255,255,0.07)',
                 minHeight: '260px',
               }}
+              onMouseEnter={() => { paused.current = true }}
+              onMouseLeave={() => { paused.current = false }}
             >
+              {/* Arrows */}
+              <button
+                onClick={prev}
+                aria-label="Previous"
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center text-[#7070a0] hover:text-[#e2e2f0] transition-colors"
+                style={{ background: 'rgba(255,255,255,0.06)' }}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M15 18l-6-6 6-6"/>
+                </svg>
+              </button>
+              <button
+                onClick={next}
+                aria-label="Next"
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center text-[#7070a0] hover:text-[#e2e2f0] transition-colors"
+                style={{ background: 'rgba(255,255,255,0.06)' }}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M9 18l6-6-6-6"/>
+                </svg>
+              </button>
+
               <div
-                className="flex flex-col items-center text-center"
+                className="px-8 flex flex-col items-center text-center"
                 style={{
                   opacity: visible ? 1 : 0,
                   transition: 'opacity 0.4s ease',
@@ -116,6 +146,7 @@ export default function Clients() {
             </div>
           </div>
         </FadeIn>
+
       </div>
     </section>
   )
