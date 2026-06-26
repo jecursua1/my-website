@@ -364,7 +364,7 @@ export const clients = [
   { name: 'Great Marketing AI', logo: '/clients/gma-logo-white.webp' },
   { name: 'Sublime SEO', logo: '/clients/sublime-seo-trimmed.webp' },
   { name: 'Leadevo Inc.', logo: '/clients/leadevo-final-perfect-fix-307x112.webp' },
-  { name: 'Lead Distro AI', logo: '/clients/lead-distro-ai-new.webp' },
+  { name: 'Lead Distro AI', logo: '/clients/leaddistro-ai.webp' },
   { name: 'Remote Office', logo: '/clients/remote-office.webp' },
 ]
 
