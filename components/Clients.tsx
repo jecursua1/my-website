@@ -1,43 +1,27 @@
 'use client'
 
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import FadeIn from '@/components/FadeIn'
 import { clients, testimonials } from '@/lib/data'
 
 export default function Clients() {
   const [active, setActive] = useState(0)
-  const [sliding, setSliding] = useState<'left' | 'right' | null>(null)
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const [visible, setVisible] = useState(true)
 
-  const goTo = useCallback((index: number, direction: 'left' | 'right' = 'left') => {
-    if (sliding) return
-    setSliding(direction)
+  const next = useCallback(() => {
+    setVisible(false)
     setTimeout(() => {
-      setActive(index)
-      setSliding(null)
-    }, 350)
-  }, [sliding])
+      setActive(i => (i + 1) % testimonials.length)
+      setVisible(true)
+    }, 400)
+  }, [])
 
-  const prev = () => goTo((active - 1 + testimonials.length) % testimonials.length, 'right')
-  const next = useCallback(() => goTo((active + 1) % testimonials.length, 'left'), [active, goTo])
-
-  // Auto-advance
   useEffect(() => {
-    timeoutRef.current = setTimeout(next, 5000)
-    return () => { if (timeoutRef.current) clearTimeout(timeoutRef.current) }
+    const timer = setInterval(next, 5000)
+    return () => clearInterval(timer)
   }, [next])
 
   const t = testimonials[active]
-
-  const slideStyle: React.CSSProperties = {
-    transform: sliding === 'left'
-      ? 'translateX(-60px)'
-      : sliding === 'right'
-      ? 'translateX(60px)'
-      : 'translateX(0)',
-    opacity: sliding ? 0 : 1,
-    transition: sliding ? 'transform 0.35s ease, opacity 0.35s ease' : 'none',
-  }
 
   return (
     <section id="clients" className="py-24 bg-[#080810]">
@@ -89,37 +73,20 @@ export default function Clients() {
         <FadeIn>
           <div className="max-w-[780px] mx-auto">
             <div
-              className="rounded-[22px] relative overflow-hidden"
+              className="p-8 md:p-10 rounded-[22px]"
               style={{
                 background: '#12121f',
                 border: '1px solid rgba(255,255,255,0.07)',
                 minHeight: '260px',
               }}
             >
-              {/* Prev / Next arrows */}
-              <button
-                onClick={prev}
-                aria-label="Previous"
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full flex items-center justify-center text-[#7070a0] hover:text-[#e2e2f0] transition-colors"
-                style={{ background: 'rgba(255,255,255,0.06)' }}
+              <div
+                className="flex flex-col items-center text-center"
+                style={{
+                  opacity: visible ? 1 : 0,
+                  transition: 'opacity 0.4s ease',
+                }}
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M15 18l-6-6 6-6"/>
-                </svg>
-              </button>
-              <button
-                onClick={next}
-                aria-label="Next"
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full flex items-center justify-center text-[#7070a0] hover:text-[#e2e2f0] transition-colors"
-                style={{ background: 'rgba(255,255,255,0.06)' }}
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M9 18l6-6-6-6"/>
-                </svg>
-              </button>
-
-              {/* Sliding content */}
-              <div className="p-8 md:p-10 px-14 flex flex-col items-center text-center" style={slideStyle}>
                 <div className="text-amber-400 text-lg tracking-[3px] mb-5">{'★★★★★'}</div>
                 <p className="text-[0.95rem] text-[#7070a0] italic leading-[1.8] mb-7 max-w-[580px]">
                   &ldquo;{t.quote}&rdquo;
@@ -146,23 +113,6 @@ export default function Clients() {
                   </div>
                 </div>
               </div>
-            </div>
-
-            {/* Dot indicators */}
-            <div className="flex justify-center gap-2 mt-5">
-              {testimonials.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => goTo(i, i > active ? 'left' : 'right')}
-                  aria-label={`Go to review ${i + 1}`}
-                  className="transition-all duration-300 rounded-full"
-                  style={{
-                    width: i === active ? '24px' : '8px',
-                    height: '8px',
-                    background: i === active ? '#9b5af5' : 'rgba(255,255,255,0.15)',
-                  }}
-                />
-              ))}
             </div>
           </div>
         </FadeIn>
