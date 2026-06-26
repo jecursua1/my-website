@@ -375,7 +375,7 @@ export const testimonials = [
     name: 'Daiana Altinay',
     role: 'Marketing Strategist - Sublime SEO',
     initials: 'DA',
-    image: null,
+    image: '/testimonials/daiana-altinay.jpg',
   },
   {
     quote:
