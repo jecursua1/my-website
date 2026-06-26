@@ -32,17 +32,18 @@ export default function Clients() {
               maskImage: 'linear-gradient(to right, transparent, black 12%, black 88%, transparent)',
             }}
           >
-            <div className="animate-marquee flex gap-16 w-max items-center py-3">
+            <div className="animate-marquee flex gap-20 w-max items-center py-3">
               {[...clients, ...clients].map((client, i) => (
                 <div
                   key={i}
-                  className="flex-shrink-0 flex items-center justify-center h-14"
+                  className="flex-shrink-0 flex items-center justify-center"
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={client.logo}
                     alt={client.name}
-                    className="client-logo h-full max-w-[160px] object-contain cursor-default"
+                    className="client-logo object-contain cursor-default"
+                    style={{ height: '52px', width: 'auto', maxWidth: '260px' }}
                   />
                 </div>
               ))}
