@@ -55,13 +55,13 @@
 }
 
 .client-logo {
-  filter: brightness(0) invert(1);
-  opacity: 0.45;
+  mix-blend-mode: screen;
+  opacity: 0.6;
   transition: opacity 0.3s;
 }
 
 .client-logo:hover {
-  opacity: 0.85;
+  opacity: 1;
 }
 
 @layer utilities {

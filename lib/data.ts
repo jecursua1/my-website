@@ -361,14 +361,11 @@ export const projects = [
 ]
 
 export const clients = [
-  { name: 'Great Marketing AI', logo: '/clients/great-marketing-ai.png' },
+  { name: 'Great Marketing AI', logo: '/clients/great-marketing-ai.webp' },
   { name: 'Lead Distro AI', logo: '/clients/lead-distro-ai.png' },
-  { name: 'Sublime SEO', logo: '/clients/sublime-seo.png' },
+  { name: 'Sublime SEO', logo: '/clients/sublime-seo.svg' },
   { name: 'Leadevo Inc.', logo: '/clients/leadevo.png' },
-  { name: 'Remote Office', logo: '/clients/remote-office.png' },
-  { name: 'ZK Limited', logo: '/clients/zk-limited.png' },
-  { name: 'Strongbiz Marketing', logo: '/clients/strongbiz-marketing.png' },
-  { name: 'Puregold', logo: '/clients/puregold.png' },
+  { name: 'Remote Office', logo: '/clients/remote-office.svg' },
 ]
 
 export const testimonials = [
