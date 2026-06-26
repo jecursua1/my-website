@@ -1,28 +1,14 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState } from 'react'
 import FadeIn from '@/components/FadeIn'
 import { clients, testimonials } from '@/lib/data'
 
 export default function Clients() {
   const [active, setActive] = useState(0)
-  const [fading, setFading] = useState(false)
 
-  const goTo = useCallback((index: number) => {
-    setFading(true)
-    setTimeout(() => {
-      setActive(index)
-      setFading(false)
-    }, 250)
-  }, [])
-
-  const prev = () => goTo((active - 1 + testimonials.length) % testimonials.length)
-  const next = useCallback(() => goTo((active + 1) % testimonials.length), [active, goTo])
-
-  useEffect(() => {
-    const timer = setInterval(next, 6000)
-    return () => clearInterval(timer)
-  }, [next])
+  const prev = () => setActive((active - 1 + testimonials.length) % testimonials.length)
+  const next = () => setActive((active + 1) % testimonials.length)
 
   const t = testimonials[active]
 
@@ -107,10 +93,7 @@ export default function Clients() {
               </button>
 
               {/* Content */}
-              <div
-                className="px-8 flex flex-col items-center text-center"
-                style={{ opacity: fading ? 0 : 1, transition: 'opacity 0.25s ease' }}
-              >
+              <div className="px-8 flex flex-col items-center text-center">
                 <div className="text-amber-400 text-lg tracking-[3px] mb-5">{'★★★★★'}</div>
                 <p className="text-[0.95rem] text-[#7070a0] italic leading-[1.8] mb-7 max-w-[580px]">
                   &ldquo;{t.quote}&rdquo;
