@@ -1,16 +1,43 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import FadeIn from '@/components/FadeIn'
 import { clients, testimonials } from '@/lib/data'
 
 export default function Clients() {
   const [active, setActive] = useState(0)
+  const [sliding, setSliding] = useState<'left' | 'right' | null>(null)
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  const prev = () => setActive((active - 1 + testimonials.length) % testimonials.length)
-  const next = () => setActive((active + 1) % testimonials.length)
+  const goTo = useCallback((index: number, direction: 'left' | 'right' = 'left') => {
+    if (sliding) return
+    setSliding(direction)
+    setTimeout(() => {
+      setActive(index)
+      setSliding(null)
+    }, 350)
+  }, [sliding])
+
+  const prev = () => goTo((active - 1 + testimonials.length) % testimonials.length, 'right')
+  const next = useCallback(() => goTo((active + 1) % testimonials.length, 'left'), [active, goTo])
+
+  // Auto-advance
+  useEffect(() => {
+    timeoutRef.current = setTimeout(next, 5000)
+    return () => { if (timeoutRef.current) clearTimeout(timeoutRef.current) }
+  }, [next])
 
   const t = testimonials[active]
+
+  const slideStyle: React.CSSProperties = {
+    transform: sliding === 'left'
+      ? 'translateX(-60px)'
+      : sliding === 'right'
+      ? 'translateX(60px)'
+      : 'translateX(0)',
+    opacity: sliding ? 0 : 1,
+    transition: sliding ? 'transform 0.35s ease, opacity 0.35s ease' : 'none',
+  }
 
   return (
     <section id="clients" className="py-24 bg-[#080810]">
@@ -61,9 +88,8 @@ export default function Clients() {
         {/* Testimonial carousel */}
         <FadeIn>
           <div className="max-w-[780px] mx-auto">
-            {/* Card */}
             <div
-              className="p-8 md:p-10 rounded-[22px] relative"
+              className="rounded-[22px] relative overflow-hidden"
               style={{
                 background: '#12121f',
                 border: '1px solid rgba(255,255,255,0.07)',
@@ -74,8 +100,8 @@ export default function Clients() {
               <button
                 onClick={prev}
                 aria-label="Previous"
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center text-[#7070a0] hover:text-[#e2e2f0] transition-colors"
-                style={{ background: 'rgba(255,255,255,0.05)' }}
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full flex items-center justify-center text-[#7070a0] hover:text-[#e2e2f0] transition-colors"
+                style={{ background: 'rgba(255,255,255,0.06)' }}
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M15 18l-6-6 6-6"/>
@@ -84,16 +110,16 @@ export default function Clients() {
               <button
                 onClick={next}
                 aria-label="Next"
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center text-[#7070a0] hover:text-[#e2e2f0] transition-colors"
-                style={{ background: 'rgba(255,255,255,0.05)' }}
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full flex items-center justify-center text-[#7070a0] hover:text-[#e2e2f0] transition-colors"
+                style={{ background: 'rgba(255,255,255,0.06)' }}
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M9 18l6-6-6-6"/>
                 </svg>
               </button>
 
-              {/* Content */}
-              <div className="px-8 flex flex-col items-center text-center">
+              {/* Sliding content */}
+              <div className="p-8 md:p-10 px-14 flex flex-col items-center text-center" style={slideStyle}>
                 <div className="text-amber-400 text-lg tracking-[3px] mb-5">{'★★★★★'}</div>
                 <p className="text-[0.95rem] text-[#7070a0] italic leading-[1.8] mb-7 max-w-[580px]">
                   &ldquo;{t.quote}&rdquo;
@@ -127,7 +153,7 @@ export default function Clients() {
               {testimonials.map((_, i) => (
                 <button
                   key={i}
-                  onClick={() => goTo(i)}
+                  onClick={() => goTo(i, i > active ? 'left' : 'right')}
                   aria-label={`Go to review ${i + 1}`}
                   className="transition-all duration-300 rounded-full"
                   style={{
