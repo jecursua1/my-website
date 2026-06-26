@@ -23,7 +23,7 @@ export default function Clients() {
   useEffect(() => {
     const timer = setInterval(() => {
       if (!paused.current) next()
-    }, 8000)
+    }, 10000)
     return () => clearInterval(timer)
   }, [next])
 
@@ -79,11 +79,11 @@ export default function Clients() {
         <FadeIn>
           <div className="max-w-[780px] mx-auto">
             <div
-              className="p-8 md:p-10 rounded-[22px] relative"
+              className="p-8 md:p-10 rounded-[22px] relative flex flex-col justify-center"
               style={{
                 background: '#12121f',
                 border: '1px solid rgba(255,255,255,0.07)',
-                minHeight: '260px',
+                height: '420px',
               }}
               onMouseEnter={() => { paused.current = true }}
               onMouseLeave={() => { paused.current = false }}
