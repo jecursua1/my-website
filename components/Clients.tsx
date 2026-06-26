@@ -42,17 +42,7 @@ export default function Clients() {
                   <img
                     src={client.logo}
                     alt={client.name}
-                    className="h-full max-w-[160px] object-contain transition-all duration-300 cursor-default"
-                    style={{
-                      filter: 'brightness(0) invert(1)',
-                      opacity: 0.45,
-                    }}
-                    onMouseEnter={e => {
-                      ;(e.currentTarget as HTMLImageElement).style.opacity = '0.85'
-                    }}
-                    onMouseLeave={e => {
-                      ;(e.currentTarget as HTMLImageElement).style.opacity = '0.45'
-                    }}
+                    className="client-logo h-full max-w-[160px] object-contain cursor-default"
                   />
                 </div>
               ))}
