@@ -52,8 +52,7 @@
 
 
 .client-logo {
-  mix-blend-mode: screen;
-  opacity: 0.6;
+  opacity: 0.75;
   transition: opacity 0.3s;
 }
 
