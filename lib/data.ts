@@ -239,7 +239,7 @@ export const projects = [
     title: 'Great Marketing AI Website',
     description:
       'Migrated the Great Marketing AI website from Framer to Next.js, then owned all SEO from the ground up. Handled on-page, off-page, and technical SEO, keyword research, and data benchmarking to track and grow organic performance.',
-    tags: ['Next.js', 'Framer', 'GitHub', 'Ubersuggest', 'GA4', 'GSC', 'Screaming Frog'],
+    tags: ['Next.js', 'Framer', 'GitHub', 'Ubersuggest', 'GA4', 'GSC', 'Screaming Frog', 'Claude Code'],
     colorClass: 'from-stone-900 to-stone-800',
     wide: false,
     featured: true,
@@ -361,43 +361,37 @@ export const projects = [
 ]
 
 export const clients = [
-  'Great Marketing AI',
-  'Lead Distro AI',
-  'Sublime SEO',
-  'Leadevo Inc.',
-  'Remote Office',
-  'ZK Limited',
-  'Strongbiz Marketing',
-  'Puregold',
+  { name: 'Great Marketing AI', logo: '/clients/great-marketing-ai.png' },
+  { name: 'Lead Distro AI', logo: '/clients/lead-distro-ai.png' },
+  { name: 'Sublime SEO', logo: '/clients/sublime-seo.png' },
+  { name: 'Leadevo Inc.', logo: '/clients/leadevo.png' },
+  { name: 'Remote Office', logo: '/clients/remote-office.png' },
+  { name: 'ZK Limited', logo: '/clients/zk-limited.png' },
+  { name: 'Strongbiz Marketing', logo: '/clients/strongbiz-marketing.png' },
+  { name: 'Puregold', logo: '/clients/puregold.png' },
 ]
 
 export const testimonials = [
   {
     quote:
-      "Jec's recruitment process was seamless. He found us the perfect candidates quickly and professionally. An absolute asset to the team.",
-    name: 'HR Director',
-    role: 'Great Marketing AI',
-    initials: 'GMA',
+      "I've worked with Jec across multiple projects covering lead generation, SEO, link building, and project management, and he's been consistently reliable in all of them. He's proactive, moves fast, and doesn't need much hand-holding. One of his strongest qualities is how quickly he picks up new things, whether it's a new tool, process, or type of task, he adapts fast and delivers. On top of that, he's easy to work with. Positive, reliable, and just a good presence in the team, which honestly matters more than people think. Overall, someone I'd happily keep working with.",
+    name: 'Daiana Altinay',
+    role: 'Marketing Strategist - Sublime SEO',
+    initials: 'DA',
   },
   {
     quote:
-      'The GoHighLevel automation workflows Jec set up saved our team countless hours every single week. Exceptional attention to detail.',
-    name: 'Operations Lead',
-    role: 'Great Marketing AI',
-    initials: 'OL',
-  },
-  {
-    quote:
-      "Jec's SEO work significantly improved our site's visibility and organic traffic. Highly organized, proactive, and always delivers on time.",
-    name: 'Director',
-    role: 'Sublime SEO',
-    initials: 'SS',
+      "Jec is an exceptional HR specialist who truly understands how to manage remote professional relationships. During our time working together, I was incredibly impressed by his consistent updates and transparency, he kept me informed every step of the way, even during the transition periods. His seamless communication and high standards of professionalism make him an asset to any team.",
+    name: 'Sana Arshad',
+    role: 'Client Success Manager - Remote Office',
+    initials: 'SA',
   },
 ]
 
 export const highlightTools = [
   { name: 'GoHighLevel' },
   { name: 'Claude AI' },
+  { name: 'Claude Code' },
   { name: 'SEMRush' },
   { name: 'Zapier' },
   { name: 'Notion' },
@@ -540,7 +534,7 @@ export const professionalSkills = [
 export const badgeGroups = [
   {
     label: 'Highlight Tools',
-    items: ['GoHighLevel', 'SEMRush', 'Ahrefs', 'Jobma', 'CVViZ', 'Zapier', 'Notion', 'Claude AI', 'Perplexity'],
+    items: ['GoHighLevel', 'SEMRush', 'Ahrefs', 'Jobma', 'CVViZ', 'Zapier', 'Notion', 'Claude AI', 'Claude Code', 'Perplexity'],
     highlight: false,
   },
   {

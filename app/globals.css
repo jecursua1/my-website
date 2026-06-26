@@ -41,6 +41,19 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
 @layer utilities {
   .grad-text {
     background: linear-gradient(135deg, #7c3aed, #06b6d4);

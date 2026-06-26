@@ -1,4 +1,4 @@
-﻿import FadeIn from '@/components/FadeIn'
+import FadeIn from '@/components/FadeIn'
 import { clients, testimonials } from '@/lib/data'
 
 export default function Clients() {
@@ -23,26 +23,45 @@ export default function Clients() {
           </div>
         </FadeIn>
 
-        {/* Client logos */}
+        {/* Scrolling logo ticker */}
         <FadeIn>
-          <div className="flex flex-wrap justify-center gap-5 mb-16">
-            {clients.map((client) => (
-              <div
-                key={client}
-                className="min-w-[130px] text-center text-[0.95rem] font-semibold text-[#7070a0] px-9 py-5 rounded-[14px] transition-all duration-300 hover:text-[#e2e2f0] cursor-default"
-                style={{
-                  background: '#12121f',
-                  border: '1px solid rgba(255,255,255,0.07)',
-                }}
-              >
-                {client}
-              </div>
-            ))}
+          <div
+            className="relative overflow-hidden mb-16"
+            style={{
+              WebkitMaskImage: 'linear-gradient(to right, transparent, black 12%, black 88%, transparent)',
+              maskImage: 'linear-gradient(to right, transparent, black 12%, black 88%, transparent)',
+            }}
+          >
+            <div className="animate-marquee flex gap-16 w-max items-center py-3">
+              {[...clients, ...clients].map((client, i) => (
+                <div
+                  key={i}
+                  className="flex-shrink-0 flex items-center justify-center h-14"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    className="h-full max-w-[160px] object-contain transition-all duration-300 cursor-default"
+                    style={{
+                      filter: 'brightness(0) invert(1)',
+                      opacity: 0.45,
+                    }}
+                    onMouseEnter={e => {
+                      ;(e.currentTarget as HTMLImageElement).style.opacity = '0.85'
+                    }}
+                    onMouseLeave={e => {
+                      ;(e.currentTarget as HTMLImageElement).style.opacity = '0.45'
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </FadeIn>
 
         {/* Testimonials */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {testimonials.map((t, i) => (
             <FadeIn key={t.name} delay={i * 0.1}>
               <div
@@ -52,7 +71,7 @@ export default function Clients() {
                   border: '1px solid rgba(255,255,255,0.07)',
                 }}
               >
-                <div className="text-amber-400 text-base tracking-[2px] mb-3.5">â˜…â˜…â˜…â˜…â˜…</div>
+                <div className="text-amber-400 text-base tracking-[2px] mb-3.5">{'★★★★★'}</div>
                 <p className="text-[0.9rem] text-[#7070a0] italic leading-[1.7] flex-1 mb-5">
                   &ldquo;{t.quote}&rdquo;
                 </p>
