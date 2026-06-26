@@ -116,12 +116,21 @@ export default function Clients() {
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <div className="flex items-center gap-3">
-                  <div
-                    className="w-11 h-11 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-bold text-white"
-                    style={{ background: 'linear-gradient(135deg, #7c3aed, #06b6d4)' }}
-                  >
-                    {t.initials}
-                  </div>
+                  {t.image ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={t.image}
+                      alt={t.name}
+                      className="w-11 h-11 rounded-full flex-shrink-0 object-cover"
+                    />
+                  ) : (
+                    <div
+                      className="w-11 h-11 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-bold text-white"
+                      style={{ background: 'linear-gradient(135deg, #7c3aed, #06b6d4)' }}
+                    >
+                      {t.initials}
+                    </div>
+                  )}
                   <div className="text-left">
                     <strong className="block text-[0.95rem] font-semibold text-[#e2e2f0]">{t.name}</strong>
                     <small className="text-xs text-[#7070a0]">{t.role}</small>
