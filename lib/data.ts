@@ -373,7 +373,8 @@ export const testimonials = [
     quote:
       "I've worked with Jec across multiple projects covering lead generation, SEO, link building, and project management, and he's been consistently reliable in all of them. He's proactive, moves fast, and doesn't need much hand-holding. One of his strongest qualities is how quickly he picks up new things, whether it's a new tool, process, or type of task, he adapts fast and delivers. On top of that, he's easy to work with. Positive, reliable, and just a good presence in the team, which honestly matters more than people think. Overall, someone I'd happily keep working with.",
     name: 'Daiana Altinay',
-    role: 'Marketing Strategist - Sublime SEO',
+    role: 'Marketing Strategist',
+    company: 'Sublime SEO',
     initials: 'DA',
     image: '/testimonials/daiana-altinay.jpg',
   },
@@ -381,7 +382,8 @@ export const testimonials = [
     quote:
       "Jec is an exceptional HR specialist who truly understands how to manage remote professional relationships. During our time working together, I was incredibly impressed by his consistent updates and transparency, he kept me informed every step of the way, even during the transition periods. His seamless communication and high standards of professionalism make him an asset to any team.",
     name: 'Sana Arshad',
-    role: 'Client Success Manager - Remote Office',
+    role: 'Client Success Manager',
+    company: 'Remote Office',
     initials: 'SA',
     image: '/testimonials/sana-arshad.jpg',
   },
@@ -389,7 +391,8 @@ export const testimonials = [
     quote:
       "Working with Jec has been amazing! I really appreciate that he's always on top of things, how detailed and organized he is, and how he's always willing to help. He is definitely a team player, and watching him tackle every challenge and task he gets assigned as efficiently and timely as possible is very reassuring. I'm glad to have crossed paths and to get to work together!",
     name: 'Samantha Flores',
-    role: 'Client Success Manager - Great Marketing AI | Lead Distro AI',
+    role: 'Client Success Manager',
+    company: 'Great Marketing AI | Lead Distro AI',
     initials: 'SF',
     image: '/testimonials/samantha-flores.jpg',
   },

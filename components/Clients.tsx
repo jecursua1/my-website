@@ -139,7 +139,8 @@ export default function Clients() {
                   )}
                   <div className="text-left">
                     <strong className="block text-[0.95rem] font-semibold text-[#e2e2f0]">{t.name}</strong>
-                    <small className="text-xs text-[#7070a0]">{t.role}</small>
+                    <small className="block text-xs text-[#7070a0]">{t.role}</small>
+                    <small className="block text-xs text-[#9b5af5]">{t.company}</small>
                   </div>
                 </div>
               </div>
