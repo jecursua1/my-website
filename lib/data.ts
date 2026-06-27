@@ -391,7 +391,7 @@ export const testimonials = [
     name: 'Samantha Flores',
     role: 'Client Success Manager - Great Marketing AI | Lead Distro AI',
     initials: 'SF',
-    image: null,
+    image: '/testimonials/samantha-flores.jpg',
   },
 ]
 
