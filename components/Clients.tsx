@@ -84,7 +84,7 @@ export default function Clients() {
               style={{
                 background: 'var(--bg-surface)',
                 border: '1px solid var(--border)',
-                minHeight: '320px',
+                height: '450px',
               }}
               onMouseEnter={() => { paused.current = true }}
               onMouseLeave={() => { paused.current = false }}
