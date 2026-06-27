@@ -1,4 +1,4 @@
-import Image from 'next/image'
+﻿import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
@@ -16,15 +16,16 @@ const stats = [
 
 export default function AboutMePage() {
   return (
-    <main style={{ background: '#080810', color: '#e2e2f0', fontFamily: 'Inter, sans-serif' }}>
+    <main style={{ background: 'var(--bg-base)', color: 'var(--text-primary)', fontFamily: 'Inter, sans-serif' }}>
 
       {/* Nav back */}
       <div className="max-w-[900px] mx-auto px-6 pt-8">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-[0.85rem] text-[#7070a0] hover:text-[#9b5af5] transition-colors duration-300"
+          className="inline-flex items-center gap-2 text-[0.85rem] hover:text-[#9b5af5] transition-colors duration-300"
+          style={{ color: 'var(--text-secondary)' }}
         >
-          ← Back to Portfolio
+          &#8592; Back to Portfolio
         </Link>
       </div>
 
@@ -54,12 +55,13 @@ export default function AboutMePage() {
               style={{
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
                 fontSize: 'clamp(2rem, 4vw, 3rem)',
+                color: 'var(--text-primary)',
               }}
             >
               The Story Behind<br />
               <span className="hero-grad-text">the Work</span>
             </h1>
-            <p className="text-[#7070a0] text-[1.05rem] leading-relaxed">
+            <p className="text-[1.05rem] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
               From an accidental HR career to Chief of Staff at global agencies. This is the real journey of how Jec Ursua got here.
             </p>
           </div>
@@ -67,7 +69,7 @@ export default function AboutMePage() {
       </section>
 
       {/* Stats */}
-      <section style={{ borderTop: '1px solid rgba(255,255,255,0.07)', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+      <section style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
         <div className="max-w-[900px] mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
@@ -83,7 +85,7 @@ export default function AboutMePage() {
               >
                 {s.value}
               </p>
-              <p className="text-[0.8rem] text-[#7070a0] uppercase tracking-widest">{s.label}</p>
+              <p className="text-[0.8rem] uppercase tracking-widest" style={{ color: 'var(--text-secondary)' }}>{s.label}</p>
             </div>
           ))}
         </div>
@@ -94,7 +96,7 @@ export default function AboutMePage() {
 
         <StoryBlock label="The Beginning">
           <p>
-            My name is Jerico Ursua, but everyone calls me <strong className="text-white">Jec</strong>. I studied Business Administration
+            My name is Jerico Ursua, but everyone calls me <strong style={{ color: 'var(--text-primary)' }}>Jec</strong>. I studied Business Administration
             majoring in Human Resource Development Management at Pangasinan State University, San Carlos Campus.
           </p>
           <p>
@@ -105,7 +107,7 @@ export default function AboutMePage() {
 
         <StoryBlock label="First Steps & First Doubts">
           <p>
-            After graduating, I landed my first job as an <strong className="text-white">HR Assistant at a retail company</strong>,
+            After graduating, I landed my first job as an <strong style={{ color: 'var(--text-primary)' }}>HR Assistant at a retail company</strong>,
             helping manage over 100 employees. On paper, it was a solid start. But deep down, something felt off.
             That environment wasn&apos;t where I was meant to be. After a couple of months, I resigned.
           </p>
@@ -114,14 +116,14 @@ export default function AboutMePage() {
           </p>
           <p>
             Jobless during one of the hardest periods in modern history, I turned to the stock market and became a{' '}
-            <strong className="text-white">day trader</strong>{' '}to keep income flowing. It wasn&apos;t easy,
+            <strong style={{ color: 'var(--text-primary)' }}>day trader</strong>{' '}to keep income flowing. It wasn&apos;t easy,
             but it taught me discipline, risk management, and how to think strategically under pressure.
           </p>
         </StoryBlock>
 
         <StoryBlock label="The Wake-Up Call">
           <p>
-            I eventually landed another role as an <strong className="text-white">HR Admin at a construction company</strong>.
+            I eventually landed another role as an <strong style={{ color: 'var(--text-primary)' }}>HR Admin at a construction company</strong>.
             I stayed for a year, performed well, but the same feeling crept back in.
             On-site work, a salary that barely moved the needle no matter how hard I worked. It just wasn&apos;t the life I envisioned.
           </p>
@@ -131,11 +133,11 @@ export default function AboutMePage() {
             To live on my own terms, not on what my salary permitted.
           </p>
           <blockquote
-            className="my-8 pl-5 italic text-[1.1rem] text-[#e2e2f0] leading-relaxed"
-            style={{ borderLeft: '3px solid #7c3aed' }}
+            className="my-8 pl-5 italic text-[1.1rem] leading-relaxed"
+            style={{ borderLeft: '3px solid #7c3aed', color: 'var(--text-primary)' }}
           >
             &ldquo;Life is like this, and I like this.&rdquo;
-            <span className="block text-[0.82rem] not-italic text-[#7070a0] mt-2">— Harvey Specter</span>
+            <span className="block text-[0.82rem] not-italic mt-2" style={{ color: 'var(--text-secondary)' }}>— Harvey Specter</span>
           </blockquote>
           <p>
             That quote hit differently when I first heard it. It wasn&apos;t just a line from a TV show.
@@ -146,7 +148,7 @@ export default function AboutMePage() {
         <StoryBlock label="The Leap into Freelancing">
           <p>
             Still employed as an HR Admin, I started mapping my way out: work abroad, start a business,
-            go all-in on trading, or explore this thing called <strong className="text-white">remote freelancing</strong>.
+            go all-in on trading, or explore this thing called <strong style={{ color: 'var(--text-primary)' }}>remote freelancing</strong>.
           </p>
           <p>
             I went deep. I studied how it worked, who was doing it, and what skills I already had that could translate.
@@ -158,8 +160,8 @@ export default function AboutMePage() {
         <StoryBlock label="Where It Led">
           <p>
             The journey wasn&apos;t overnight, but it was worth every uncomfortable moment. Today, I work as
-            <strong className="text-white"> Chief of Staff</strong> for powerful digital marketing agencies, including
-            teams that serve clients like <strong className="text-white">Neil Patel</strong>. I handle operations,
+            <strong style={{ color: 'var(--text-primary)' }}> Chief of Staff</strong> for powerful digital marketing agencies, including
+            teams that serve clients like <strong style={{ color: 'var(--text-primary)' }}>Neil Patel</strong>. I handle operations,
             recruitment, SEO, web development, AI automation, and everything in between.
           </p>
           <p>
@@ -172,7 +174,7 @@ export default function AboutMePage() {
 
         <StoryBlock label="Beyond the Work">
           <p>
-            What people don&apos;t always know about me is that my <strong className="text-white">real dream has always been music</strong>.
+            What people don&apos;t always know about me is that my <strong style={{ color: 'var(--text-primary)' }}>real dream has always been music</strong>.
             I&apos;m a musician at heart. One day I want to perform on a big stage, with crowds singing along with my band.
             The kind of moment that gives you chills just imagining it.
           </p>
@@ -190,15 +192,15 @@ export default function AboutMePage() {
             border: '1px solid rgba(124,58,237,0.25)',
           }}
         >
-          <p className="text-[1.15rem] text-[#e2e2f0] leading-relaxed italic mb-4">
+          <p className="text-[1.15rem] leading-relaxed italic mb-4" style={{ color: 'var(--text-primary)' }}>
             &ldquo;If you have the ability to do it, do it. Don&apos;t settle for less. Aim higher.&rdquo;
           </p>
-          <span className="text-[0.85rem] text-[#7070a0]">— Jec Ursua</span>
+          <span className="text-[0.85rem]" style={{ color: 'var(--text-secondary)' }}>— Jec Ursua</span>
         </div>
 
         {/* CTA */}
         <div className="mt-16 text-center">
-          <p className="text-[#7070a0] mb-6 text-[1rem]">
+          <p className="mb-6 text-[1rem]" style={{ color: 'var(--text-secondary)' }}>
             Want to work with someone who has lived this journey?
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
@@ -210,12 +212,12 @@ export default function AboutMePage() {
                 boxShadow: '0 4px 24px rgba(124,58,237,0.4)',
               }}
             >
-              Let&apos;s Work Together →
+              Let&apos;s Work Together &#8594;
             </Link>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-[10px] text-[0.95rem] font-semibold text-[#e2e2f0] transition-all duration-300 hover:text-[#9b5af5]"
-              style={{ border: '1.5px solid rgba(255,255,255,0.07)' }}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-[10px] text-[0.95rem] font-semibold transition-all duration-300 hover:text-[#9b5af5]"
+              style={{ border: '1.5px solid var(--border)', color: 'var(--text-primary)' }}
             >
               View My Portfolio
             </Link>
@@ -239,7 +241,7 @@ function StoryBlock({ label, children }: { label: string; children: React.ReactN
           {label}
         </h2>
       </div>
-      <div className="flex flex-col gap-4 text-[1rem] text-[#9090b8] leading-[1.85] pl-5" style={{ borderLeft: '1px solid rgba(255,255,255,0.06)' }}>
+      <div className="flex flex-col gap-4 text-[1rem] leading-[1.85] pl-5" style={{ color: 'var(--text-secondary)', borderLeft: '1px solid var(--border-subtle)' }}>
         {children}
       </div>
     </div>

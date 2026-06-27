@@ -1,17 +1,17 @@
-import FadeIn from '@/components/FadeIn'
+﻿import FadeIn from '@/components/FadeIn'
 import { toolCategories, highlightTools } from '@/lib/data'
 
 const toolIcons: Record<string, React.ReactNode> = {
   'GoHighLevel': (
     <svg viewBox="0 0 24 24" width="22" height="22">
       <circle cx="12" cy="12" r="12" fill="#0D1C2E"/>
-      {/* Yellow arrow — left, tallest */}
+      {/* Yellow arrow â€” left, tallest */}
       <polygon points="4.5,13 7.5,5.5 10.5,13 9,13 9,20 6,20 6,13" fill="#FFC107"/>
       <polygon points="7.5,5.5 10.5,13 9,13 9,20" fill="#996600" opacity="0.45"/>
-      {/* Green arrow — right, medium */}
+      {/* Green arrow â€” right, medium */}
       <polygon points="13.5,14 16.5,7.5 19.5,14 18,14 18,20 15,20 15,14" fill="#43C644"/>
       <polygon points="16.5,7.5 19.5,14 18,14 18,20" fill="#1A6B1A" opacity="0.45"/>
-      {/* Blue arrow — center, shortest */}
+      {/* Blue arrow â€” center, shortest */}
       <polygon points="9.5,16.5 12,12 14.5,16.5 13.5,16.5 13.5,20 10.5,20 10.5,16.5" fill="#3B8FE8"/>
       <polygon points="12,12 14.5,16.5 13.5,16.5 13.5,20" fill="#0D3D7A" opacity="0.45"/>
     </svg>
@@ -102,7 +102,7 @@ const toolIcons: Record<string, React.ReactNode> = {
 
 export default function Tools() {
   return (
-    <section id="tools" className="py-24 bg-[#0e0e1a]">
+    <section id="tools" className="py-24" style={{ background: 'var(--bg-elevated)' }}>
       <div className="max-w-[1160px] mx-auto px-6">
         <FadeIn>
           <div className="text-center mb-16">
@@ -112,11 +112,12 @@ export default function Tools() {
               style={{
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
                 fontSize: 'clamp(2rem, 4vw, 2.8rem)',
+              color: 'var(--text-primary)',
               }}
             >
               Tools I Use
             </h2>
-            <p className="text-[#7070a0] max-w-[520px] mx-auto text-[1.05rem]">
+            <p className="max-w-[520px] mx-auto text-[1.05rem]" style={{ color: 'var(--text-secondary)' }}>
               Technologies and platforms I work with daily to get things done
             </p>
           </div>
@@ -141,10 +142,11 @@ export default function Tools() {
               {highlightTools.map((tool) => (
                 <div
                   key={tool.name}
-                  className="flex items-center gap-3 px-6 py-3.5 rounded-[14px] text-[1.05rem] font-semibold text-[#e2e2f0] transition-transform duration-300 hover:-translate-y-0.5 cursor-default animate-glow-pulse"
+                  className="flex items-center gap-3 px-6 py-3.5 rounded-[14px] text-[1.05rem] font-semibold transition-transform duration-300 hover:-translate-y-0.5 cursor-default animate-glow-pulse"
                   style={{
                     background: 'linear-gradient(135deg, rgba(124,58,237,0.18), rgba(6,182,212,0.1))',
                     border: '1px solid rgba(124,58,237,0.4)',
+                  color: 'var(--text-primary)',
                   }}
                 >
                   {toolIcons[tool.name] && (
@@ -162,11 +164,11 @@ export default function Tools() {
         <FadeIn delay={0.2}>
           <div
             className="text-center mb-8"
-            style={{ borderTop: '1px solid rgba(255,255,255,0.07)', paddingTop: '2rem' }}
+            style={{ borderTop: '1px solid var(--border)', paddingTop: '2rem' }}
           >
             <h3
-              className="text-[1.15rem] font-bold text-[#e2e2f0]"
-              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+              className="text-[1.15rem] font-bold"
+              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: 'var(--text-primary)' }}
             >
               More Tools in My Stack
             </h3>
@@ -178,8 +180,8 @@ export default function Tools() {
             <FadeIn key={cat.title} delay={i * 0.08}>
               <div>
                 <h4
-                  className="text-[1rem] font-bold text-[#e2e2f0] mb-4"
-                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                  className="text-[1rem] font-bold mb-4"
+                style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: 'var(--text-primary)' }}
                 >
                   {cat.title}
                 </h4>
@@ -187,10 +189,11 @@ export default function Tools() {
                   {cat.tools.map((tool) => (
                     <div
                       key={tool.name}
-                      className="px-4 py-2.5 rounded-[10px] text-[0.85rem] font-medium text-[#e2e2f0] transition-all duration-300 hover:text-[#9b5af5] hover:-translate-y-0.5 cursor-default"
+                      className="px-4 py-2.5 rounded-[10px] text-[0.85rem] font-medium transition-all duration-300 hover:text-[#9b5af5] hover:-translate-y-0.5 cursor-default"
                       style={{
-                        background: '#12121f',
-                        border: '1px solid rgba(255,255,255,0.07)',
+                        background: 'var(--bg-surface)',
+                        border: '1px solid var(--border)',
+                        color: 'var(--text-primary)',
                       }}
                     >
                       {tool.name}
@@ -205,3 +208,7 @@ export default function Tools() {
     </section>
   )
 }
+
+
+
+

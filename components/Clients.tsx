@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState, useEffect, useCallback, useRef } from 'react'
 import FadeIn from '@/components/FadeIn'
@@ -30,7 +30,7 @@ export default function Clients() {
   const t = testimonials[active]
 
   return (
-    <section id="clients" className="py-24 bg-[#080810]">
+    <section id="clients" className="py-24" style={{ background: 'var(--bg-base)' }}>
       <div className="max-w-[1160px] mx-auto px-6">
         <FadeIn>
           <div className="text-center mb-16">
@@ -40,11 +40,12 @@ export default function Clients() {
               style={{
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
                 fontSize: 'clamp(2rem, 4vw, 2.8rem)',
+                color: 'var(--text-primary)',
               }}
             >
               Trusted by Great Clients
             </h2>
-            <p className="text-[#7070a0] max-w-[520px] mx-auto text-[1.05rem]">
+            <p className="max-w-[520px] mx-auto text-[1.05rem]" style={{ color: 'var(--text-secondary)' }}>
               I&apos;ve had the privilege of working with businesses across multiple industries and countries
             </p>
           </div>
@@ -81,8 +82,8 @@ export default function Clients() {
             <div
               className="p-8 md:p-10 rounded-[22px] relative flex flex-col justify-center"
               style={{
-                background: '#12121f',
-                border: '1px solid rgba(255,255,255,0.07)',
+                background: 'var(--bg-surface)',
+                border: '1px solid var(--border)',
                 height: '420px',
               }}
               onMouseEnter={() => { paused.current = true }}
@@ -92,8 +93,8 @@ export default function Clients() {
               <button
                 onClick={prev}
                 aria-label="Previous"
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center text-[#7070a0] hover:text-[#e2e2f0] transition-colors"
-                style={{ background: 'rgba(255,255,255,0.06)' }}
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center transition-colors"
+                style={{ background: 'var(--bg-elevated)', color: 'var(--text-secondary)' }}
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M15 18l-6-6 6-6"/>
@@ -102,8 +103,8 @@ export default function Clients() {
               <button
                 onClick={next}
                 aria-label="Next"
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center text-[#7070a0] hover:text-[#e2e2f0] transition-colors"
-                style={{ background: 'rgba(255,255,255,0.06)' }}
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center transition-colors"
+                style={{ background: 'var(--bg-elevated)', color: 'var(--text-secondary)' }}
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M9 18l6-6-6-6"/>
@@ -118,28 +119,28 @@ export default function Clients() {
                 }}
               >
                 <div className="text-amber-400 text-lg tracking-[3px] mb-5">{'★★★★★'}</div>
-                <p className="text-[0.95rem] text-[#7070a0] italic leading-[1.8] mb-7 max-w-[580px]">
+                <p className="text-[0.95rem] italic leading-[1.8] mb-7 max-w-[580px]" style={{ color: 'var(--text-secondary)' }}>
                   &ldquo;{t.quote}&rdquo;
                 </p>
-                <div className="flex items-center gap-3">
+                <div className="flex flex-col items-center gap-2">
                   {t.image ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       src={t.image}
                       alt={t.name}
-                      className="w-11 h-11 rounded-full flex-shrink-0 object-cover"
+                      className="w-14 h-14 rounded-full object-cover"
                     />
                   ) : (
                     <div
-                      className="w-11 h-11 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-bold text-white"
+                      className="w-14 h-14 rounded-full flex items-center justify-center text-sm font-bold text-white"
                       style={{ background: 'linear-gradient(135deg, #7c3aed, #06b6d4)' }}
                     >
                       {t.initials}
                     </div>
                   )}
-                  <div className="text-left">
-                    <strong className="block text-[0.95rem] font-semibold text-[#e2e2f0]">{t.name}</strong>
-                    <small className="block text-xs text-[#7070a0]">{t.role}</small>
+                  <div className="text-center">
+                    <strong className="block text-[0.95rem] font-semibold" style={{ color: 'var(--text-primary)' }}>{t.name}</strong>
+                    <small className="block text-xs" style={{ color: 'var(--text-secondary)' }}>{t.role}</small>
                     <small className="block text-xs text-[#9b5af5]">{t.company}</small>
                   </div>
                 </div>

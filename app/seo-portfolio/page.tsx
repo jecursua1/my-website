@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -44,12 +44,12 @@ const services = [
 
 export default function SeoPortfolioPage() {
   return (
-    <main className="min-h-screen" style={{ background: '#080810', color: '#e2e2f0' }}>
+    <main className="min-h-screen" style={{ background: 'var(--bg-base)', color: 'var(--text-primary)' }}>
 
       {/* Header */}
       <div
         className="relative overflow-hidden px-6 pt-12 pb-16"
-        style={{ background: 'linear-gradient(180deg, rgba(124,58,237,0.16) 0%, rgba(8,8,16,0) 100%)' }}
+        style={{ background: 'linear-gradient(180deg, rgba(124,58,237,0.16) 0%, rgba(0,0,0,0) 100%)' }}
       >
         {/* Subtle grid background */}
         <div
@@ -63,7 +63,8 @@ export default function SeoPortfolioPage() {
         <div className="max-w-[1160px] mx-auto relative">
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-2 text-sm text-[#7070a0] hover:text-white transition-colors mb-10"
+            className="inline-flex items-center gap-2 text-sm hover:text-white transition-colors mb-10"
+            style={{ color: 'var(--text-secondary)' }}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="15 18 9 12 15 6" />
@@ -73,11 +74,11 @@ export default function SeoPortfolioPage() {
 
           <h1
             className="font-black mb-4 leading-tight max-w-[700px]"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 'clamp(2.2rem, 4vw, 3.2rem)' }}
+            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 'clamp(2.2rem, 4vw, 3.2rem)', color: 'var(--text-primary)' }}
           >
             SEO Client Work
           </h1>
-          <p className="text-[#7070a0] text-[1.05rem] mb-8 leading-relaxed max-w-[580px]">
+          <p className="text-[1.05rem] mb-8 leading-relaxed max-w-[580px]" style={{ color: 'var(--text-secondary)' }}>
             Real clients we helped grow at Sublime SEO. From on-page optimization and technical audits to keyword strategy and link building, these are websites we actively managed and improved.
           </p>
 
@@ -108,7 +109,7 @@ export default function SeoPortfolioPage() {
                 >
                   {value}
                 </div>
-                <div className="text-xs text-[#7070a0] font-medium">{label}</div>
+                <div className="text-xs font-medium" style={{ color: 'var(--text-secondary)' }}>{label}</div>
               </div>
             ))}
           </div>
@@ -124,9 +125,10 @@ export default function SeoPortfolioPage() {
               href={client.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group rounded-[16px] overflow-hidden transition-all duration-300 hover:-translate-y-1 border border-white/[0.07] hover:border-purple-600/40"
+              className="group rounded-[16px] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-purple-600/40"
               style={{
-                background: '#12121f',
+                background: 'var(--bg-surface)',
+                border: '1px solid var(--border)',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
               }}
             >
@@ -157,8 +159,8 @@ export default function SeoPortfolioPage() {
 
               {/* Info */}
               <div className="px-4 py-3">
-                <p className="text-sm font-semibold text-[#e2e2f0]">{client.name}</p>
-                <p className="text-xs text-[#7070a0] mt-0.5 truncate">{new URL(client.url).hostname.replace('www.', '')}</p>
+                <p className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>{client.name}</p>
+                <p className="text-xs mt-0.5 truncate" style={{ color: 'var(--text-secondary)' }}>{new URL(client.url).hostname.replace('www.', '')}</p>
               </div>
             </a>
           ))}
@@ -167,7 +169,7 @@ export default function SeoPortfolioPage() {
 
       {/* CTA */}
       <div className="text-center pb-20">
-        <p className="text-[#7070a0] text-sm mb-4">Want results like these for your website?</p>
+        <p className="text-sm mb-4" style={{ color: 'var(--text-secondary)' }}>Want results like these for your website?</p>
         <Link
           href="/#contact"
           className="inline-flex items-center gap-2 px-8 py-4 rounded-[10px] text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5"

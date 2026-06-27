@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState, FormEvent } from 'react'
 import FadeIn from '@/components/FadeIn'
@@ -142,11 +142,11 @@ export default function Contact() {
   }
 
   const inputStyle = {
-    background: '#0e0e1a',
-    border: '1.5px solid rgba(255,255,255,0.07)',
+    background: 'var(--bg-elevated)',
+    border: '1.5px solid var(--border)',
     borderRadius: '10px',
     padding: '13px 16px',
-    color: '#e2e2f0',
+    color: 'var(--text-primary)',
     fontSize: '0.92rem',
     fontFamily: 'inherit',
     outline: 'none',
@@ -155,7 +155,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 bg-[#0e0e1a]">
+    <section id="contact" className="py-24" style={{ background: 'var(--bg-elevated)' }}>
       <div className="max-w-[1160px] mx-auto px-6">
         <FadeIn once={false}>
           <div className="text-center mb-16">
@@ -165,11 +165,12 @@ export default function Contact() {
               style={{
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
                 fontSize: 'clamp(2rem, 4vw, 2.8rem)',
+                color: 'var(--text-primary)',
               }}
             >
               Let&apos;s Work Together
             </h2>
-            <p className="text-[#7070a0] max-w-[520px] mx-auto text-[1.05rem]">
+            <p className="max-w-[520px] mx-auto text-[1.05rem]" style={{ color: 'var(--text-secondary)' }}>
               Have a project in mind? I&apos;d love to hear about it.
             </p>
           </div>
@@ -180,7 +181,7 @@ export default function Contact() {
           <FadeIn direction="left" once={false}>
             <div
               className="flex flex-col gap-5 p-7 rounded-[22px] mb-5"
-              style={{ background: '#12121f', border: '1px solid rgba(255,255,255,0.07)' }}
+              style={{ background: 'var(--bg-surface)', border: '1px solid var(--border)' }}
             >
               {contactItems.map((item) => (
                 <div key={item.label} className="flex items-start gap-4">
@@ -190,18 +191,19 @@ export default function Contact() {
                     {item.icon}
                   </span>
                   <div>
-                    <small className="block text-[0.75rem] text-[#7070a0] uppercase tracking-widest mb-0.5">
+                    <small className="block text-[0.75rem] uppercase tracking-widest mb-0.5" style={{ color: 'var(--text-secondary)' }}>
                       {item.label}
                     </small>
                     {item.href ? (
                       <a
                         href={item.href}
-                        className="text-[0.9rem] font-medium text-[#e2e2f0] hover:text-[#9b5af5] transition-colors"
+                        className="text-[0.9rem] font-medium hover:text-[#9b5af5] transition-colors"
+                        style={{ color: 'var(--text-primary)' }}
                       >
                         {item.value}
                       </a>
                     ) : (
-                      <span className="text-[0.9rem] font-medium text-[#e2e2f0]">{item.value}</span>
+                      <span className="text-[0.9rem] font-medium" style={{ color: 'var(--text-primary)' }}>{item.value}</span>
                     )}
                   </div>
                 </div>
@@ -209,7 +211,7 @@ export default function Contact() {
             </div>
 
             <div>
-              <p className="text-[0.78rem] font-bold uppercase tracking-widest text-[#7070a0] mb-3">
+              <p className="text-[0.78rem] font-bold uppercase tracking-widest mb-3" style={{ color: 'var(--text-secondary)' }}>
                 Find me on
               </p>
               <div className="flex flex-wrap gap-2.5">
@@ -221,8 +223,8 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     aria-label={s.label}
                     title={s.label}
-                    className="w-11 h-11 rounded-[10px] flex items-center justify-center text-[#7070a0] transition-all duration-300 hover:text-[#9b5af5] hover:-translate-y-0.5 hover:border-[rgba(124,58,237,0.4)]"
-                    style={{ border: '1.5px solid rgba(255,255,255,0.07)' }}
+                    className="w-11 h-11 rounded-[10px] flex items-center justify-center transition-all duration-300 hover:text-[#9b5af5] hover:-translate-y-0.5 hover:border-[rgba(124,58,237,0.4)]"
+                    style={{ border: '1.5px solid var(--border)', color: 'var(--text-secondary)' }}
                   >
                     {s.icon}
                   </a>
@@ -236,12 +238,12 @@ export default function Contact() {
             <form
               onSubmit={handleSubmit}
               className="flex flex-col gap-4 p-5 md:p-9 rounded-[22px]"
-              style={{ background: '#12121f', border: '1px solid rgba(255,255,255,0.07)' }}
+              style={{ background: 'var(--bg-surface)', border: '1px solid var(--border)' }}
               noValidate
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-[0.82rem] font-semibold text-[#7070a0] uppercase tracking-widest">
+                  <label className="text-[0.82rem] font-semibold uppercase tracking-widest" style={{ color: 'var(--text-secondary)' }}>
                     Your Name
                   </label>
                   <input
@@ -251,11 +253,11 @@ export default function Contact() {
                     required
                     style={inputStyle}
                     onFocus={(e) => (e.target.style.borderColor = '#9b5af5')}
-                    onBlur={(e) => (e.target.style.borderColor = 'rgba(255,255,255,0.07)')}
+                    onBlur={(e) => (e.target.style.borderColor = 'var(--border)')}
                   />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-[0.82rem] font-semibold text-[#7070a0] uppercase tracking-widest">
+                  <label className="text-[0.82rem] font-semibold uppercase tracking-widest" style={{ color: 'var(--text-secondary)' }}>
                     Email Address
                   </label>
                   <input
@@ -265,13 +267,13 @@ export default function Contact() {
                     required
                     style={inputStyle}
                     onFocus={(e) => (e.target.style.borderColor = '#9b5af5')}
-                    onBlur={(e) => (e.target.style.borderColor = 'rgba(255,255,255,0.07)')}
+                    onBlur={(e) => (e.target.style.borderColor = 'var(--border)')}
                   />
                 </div>
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-[0.82rem] font-semibold text-[#7070a0] uppercase tracking-widest">
+                <label className="text-[0.82rem] font-semibold uppercase tracking-widest" style={{ color: 'var(--text-secondary)' }}>
                   Subject
                 </label>
                 <input
@@ -281,19 +283,19 @@ export default function Contact() {
                   required
                   style={inputStyle}
                   onFocus={(e) => (e.target.style.borderColor = '#9b5af5')}
-                  onBlur={(e) => (e.target.style.borderColor = 'rgba(255,255,255,0.07)')}
+                  onBlur={(e) => (e.target.style.borderColor = 'var(--border)')}
                 />
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-[0.82rem] font-semibold text-[#7070a0] uppercase tracking-widest">
+                <label className="text-[0.82rem] font-semibold uppercase tracking-widest" style={{ color: 'var(--text-secondary)' }}>
                   Service Needed
                 </label>
                 <select
                   name="service"
                   style={{ ...inputStyle, appearance: 'none', cursor: 'pointer' }}
                   onFocus={(e) => (e.target.style.borderColor = '#9b5af5')}
-                  onBlur={(e) => (e.target.style.borderColor = 'rgba(255,255,255,0.07)')}
+                  onBlur={(e) => (e.target.style.borderColor = 'var(--border)')}
                 >
                   {serviceOptions.map((opt) => (
                     <option key={opt.value} value={opt.value}>
@@ -304,7 +306,7 @@ export default function Contact() {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-[0.82rem] font-semibold text-[#7070a0] uppercase tracking-widest">
+                <label className="text-[0.82rem] font-semibold uppercase tracking-widest" style={{ color: 'var(--text-secondary)' }}>
                   Message
                 </label>
                 <textarea
@@ -314,7 +316,7 @@ export default function Contact() {
                   required
                   style={{ ...inputStyle, resize: 'vertical', minHeight: '130px' }}
                   onFocus={(e) => (e.target.style.borderColor = '#9b5af5')}
-                  onBlur={(e) => (e.target.style.borderColor = 'rgba(255,255,255,0.07)')}
+                  onBlur={(e) => (e.target.style.borderColor = 'var(--border)')}
                 />
               </div>
 

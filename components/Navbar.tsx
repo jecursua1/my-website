@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import { useTheme } from '@/components/ThemeProvider'
 
 const navLinks = [
   { id: 'about', label: 'About' },
@@ -21,10 +22,35 @@ function scrollTo(id: string) {
   }
 }
 
+function SunIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="5"/>
+      <line x1="12" y1="1" x2="12" y2="3"/>
+      <line x1="12" y1="21" x2="12" y2="23"/>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+      <line x1="1" y1="12" x2="3" y2="12"/>
+      <line x1="21" y1="12" x2="23" y2="12"/>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+    </svg>
+  )
+}
+
+function MoonIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    </svg>
+  )
+}
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
+  const { theme, toggle } = useTheme()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,10 +81,10 @@ export default function Navbar() {
         scrolled ? 'py-3' : 'py-4'
       }`}
       style={{
-        background: 'rgba(8,8,16,0.92)',
+        background: theme === 'dark' ? 'rgba(8,8,16,0.92)' : 'rgba(244,244,252,0.92)',
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
-        borderBottom: '1px solid rgba(255,255,255,0.07)',
+        borderBottom: '1px solid var(--border)',
       }}
     >
       <div className="max-w-[1160px] mx-auto px-6 flex items-center justify-between">
@@ -84,21 +110,36 @@ export default function Navbar() {
             <button
               key={link.id}
               onClick={() => scrollTo(link.id)}
-              className={`text-sm font-medium transition-colors duration-300 bg-transparent border-none cursor-pointer ${
-                activeSection === link.id
-                  ? 'text-white'
-                  : 'text-[#7070a0] hover:text-white'
-              }`}
+              className="text-sm font-medium transition-colors duration-300 bg-transparent border-none cursor-pointer"
+              style={{
+                color: activeSection === link.id ? 'var(--text-primary)' : 'var(--text-secondary)',
+              }}
             >
               {link.label}
             </button>
           ))}
           <Link
             href="/about-me"
-            className="text-sm font-medium text-[#7070a0] hover:text-white transition-colors duration-300"
+            className="text-sm font-medium transition-colors duration-300"
+            style={{ color: 'var(--text-secondary)' }}
           >
             My Story
           </Link>
+
+          {/* Theme Toggle */}
+          <button
+            onClick={toggle}
+            aria-label="Toggle theme"
+            className="w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5 cursor-pointer border-none"
+            style={{
+              background: 'var(--bg-surface)',
+              border: '1px solid var(--border)',
+              color: 'var(--text-secondary)',
+            }}
+          >
+            {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+          </button>
+
           <button
             onClick={() => scrollTo('contact')}
             className="text-white text-sm font-semibold px-5 py-2 rounded-lg transition-all duration-300 hover:-translate-y-0.5 cursor-pointer border-none"
@@ -111,28 +152,48 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Hamburger */}
-        <button
-          className="md:hidden flex flex-col gap-1.5 p-1 z-[60]"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span
-            className={`block w-6 h-0.5 bg-white rounded transition-all duration-300 ${
-              menuOpen ? 'translate-y-2 rotate-45' : ''
-            }`}
-          />
-          <span
-            className={`block w-6 h-0.5 bg-white rounded transition-all duration-300 ${
-              menuOpen ? 'opacity-0' : ''
-            }`}
-          />
-          <span
-            className={`block w-6 h-0.5 bg-white rounded transition-all duration-300 ${
-              menuOpen ? '-translate-y-2 -rotate-45' : ''
-            }`}
-          />
-        </button>
+        {/* Mobile right side: theme toggle + hamburger */}
+        <div className="md:hidden flex items-center gap-3">
+          <button
+            onClick={toggle}
+            aria-label="Toggle theme"
+            className="w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-300 cursor-pointer border-none"
+            style={{
+              background: 'var(--bg-surface)',
+              border: '1px solid var(--border)',
+              color: 'var(--text-secondary)',
+            }}
+          >
+            {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+          </button>
+
+          {/* Mobile Hamburger */}
+          <button
+            className="flex flex-col gap-1.5 p-1 z-[60]"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+            style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+          >
+            <span
+              className={`block w-6 h-0.5 rounded transition-all duration-300 ${
+                menuOpen ? 'translate-y-2 rotate-45' : ''
+              }`}
+              style={{ background: 'var(--text-primary)' }}
+            />
+            <span
+              className={`block w-6 h-0.5 rounded transition-all duration-300 ${
+                menuOpen ? 'opacity-0' : ''
+              }`}
+              style={{ background: 'var(--text-primary)' }}
+            />
+            <span
+              className={`block w-6 h-0.5 rounded transition-all duration-300 ${
+                menuOpen ? '-translate-y-2 -rotate-45' : ''
+              }`}
+              style={{ background: 'var(--text-primary)' }}
+            />
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -140,16 +201,17 @@ export default function Navbar() {
         <div
           className="md:hidden flex flex-col items-center gap-7 py-8"
           style={{
-            background: 'rgba(8,8,16,0.97)',
+            background: theme === 'dark' ? 'rgba(8,8,16,0.97)' : 'rgba(244,244,252,0.97)',
             backdropFilter: 'blur(20px)',
-            borderBottom: '1px solid rgba(255,255,255,0.07)',
+            borderBottom: '1px solid var(--border)',
           }}
         >
           {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => { scrollTo(link.id); closeMenu() }}
-              className="text-xl font-medium text-[#e2e2f0] hover:text-white transition-colors bg-transparent border-none cursor-pointer"
+              className="text-xl font-medium transition-colors bg-transparent border-none cursor-pointer"
+              style={{ color: 'var(--text-primary)' }}
             >
               {link.label}
             </button>
@@ -157,7 +219,8 @@ export default function Navbar() {
           <Link
             href="/about-me"
             onClick={closeMenu}
-            className="text-xl font-medium text-[#e2e2f0] hover:text-white transition-colors"
+            className="text-xl font-medium transition-colors"
+            style={{ color: 'var(--text-primary)' }}
           >
             My Story
           </Link>

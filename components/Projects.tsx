@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
@@ -66,7 +66,7 @@ function Lightbox({
         </svg>
       </button>
 
-      {/* Image container — stop propagation so clicking image doesn't close */}
+      {/* Image container */}
       <div
         className="relative w-full max-w-5xl mx-6"
         onClick={(e) => e.stopPropagation()}
@@ -79,7 +79,7 @@ function Lightbox({
               alt={`${title} screenshot ${i + 1}`}
               fill
               unoptimized
-          sizes="(max-width: 1280px) 95vw, 1024px"
+              sizes="(max-width: 1280px) 95vw, 1024px"
               className="object-cover object-top transition-opacity duration-500"
               style={{ opacity: i === idx ? 1 : 0 }}
               priority
@@ -212,7 +212,7 @@ export default function Projects() {
     : projects.filter((p) => p.category === active).sort((a, b) => (a.wide ? 1 : 0) - (b.wide ? 1 : 0))
 
   return (
-    <section id="projects" className="py-24 bg-[#0e0e1a]">
+    <section id="projects" className="py-24" style={{ background: 'var(--bg-elevated)' }}>
       <div className="max-w-[1160px] mx-auto px-6">
         <FadeIn>
           <div className="text-center mb-16">
@@ -222,11 +222,12 @@ export default function Projects() {
               style={{
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
                 fontSize: 'clamp(2rem, 4vw, 2.8rem)',
+                color: 'var(--text-primary)',
               }}
             >
               Featured Projects
             </h2>
-            <p className="text-[#7070a0] max-w-[520px] mx-auto text-[1.05rem]">
+            <p className="max-w-[520px] mx-auto text-[1.05rem]" style={{ color: 'var(--text-secondary)' }}>
               A selection of work I&apos;m proud to have delivered
             </p>
           </div>
@@ -239,14 +240,13 @@ export default function Projects() {
               <button
                 key={f.key}
                 onClick={() => setActive(f.key)}
-                className={`px-5 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                  active === f.key ? 'text-white' : 'text-[#7070a0] hover:text-white'
-                }`}
+                className="px-5 py-2 rounded-lg text-sm font-medium transition-all duration-300"
                 style={{
+                  color: active === f.key ? '#fff' : 'var(--text-secondary)',
                   background: active === f.key ? '#7c3aed' : 'transparent',
                   border: active === f.key
                     ? '1.5px solid #7c3aed'
-                    : '1.5px solid rgba(255,255,255,0.07)',
+                    : '1.5px solid var(--border)',
                 }}
               >
                 {f.label}
@@ -266,12 +266,12 @@ export default function Projects() {
               <div
                 className="rounded-[22px] overflow-hidden transition-all duration-300 hover:-translate-y-1 h-full"
                 style={{
-                  background: '#12121f',
-                  border: '1px solid rgba(255,255,255,0.07)',
+                  background: 'var(--bg-surface)',
+                  border: '1px solid var(--border)',
                   boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
                 }}
                 onMouseEnter={e => (e.currentTarget.style.border = '1px solid rgba(124,58,237,0.4)')}
-                onMouseLeave={e => (e.currentTarget.style.border = '1px solid rgba(255,255,255,0.07)')}
+                onMouseLeave={e => (e.currentTarget.style.border = '1px solid var(--border)')}
               >
                 <ProjectImage
                   images={'cycling' in proj && proj.cycling ? proj.images : [proj.images[0]]}
@@ -296,12 +296,12 @@ export default function Projects() {
                     ))}
                   </div>
                   <h3
-                    className="text-[1rem] font-bold text-[#e2e2f0] mb-2"
-                    style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                    className="text-[1rem] font-bold mb-2"
+                    style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: 'var(--text-primary)' }}
                   >
                     {proj.title}
                   </h3>
-                  <p className="text-[0.85rem] text-[#7070a0] mb-3">{proj.description}</p>
+                  <p className="text-[0.85rem] mb-3" style={{ color: 'var(--text-secondary)' }}>{proj.description}</p>
                   {'link' in proj && proj.link && (
                     <Link
                       href={proj.link}

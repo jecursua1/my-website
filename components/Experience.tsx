@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { Fragment } from 'react'
 import FadeIn from '@/components/FadeIn'
@@ -6,7 +6,7 @@ import { experiences, type GroupedExperience, type SingleExperience } from '@/li
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 bg-[#080810]">
+    <section id="experience" className="py-24" style={{ background: 'var(--bg-base)' }}>
       <div className="max-w-[1160px] mx-auto px-6">
         <FadeIn>
           <div className="text-center mb-16">
@@ -16,11 +16,12 @@ export default function Experience() {
               style={{
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
                 fontSize: 'clamp(2rem, 4vw, 2.8rem)',
+                color: 'var(--text-primary)',
               }}
             >
               Work Experience
             </h2>
-            <p className="text-[#7070a0] max-w-[520px] mx-auto text-[1.05rem]">
+            <p className="max-w-[520px] mx-auto text-[1.05rem]" style={{ color: 'var(--text-secondary)' }}>
               A track record of delivering results across diverse industries and countries
             </p>
           </div>
@@ -31,19 +32,14 @@ export default function Experience() {
           {/* Desktop center line */}
           <div
             className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 hidden md:block"
-            style={{ background: 'rgba(255,255,255,0.07)' }}
+            style={{ background: 'var(--border)' }}
           />
           {/* Mobile left line */}
           <div
             className="absolute left-3.5 top-0 bottom-0 w-0.5 md:hidden"
-            style={{ background: 'rgba(255,255,255,0.07)' }}
+            style={{ background: 'var(--border)' }}
           />
 
-          {/*
-            Each experience renders ONCE — no duplicate DOM nodes.
-            Mobile: flex row with inline dot on left.
-            Desktop: 3-col grid, odd=left col, even=right col, dot in center col.
-          */}
           <div className="flex flex-col gap-12 md:grid md:grid-cols-[1fr_28px_1fr] md:gap-x-6 md:gap-y-12">
             {experiences.map((exp, i) => {
               const isOdd = i % 2 === 0
@@ -56,25 +52,19 @@ export default function Experience() {
                 <Fragment key={key}>
                   {isOdd ? (
                     <>
-                      {/* Col 1 — card (mobile: flex with inline dot) */}
                       <FadeIn direction="left" delay={0.05}>
                         <div className="flex gap-6 items-start md:block">
                           <InlineDot />
                           <div className="flex-1 min-w-0">{card}</div>
                         </div>
                       </FadeIn>
-                      {/* Col 2 — center dot, desktop only */}
                       <CenterDot />
-                      {/* Col 3 — empty spacer */}
                       <div className="hidden md:block" />
                     </>
                   ) : (
                     <>
-                      {/* Col 1 — empty spacer */}
                       <div className="hidden md:block" />
-                      {/* Col 2 — center dot, desktop only */}
                       <CenterDot />
-                      {/* Col 3 — card (mobile: flex with inline dot) */}
                       <FadeIn direction="right" delay={0.05}>
                         <div className="flex gap-6 items-start md:block">
                           <InlineDot />
@@ -91,7 +81,7 @@ export default function Experience() {
 
         <FadeIn delay={0.3}>
           <div className="text-center mt-14">
-            <p className="text-[#7070a0] text-[0.97rem] mb-5">
+            <p className="text-[0.97rem] mb-5" style={{ color: 'var(--text-secondary)' }}>
               Interested in adding this track record to your team?
             </p>
             <a
@@ -145,10 +135,11 @@ function TagList({ tags, align }: { tags: string[]; align: 'left' | 'right' }) {
       {tags.map((tag) => (
         <span
           key={tag}
-          className="text-[0.75rem] px-2.5 py-0.5 rounded-md text-[#e2e2f0]"
+          className="text-[0.75rem] px-2.5 py-0.5 rounded-md"
           style={{
-            background: 'rgba(255,255,255,0.05)',
-            border: '1px solid rgba(255,255,255,0.07)',
+            color: 'var(--text-primary)',
+            background: 'var(--bg-base)',
+            border: '1px solid var(--border)',
           }}
         >
           {tag}
@@ -164,23 +155,23 @@ function SingleBody({ exp, align = 'left' }: { exp: SingleExperience; align?: 'l
     <div
       className="w-full rounded-[14px] overflow-hidden transition-all duration-300 hover:scale-[1.025] hover:-translate-y-1 cursor-default"
       style={{
-        background: '#12121f',
-        border: '1px solid rgba(255,255,255,0.07)',
+        background: 'var(--bg-surface)',
+        border: '1px solid var(--border)',
         willChange: 'transform',
       }}
       onMouseEnter={e => (e.currentTarget.style.border = '1px solid rgba(124,58,237,0.4)')}
-      onMouseLeave={e => (e.currentTarget.style.border = '1px solid rgba(255,255,255,0.07)')}
+      onMouseLeave={e => (e.currentTarget.style.border = '1px solid var(--border)')}
     >
       {/* Company header */}
       <div
         className={`px-6 py-3 flex items-center gap-2 flex-wrap ${isRight ? 'md:justify-end' : ''}`}
         style={{
           background: 'linear-gradient(135deg, rgba(124,58,237,0.12), rgba(6,182,212,0.06))',
-          borderBottom: '1px solid rgba(255,255,255,0.07)',
+          borderBottom: '1px solid var(--border)',
         }}
       >
         <span className="text-[0.85rem] font-bold" style={{ color: '#9b5af5' }}>{exp.company}</span>
-        <span className="text-[0.75rem] text-[#7070a0]">· {exp.location}</span>
+        <span className="text-[0.75rem]" style={{ color: 'var(--text-secondary)' }}>&#183; {exp.location}</span>
       </div>
 
       {/* Role content */}
@@ -199,12 +190,12 @@ function SingleBody({ exp, align = 'left' }: { exp: SingleExperience; align?: 'l
           </span>
         </div>
         <h3
-          className="text-[1.05rem] font-bold text-[#e2e2f0] mb-2"
-          style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+          className="text-[1.05rem] font-bold mb-2"
+          style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: 'var(--text-primary)' }}
         >
           {exp.title}
         </h3>
-        <p className="text-[0.87rem] text-[#7070a0] mb-3.5">{exp.description}</p>
+        <p className="text-[0.87rem] mb-3.5" style={{ color: 'var(--text-secondary)' }}>{exp.description}</p>
         <TagList tags={exp.tags} align={align} />
       </div>
     </div>
@@ -217,23 +208,23 @@ function GroupedBody({ exp, align = 'left' }: { exp: GroupedExperience; align?: 
     <div
       className="w-full rounded-[14px] overflow-hidden transition-all duration-300 hover:scale-[1.025] hover:-translate-y-1 cursor-default"
       style={{
-        background: '#12121f',
-        border: '1px solid rgba(255,255,255,0.07)',
+        background: 'var(--bg-surface)',
+        border: '1px solid var(--border)',
         willChange: 'transform',
       }}
       onMouseEnter={e => (e.currentTarget.style.border = '1px solid rgba(124,58,237,0.4)')}
-      onMouseLeave={e => (e.currentTarget.style.border = '1px solid rgba(255,255,255,0.07)')}
+      onMouseLeave={e => (e.currentTarget.style.border = '1px solid var(--border)')}
     >
       {/* Company header */}
       <div
         className={`px-6 py-3 flex items-center gap-2 flex-wrap ${isRight ? 'md:justify-end' : ''}`}
         style={{
           background: 'linear-gradient(135deg, rgba(124,58,237,0.12), rgba(6,182,212,0.06))',
-          borderBottom: '1px solid rgba(255,255,255,0.07)',
+          borderBottom: '1px solid var(--border)',
         }}
       >
         <span className="text-[0.85rem] font-bold" style={{ color: '#9b5af5' }}>{exp.company}</span>
-        <span className="text-[0.75rem] text-[#7070a0]">· {exp.location}</span>
+        <span className="text-[0.75rem]" style={{ color: 'var(--text-secondary)' }}>&#183; {exp.location}</span>
       </div>
 
       {/* Roles */}
@@ -242,7 +233,7 @@ function GroupedBody({ exp, align = 'left' }: { exp: GroupedExperience; align?: 
           <div
             key={role.title}
             className="px-6 py-5"
-            style={{ borderTop: i > 0 ? '1px solid rgba(255,255,255,0.05)' : undefined }}
+            style={{ borderTop: i > 0 ? '1px solid var(--border-subtle)' : undefined }}
           >
             <div className={`flex mb-2 ${isRight ? 'md:justify-end' : ''}`}>
               <span
@@ -270,12 +261,12 @@ function GroupedBody({ exp, align = 'left' }: { exp: GroupedExperience; align?: 
               </span>
             </div>
             <h3
-              className="text-[1.05rem] font-bold text-[#e2e2f0] mb-2"
-              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+              className="text-[1.05rem] font-bold mb-2"
+              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: 'var(--text-primary)' }}
             >
               {role.title}
             </h3>
-            <p className="text-[0.87rem] text-[#7070a0] mb-3">{role.description}</p>
+            <p className="text-[0.87rem] mb-3" style={{ color: 'var(--text-secondary)' }}>{role.description}</p>
             <TagList tags={role.tags} align={align} />
           </div>
         ))}

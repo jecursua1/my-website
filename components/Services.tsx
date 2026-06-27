@@ -3,7 +3,7 @@ import { services } from '@/lib/data'
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-[#0e0e1a]">
+    <section id="services" className="py-24" style={{ background: 'var(--bg-elevated)' }}>
       <div className="max-w-[1160px] mx-auto px-6">
         <FadeIn>
           <div className="text-center mb-16">
@@ -13,11 +13,12 @@ export default function Services() {
               style={{
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
                 fontSize: 'clamp(2rem, 4vw, 2.8rem)',
+                color: 'var(--text-primary)',
               }}
             >
               Services I Offer
             </h2>
-            <p className="text-[#7070a0] max-w-[520px] mx-auto text-[1.05rem]">
+            <p className="max-w-[520px] mx-auto text-[1.05rem]" style={{ color: 'var(--text-secondary)' }}>
               End-to-end solutions tailored to help your business operate efficiently and grow
             </p>
           </div>
@@ -31,10 +32,10 @@ export default function Services() {
                 style={{
                   background: svc.featured
                     ? 'linear-gradient(135deg, rgba(124,58,237,0.15), rgba(6,182,212,0.08))'
-                    : '#12121f',
+                    : 'var(--bg-surface)',
                   border: svc.featured
                     ? '1px solid rgba(124,58,237,0.4)'
-                    : '1px solid rgba(255,255,255,0.07)',
+                    : '1px solid var(--border)',
                   boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
                 }}
               >
@@ -48,19 +49,20 @@ export default function Services() {
                 )}
                 <span className="text-[2rem]">{svc.icon}</span>
                 <h3
-                  className="text-[1.1rem] font-bold text-[#e2e2f0]"
-                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                  className="text-[1.1rem] font-bold"
+                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: 'var(--text-primary)' }}
                 >
                   {svc.title}
                 </h3>
-                <p className="text-[#7070a0] text-[0.88rem] flex-1">{svc.description}</p>
+                <p className="text-[0.88rem] flex-1" style={{ color: 'var(--text-secondary)' }}>{svc.description}</p>
                 <ul className="flex flex-col gap-1.5 mt-1">
                   {svc.items.map((item) => (
                     <li
                       key={item}
-                      className="text-[0.82rem] text-[#7070a0] pl-3.5 relative"
+                      className="text-[0.82rem] pl-3.5 relative"
+                      style={{ color: 'var(--text-secondary)' }}
                     >
-                      <span className="absolute left-0 text-[#9b5af5] text-[0.75rem]">▸</span>
+                      <span className="absolute left-0 text-[#9b5af5] text-[0.75rem]">&#9658;</span>
                       {item}
                     </li>
                   ))}
@@ -72,7 +74,7 @@ export default function Services() {
 
         <FadeIn delay={0.5}>
           <div className="text-center mt-14">
-            <p className="text-[#7070a0] text-[0.97rem] mb-5">
+            <p className="text-[0.97rem] mb-5" style={{ color: 'var(--text-secondary)' }}>
               Ready to bring in a results-driven operations and growth expert?
             </p>
             <a

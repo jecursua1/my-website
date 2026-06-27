@@ -1,4 +1,4 @@
-import Image from 'next/image'
+﻿import Image from 'next/image'
 import Link from 'next/link'
 import { personalInfo } from '@/lib/data'
 
@@ -66,7 +66,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#0a0a14', borderTop: '1px solid rgba(255,255,255,0.07)' }}>
+    <footer style={{ background: 'var(--bg-base)', borderTop: '1px solid var(--border)' }}>
       <div className="max-w-[1160px] mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr_1fr] gap-12">
 
@@ -84,7 +84,7 @@ export default function Footer() {
                 className="flex-shrink-0"
               />
             </a>
-            <p className="text-[0.9rem] text-[#7070a0] leading-[1.75] mb-5 max-w-[240px]">
+            <p className="text-[0.9rem] leading-[1.75] mb-5 max-w-[240px]" style={{ color: 'var(--text-secondary)' }}>
               Chief of Staff, HR Executive &amp; SEO Specialist helping teams hire better, rank higher, and automate smarter.
             </p>
             <a
@@ -98,7 +98,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <p className="text-[0.75rem] font-bold uppercase tracking-widest text-[#7070a0] mb-5">
+            <p className="text-[0.75rem] font-bold uppercase tracking-widest mb-5" style={{ color: 'var(--text-secondary)' }}>
               Quick Links
             </p>
             <nav className="flex flex-col gap-3">
@@ -106,14 +106,16 @@ export default function Footer() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-[0.9rem] text-[#9090b8] hover:text-[#e2e2f0] transition-colors duration-300 w-fit"
+                  className="text-[0.9rem] transition-colors duration-300 w-fit hover:text-[#9b5af5]"
+                  style={{ color: 'var(--text-secondary)' }}
                 >
                   {link.label}
                 </a>
               ))}
               <Link
                 href="/about-me"
-                className="text-[0.9rem] text-[#9090b8] hover:text-[#e2e2f0] transition-colors duration-300 w-fit"
+                className="text-[0.9rem] transition-colors duration-300 w-fit hover:text-[#9b5af5]"
+                style={{ color: 'var(--text-secondary)' }}
               >
                 My Story
               </Link>
@@ -122,7 +124,7 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <p className="text-[0.75rem] font-bold uppercase tracking-widest text-[#7070a0] mb-5">
+            <p className="text-[0.75rem] font-bold uppercase tracking-widest mb-5" style={{ color: 'var(--text-secondary)' }}>
               Find Me On
             </p>
             <div className="flex flex-col gap-3">
@@ -132,11 +134,12 @@ export default function Footer() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-[0.9rem] text-[#9090b8] hover:text-[#9b5af5] transition-colors duration-300 w-fit group"
+                  className="flex items-center gap-3 text-[0.9rem] hover:text-[#9b5af5] transition-colors duration-300 w-fit group"
+                  style={{ color: 'var(--text-secondary)' }}
                 >
                   <span
                     className="w-8 h-8 rounded-[8px] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:border-[rgba(124,58,237,0.4)] group-hover:-translate-y-0.5"
-                    style={{ border: '1.5px solid rgba(255,255,255,0.07)' }}
+                    style={{ border: '1.5px solid var(--border)' }}
                   >
                     {s.icon}
                   </span>
@@ -151,18 +154,19 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div
-        className="max-w-[1160px] mx-auto px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-2 text-[0.8rem] text-[#5050708]"
-        style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}
+        className="max-w-[1160px] mx-auto px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-2 text-[0.8rem]"
+        style={{ borderTop: '1px solid var(--border)' }}
       >
-        <p className="text-[#50507a]">&copy; 2026 Jerico Ursua. All rights reserved.</p>
+        <p style={{ color: 'var(--text-secondary)' }}>&copy; 2026 Jerico Ursua. All rights reserved.</p>
         <div className="flex items-center gap-2">
           <span
             className="w-2 h-2 rounded-full"
             style={{ background: '#22c55e', boxShadow: '0 0 6px #22c55e' }}
           />
-          <span className="text-[#50507a]">Available for freelance work</span>
+          <span style={{ color: 'var(--text-secondary)' }}>Available for freelance work</span>
         </div>
       </div>
     </footer>
   )
 }
+

@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
@@ -57,9 +57,9 @@ function FloatCard({
     <div
       className={`${posClass} z-20 flex items-center gap-3 px-4 py-3 rounded-[14px] ${animClass}`}
       style={{
-        background: 'rgba(255,255,255,0.05)',
+        background: 'var(--bg-surface)',
         backdropFilter: 'blur(20px)',
-        border: '1px solid rgba(255,255,255,0.1)',
+        border: '1px solid var(--border)',
         boxShadow: '0 8px 32px rgba(0,0,0,0.45)',
         opacity: show ? 1 : 0,
         transition: `opacity ${FADE}ms ease`,
@@ -68,8 +68,8 @@ function FloatCard({
     >
       <span className="text-2xl">{card.icon}</span>
       <div>
-        <strong className="block text-sm font-semibold text-[#e2e2f0]">{card.title}</strong>
-        <small className="text-xs text-[#7070a0]">{card.sub}</small>
+        <strong className="block text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>{card.title}</strong>
+        <small className="text-xs" style={{ color: 'var(--text-secondary)' }}>{card.sub}</small>
       </div>
     </div>
   )
@@ -158,7 +158,7 @@ function StatCounter({ value, suffix, label }: { value: number; suffix: string; 
       >
         {count}{suffix}
       </span>
-      <span className="text-xs text-[#7070a0] uppercase tracking-widest">{label}</span>
+      <span className="text-xs uppercase tracking-widest" style={{ color: 'var(--text-secondary)' }}>{label}</span>
     </div>
   )
 }
@@ -236,8 +236,8 @@ export default function Hero() {
         </h1>
 
         <p
-          className="text-[#7070a0] mb-4 leading-relaxed mt-2"
-          style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)' }}
+          className="mb-4 leading-relaxed mt-2"
+          style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)', color: 'var(--text-secondary)' }}
         >
           Chief of Staff &middot; HR Specialist &middot; SEO Specialist &middot; AI &amp; Automation Expert
           <br />
@@ -257,8 +257,8 @@ export default function Hero() {
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[10px] text-[0.95rem] font-semibold text-[#e2e2f0] transition-all duration-300 hover:text-[#9b5af5]"
-            style={{ border: '1.5px solid rgba(255,255,255,0.07)' }}
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[10px] text-[0.95rem] font-semibold transition-all duration-300 hover:text-[#9b5af5]"
+            style={{ border: '1.5px solid var(--border)', color: 'var(--text-primary)' }}
           >
             Let&apos;s Talk &#8594;
           </a>
@@ -266,13 +266,13 @@ export default function Hero() {
 
         <div
           className="flex items-center gap-7 mt-12 pt-8"
-          style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}
+          style={{ borderTop: '1px solid var(--border)' }}
         >
           {personalInfo.stats.map((stat, i) => (
             <div key={stat.label} className="flex items-center gap-7">
               <StatCounter value={stat.value} suffix={stat.suffix} label={stat.label} />
               {i < personalInfo.stats.length - 1 && (
-                <div className="w-px h-9" style={{ background: 'rgba(255,255,255,0.07)' }} />
+                <div className="w-px h-9" style={{ background: 'var(--border)' }} />
               )}
             </div>
           ))}
