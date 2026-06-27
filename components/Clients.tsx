@@ -80,20 +80,20 @@ export default function Clients() {
         <FadeIn>
           <div className="max-w-[780px] mx-auto">
             <div
-              className="p-8 md:p-10 rounded-[22px] relative flex flex-col justify-center"
+              className="p-6 md:p-10 rounded-[22px] relative flex flex-col"
               style={{
                 background: 'var(--bg-surface)',
                 border: '1px solid var(--border)',
-                height: '420px',
+                minHeight: '320px',
               }}
               onMouseEnter={() => { paused.current = true }}
               onMouseLeave={() => { paused.current = false }}
             >
-              {/* Arrows */}
+              {/* Arrows — pinned to bottom of card on mobile, vertically centered on desktop */}
               <button
                 onClick={prev}
                 aria-label="Previous"
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center transition-colors"
+                className="absolute left-3 bottom-6 md:bottom-auto md:top-1/2 md:-translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center transition-colors z-10"
                 style={{ background: 'var(--bg-elevated)', color: 'var(--text-secondary)' }}
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -103,7 +103,7 @@ export default function Clients() {
               <button
                 onClick={next}
                 aria-label="Next"
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center transition-colors"
+                className="absolute right-3 bottom-6 md:bottom-auto md:top-1/2 md:-translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center transition-colors z-10"
                 style={{ background: 'var(--bg-elevated)', color: 'var(--text-secondary)' }}
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -112,14 +112,14 @@ export default function Clients() {
               </button>
 
               <div
-                className="px-8 flex flex-col items-center text-center"
+                className="flex flex-col items-center text-center flex-1 pb-14 md:pb-0 md:px-10"
                 style={{
                   opacity: visible ? 1 : 0,
                   transition: 'opacity 0.4s ease',
                 }}
               >
                 <div className="text-amber-400 text-lg tracking-[3px] mb-5">{'★★★★★'}</div>
-                <p className="text-[0.95rem] italic leading-[1.8] mb-7 max-w-[580px]" style={{ color: 'var(--text-secondary)' }}>
+                <p className="text-[0.9rem] md:text-[0.95rem] italic leading-[1.8] mb-7 max-w-[580px]" style={{ color: 'var(--text-secondary)' }}>
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <div className="flex items-center gap-3 justify-center">
