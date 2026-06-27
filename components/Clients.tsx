@@ -80,11 +80,11 @@ export default function Clients() {
         <FadeIn>
           <div className="max-w-[780px] mx-auto">
             <div
-              className="p-6 md:p-10 rounded-[22px] relative flex flex-col"
+              className="p-6 md:p-10 rounded-[22px] relative flex flex-col justify-center"
               style={{
                 background: 'var(--bg-surface)',
                 border: '1px solid var(--border)',
-                height: '450px',
+                height: '440px',
               }}
               onMouseEnter={() => { paused.current = true }}
               onMouseLeave={() => { paused.current = false }}
