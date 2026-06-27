@@ -122,23 +122,23 @@ export default function Clients() {
                 <p className="text-[0.95rem] italic leading-[1.8] mb-7 max-w-[580px]" style={{ color: 'var(--text-secondary)' }}>
                   &ldquo;{t.quote}&rdquo;
                 </p>
-                <div className="flex flex-col items-center gap-2">
+                <div className="flex items-center gap-3 justify-center">
                   {t.image ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       src={t.image}
                       alt={t.name}
-                      className="w-14 h-14 rounded-full object-cover"
+                      className="w-11 h-11 rounded-full object-cover flex-shrink-0"
                     />
                   ) : (
                     <div
-                      className="w-14 h-14 rounded-full flex items-center justify-center text-sm font-bold text-white"
+                      className="w-11 h-11 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0"
                       style={{ background: 'linear-gradient(135deg, #7c3aed, #06b6d4)' }}
                     >
                       {t.initials}
                     </div>
                   )}
-                  <div className="text-center">
+                  <div className="text-left">
                     <strong className="block text-[0.95rem] font-semibold" style={{ color: 'var(--text-primary)' }}>{t.name}</strong>
                     <small className="block text-xs" style={{ color: 'var(--text-secondary)' }}>{t.role}</small>
                     <small className="block text-xs text-[#9b5af5]">{t.company}</small>

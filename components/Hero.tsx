@@ -153,8 +153,8 @@ function StatCounter({ value, suffix, label }: { value: number; suffix: string; 
   return (
     <div ref={ref} className="flex flex-col gap-0.5">
       <span
-        className="text-[1.7rem] font-black text-white leading-none"
-        style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+        className="text-[1.7rem] font-black leading-none"
+        style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: 'var(--text-primary)' }}
       >
         {count}{suffix}
       </span>
@@ -231,7 +231,7 @@ export default function Hero() {
             fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
           }}
         >
-          <span className="text-white">Hi, I&apos;m </span>
+          <span style={{ color: 'var(--text-primary)' }}>Hi, I&apos;m </span>
           <span className="hero-grad-text">Jerico Ursua</span>
         </h1>
 

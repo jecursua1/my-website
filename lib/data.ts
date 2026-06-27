@@ -392,7 +392,7 @@ export const testimonials = [
       "Working with Jec has been amazing! I really appreciate that he's always on top of things, how detailed and organized he is, and how he's always willing to help. He is definitely a team player, and watching him tackle every challenge and task he gets assigned as efficiently and timely as possible is very reassuring. I'm glad to have crossed paths and to get to work together!",
     name: 'Samantha Flores',
     role: 'Client Success Manager',
-    company: 'Great Marketing AI | Lead Distro AI',
+    company: 'Great Marketing AI',
     initials: 'SF',
     image: '/testimonials/samantha-flores.jpg',
   },
