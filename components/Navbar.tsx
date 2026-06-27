@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useTheme } from '@/components/ThemeProvider'
 
 const navLinks = [
@@ -17,8 +17,12 @@ function scrollTo(id: string) {
   const el = document.getElementById(id)
   if (el) {
     el.scrollIntoView({ behavior: 'smooth' })
-    const path = id === 'home' ? '/' : `/${id}`
-    window.history.pushState(null, '', path)
+    try {
+      const path = id === 'home' ? '/' : `/${id}`
+      window.history.pushState(null, '', path)
+    } catch {
+      // iOS Safari rate-limits history API — silently skip
+    }
   }
 }
 
@@ -51,6 +55,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
   const { theme, toggle } = useTheme()
+  const activeSectionRef = useRef('home')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,14 +67,19 @@ export default function Navbar() {
         const top = el.offsetTop
         const height = el.offsetHeight
         const id = el.getAttribute('id') || ''
-        if (scrollY >= top && scrollY < top + height) {
+        if (scrollY >= top && scrollY < top + height && id !== activeSectionRef.current) {
+          activeSectionRef.current = id
           setActiveSection(id)
-          const path = id === 'home' ? '/' : `/${id}`
-          window.history.replaceState(null, '', path)
+          try {
+            const path = id === 'home' ? '/' : `/${id}`
+            window.history.replaceState(null, '', path)
+          } catch {
+            // iOS Safari rate-limits history API — silently skip
+          }
         }
       })
     }
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 

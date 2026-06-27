@@ -312,7 +312,7 @@ export default function Hero() {
         className="absolute bottom-9 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5"
         aria-label="Scroll down"
       >
-        <div className="w-5 h-5 border-r-2 border-b-2 border-muted animate-bounce-arrow" />
+        <div className="w-5 h-5 border-r-2 border-b-2 animate-bounce-arrow" style={{ borderColor: 'var(--text-secondary)' }} />
       </a>
     </section>
   )
