@@ -235,7 +235,7 @@ export default function Contact() {
           <FadeIn direction="right" once={false}>
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col gap-4 p-9 rounded-[22px]"
+              className="flex flex-col gap-4 p-5 md:p-9 rounded-[22px]"
               style={{ background: '#12121f', border: '1px solid rgba(255,255,255,0.07)' }}
               noValidate
             >

@@ -94,7 +94,7 @@ function Lightbox({
         {images.length > 1 && (
           <>
             <button
-              className="absolute left-[-52px] top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center text-white transition-all duration-200 hover:bg-white/10"
+              className="absolute left-0 md:left-[-52px] top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center text-white transition-all duration-200 bg-black/40 md:bg-transparent hover:bg-white/10"
               onClick={prev}
               aria-label="Previous"
             >
@@ -103,7 +103,7 @@ function Lightbox({
               </svg>
             </button>
             <button
-              className="absolute right-[-52px] top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center text-white transition-all duration-200 hover:bg-white/10"
+              className="absolute right-0 md:right-[-52px] top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center text-white transition-all duration-200 bg-black/40 md:bg-transparent hover:bg-white/10"
               onClick={next}
               aria-label="Next"
             >

@@ -73,7 +73,7 @@ export default function Navbar() {
             alt="Jerico Ursua Logo"
             width={160}
             height={160}
-            className="flex-shrink-0 transition-all duration-300 group-hover:drop-shadow-[0_0_14px_rgba(167,139,250,0.6)]"
+            className="flex-shrink-0 transition-all duration-300 group-hover:drop-shadow-[0_0_14px_rgba(167,139,250,0.6)] w-[100px] md:w-[130px] h-auto"
             priority
           />
         </button>
