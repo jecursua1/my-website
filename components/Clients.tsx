@@ -112,7 +112,7 @@ export default function Clients() {
               </button>
 
               <div
-                className="flex flex-col items-center text-center flex-1 pb-14 md:pb-0 md:px-10"
+                className="flex flex-col items-center text-center pb-14 md:pb-0 md:px-10"
                 style={{
                   opacity: visible ? 1 : 0,
                   transition: 'opacity 0.4s ease',
