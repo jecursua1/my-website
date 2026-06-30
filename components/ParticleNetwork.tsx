@@ -12,7 +12,7 @@ interface Particle {
   baseVy: number
 }
 
-const PARTICLE_COUNT = 85
+const PARTICLE_COUNT = 140
 const LINE_DIST = 140
 const TRI_DIST = 110
 const MOUSE_RADIUS = 120
