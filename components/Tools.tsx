@@ -145,12 +145,12 @@ export default function Tools() {
                 return (
                   <div
                     key={tool.name}
-                    className={`flex items-center gap-3 px-6 py-3.5 rounded-[14px] text-[1.05rem] font-semibold cursor-default ${floatClasses[i % 3]}`}
+                    className="flex items-center gap-3 px-6 py-3.5 rounded-[14px] text-[1.05rem] font-semibold cursor-default"
                     style={{
                       background: 'linear-gradient(135deg, rgba(124,58,237,0.18), rgba(6,182,212,0.1))',
                       border: '1px solid rgba(124,58,237,0.4)',
                       color: 'var(--text-primary)',
-                      animationDelay: delays[i] ?? '0s',
+                      animation: `floatSoft ${[4,5.5,7][i % 3]}s ease-in-out ${delays[i] ?? '0s'} infinite, glowPulse 2.5s ease-in-out ${delays[i] ?? '0s'} infinite`,
                     }}
                   >
                     {toolIcons[tool.name] && (
