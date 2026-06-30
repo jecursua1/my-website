@@ -139,24 +139,29 @@ export default function Tools() {
               Highlight Tools
             </h4>
             <div className="flex flex-wrap gap-3 justify-center">
-              {highlightTools.map((tool) => (
-                <div
-                  key={tool.name}
-                  className="flex items-center gap-3 px-6 py-3.5 rounded-[14px] text-[1.05rem] font-semibold transition-transform duration-300 hover:-translate-y-0.5 cursor-default animate-glow-pulse"
-                  style={{
-                    background: 'linear-gradient(135deg, rgba(124,58,237,0.18), rgba(6,182,212,0.1))',
-                    border: '1px solid rgba(124,58,237,0.4)',
-                  color: 'var(--text-primary)',
-                  }}
-                >
-                  {toolIcons[tool.name] && (
-                    <span className="flex-shrink-0" style={{ transform: 'scale(1.25)', transformOrigin: 'center' }}>
-                      {toolIcons[tool.name]}
-                    </span>
-                  )}
-                  {tool.name}
-                </div>
-              ))}
+              {highlightTools.map((tool, i) => {
+                const floatClasses = ['animate-float-soft', 'animate-float-soft-slow', 'animate-float-soft-slower']
+                const delays = ['0s', '0.6s', '1.2s', '1.8s', '0.3s', '0.9s', '1.5s', '2.1s', '0.5s', '1.1s', '1.7s', '2.3s', '0.8s']
+                return (
+                  <div
+                    key={tool.name}
+                    className={`flex items-center gap-3 px-6 py-3.5 rounded-[14px] text-[1.05rem] font-semibold cursor-default ${floatClasses[i % 3]}`}
+                    style={{
+                      background: 'linear-gradient(135deg, rgba(124,58,237,0.18), rgba(6,182,212,0.1))',
+                      border: '1px solid rgba(124,58,237,0.4)',
+                      color: 'var(--text-primary)',
+                      animationDelay: delays[i] ?? '0s',
+                    }}
+                  >
+                    {toolIcons[tool.name] && (
+                      <span className="flex-shrink-0" style={{ transform: 'scale(1.25)', transformOrigin: 'center' }}>
+                        {toolIcons[tool.name]}
+                      </span>
+                    )}
+                    {tool.name}
+                  </div>
+                )
+              })}
             </div>
           </div>
         </FadeIn>
