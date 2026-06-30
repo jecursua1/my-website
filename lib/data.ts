@@ -433,7 +433,6 @@ export const toolCategories = [
       { name: 'PandaDoc' },
       { name: 'Skool' },
       { name: 'Typeform' },
-      { name: 'Fillout' },
     ],
   },
   {
@@ -468,6 +467,7 @@ export const toolCategories = [
       { name: 'WordPress' },
       { name: 'Shopify' },
       { name: 'Squarespace' },
+      { name: 'Framer' },
       { name: 'Namecheap' },
       { name: 'GoDaddy' },
       { name: 'VS Code' },
@@ -480,6 +480,7 @@ export const toolCategories = [
       { name: 'SE Ranking' },
       { name: 'Google Analytics' },
       { name: 'Google Search Console' },
+      { name: 'Fathom' },
       { name: 'Apollo.io' },
       { name: 'Buffer' },
       { name: 'Metricool' },
@@ -513,6 +514,7 @@ export const toolCategories = [
     tools: [
       { name: 'Canva' },
       { name: 'Figma' },
+      { name: 'Fillout' },
       { name: 'Photoshop' },
       { name: 'Premiere Pro' },
       { name: 'Freepik' },
