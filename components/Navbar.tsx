@@ -15,15 +15,7 @@ const navLinks = [
 
 function scrollTo(id: string) {
   const el = document.getElementById(id)
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth' })
-    try {
-      const path = id === 'home' ? '/' : `/${id}`
-      window.history.pushState(null, '', path)
-    } catch {
-      // iOS Safari rate-limits history API — silently skip
-    }
-  }
+  if (el) el.scrollIntoView({ behavior: 'smooth' })
 }
 
 function SunIcon() {
@@ -70,12 +62,6 @@ export default function Navbar() {
         if (scrollY >= top && scrollY < top + height && id !== activeSectionRef.current) {
           activeSectionRef.current = id
           setActiveSection(id)
-          try {
-            const path = id === 'home' ? '/' : `/${id}`
-            window.history.replaceState(null, '', path)
-          } catch {
-            // iOS Safari rate-limits history API — silently skip
-          }
         }
       })
     }
