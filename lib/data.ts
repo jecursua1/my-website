@@ -443,6 +443,8 @@ export const toolCategories = [
       { name: 'Instantly.ai' },
       { name: 'InboxKit' },
       { name: 'Seamless.ai' },
+      { name: 'NeverBounce' },
+      { name: 'SendPotion' },
     ],
   },
   {
@@ -491,6 +493,7 @@ export const toolCategories = [
     tools: [
       { name: 'Stripe' },
       { name: 'QuickBooks' },
+      { name: 'FreshBooks' },
     ],
   },
   {
