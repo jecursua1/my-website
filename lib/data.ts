@@ -396,6 +396,15 @@ export const testimonials = [
     initials: 'SF',
     image: '/testimonials/samantha-flores.jpg',
   },
+  {
+    quote:
+      "I've worked with Jec for a few years now, and he's grown so much from being a VA into a real SEO asset for my agency. What I love most is his attitude. He's eager, always positive, and genuinely loves learning new things. Whether it's a new tool, an AI workflow, or something I've literally never asked him to do before, he just dives in and figures it out, and does it well. He's really into AI and tech, which keeps him sharp and ahead of the curve in this industry. He's reliable, adaptable, and honestly just a pleasure to work with.",
+    name: 'Megan Kioulafofski',
+    role: 'Founder',
+    company: 'Sublime SEO',
+    initials: 'MK',
+    image: '/testimonials/megan-kioulafofski.jpg',
+  },
 ]
 
 export const highlightTools = [
