@@ -405,6 +405,15 @@ export const testimonials = [
     initials: 'MK',
     image: '/testimonials/megan-kioulafofski.jpg',
   },
+  {
+    quote:
+      "Jec Ursua has been a strong addition to the HR team. He responded well to training, picking up new processes and responsibilities quickly and requiring minimal hand-holding along the way. In our time together in the Remote Office, he consistently demonstrated good behavioural conduct in his interactions with candidates, representing the team professionally and helping maintain a positive candidate experience throughout the recruitment process. Jec has also been an active and engaged member of the team, contributing positively to group dynamics and collaborative efforts. His ambition is evident in his approach to work, and with continued development, he shows strong potential for growth within the HR function.",
+    name: 'Sadia Reeti',
+    role: 'HR Executive',
+    company: 'Remote Office',
+    initials: 'SR',
+    image: '/testimonials/sadia-reeti.jpg',
+  },
 ]
 
 export const highlightTools = [
