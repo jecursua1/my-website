@@ -90,14 +90,15 @@ const toolIcons: Record<string, React.ReactNode> = {
   'Canva': (
     <svg viewBox="0 0 24 24" width="22" height="22">
       <defs>
-        <radialGradient id="canva-grad" cx="35%" cy="30%" r="80%">
-          <stop offset="0%" stopColor="#00C4CC"/>
-          <stop offset="50%" stopColor="#7B2FF7"/>
+        <linearGradient id="canva-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#00C2CC"/>
+          <stop offset="50%" stopColor="#5B6CF9"/>
           <stop offset="100%" stopColor="#7B2FF7"/>
-        </radialGradient>
+        </linearGradient>
       </defs>
-      <circle cx="12" cy="12" r="12" fill="url(#canva-grad)"/>
-      <text x="12" y="17" textAnchor="middle" fontFamily="Georgia, serif" fontSize="15" fontStyle="italic" fontWeight="bold" fill="white">c</text>
+      <circle cx="12" cy="12" r="12" fill="url(#canva-bg)"/>
+      {/* White C arc: from upper-right to lower-right, sweeping the long way around */}
+      <path d="M14.75,7.24 A5.5,5.5 0 1 0 14.75,16.76" fill="none" stroke="white" strokeWidth="2.6" strokeLinecap="round"/>
     </svg>
   ),
   'Ubersuggest': (
