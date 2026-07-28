@@ -87,9 +87,17 @@ const toolIcons: Record<string, React.ReactNode> = {
       </defs>
     </svg>
   ),
-  'Nano Banana': (
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
-      <path d="M5 8c0-1 .5-3 3-4.5S14 2 17 3c1 .4 1.5 1 1 2-.5.8-1.5.5-2.5.2C13 4.5 10 5 8.5 7.5 7 10 7.5 13 9 15s3.5 3 6 2.5c1-.2 2 .2 2 1.2s-1 1.8-3 2C9 21 5 17 5 8z" fill="#FFD700" stroke="#F59E0B" strokeWidth="0.5"/>
+  'Canva': (
+    <svg viewBox="0 0 24 24" width="22" height="22">
+      <defs>
+        <radialGradient id="canva-grad" cx="35%" cy="30%" r="80%">
+          <stop offset="0%" stopColor="#00C4CC"/>
+          <stop offset="50%" stopColor="#7B2FF7"/>
+          <stop offset="100%" stopColor="#7B2FF7"/>
+        </radialGradient>
+      </defs>
+      <circle cx="12" cy="12" r="12" fill="url(#canva-grad)"/>
+      <text x="12" y="17" textAnchor="middle" fontFamily="Georgia, serif" fontSize="15" fontStyle="italic" fontWeight="bold" fill="white">c</text>
     </svg>
   ),
   'Ubersuggest': (

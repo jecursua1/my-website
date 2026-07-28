@@ -428,7 +428,7 @@ export const highlightTools = [
   { name: 'G-Suite' },
   { name: 'Vercel' },
   { name: 'ClickUp' },
-  { name: 'Nano Banana' },
+  { name: 'Canva' },
   { name: 'Ubersuggest' },
 ]
 
