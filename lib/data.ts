@@ -477,6 +477,13 @@ export const toolCategories = [
       { name: 'Hubstaff' },
       { name: 'Time Doctor' },
       { name: 'Wise' },
+      { name: 'Indeed' },
+      { name: 'LinkedIn Sales Navigator' },
+      { name: 'LinkedIn Recruiter' },
+      { name: 'ZipRecruiter' },
+      { name: 'OnlineJobs.ph' },
+      { name: 'Naukri' },
+      { name: 'Jobstreet' },
     ],
   },
   {
