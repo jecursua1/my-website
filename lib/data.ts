@@ -414,6 +414,24 @@ export const testimonials = [
     initials: 'SR',
     image: '/testimonials/sadia-reeti.jpg',
   },
+  {
+    quote:
+      "I had the opportunity to work with Jec while he was serving as Chief of Staff and previously as an HR Executive Assistant. He handled everything from recruitment and onboarding to executive support, team coordination, and day-to-day operations with a level of professionalism and dedication that is truly rare. What stood out most was his ability to manage multiple responsibilities simultaneously without losing attention to detail or quality. He is dependable, proactive, and always brings a solutions-oriented mindset to every challenge. Anyone who gets the chance to work with Jec is fortunate to have him on their team.",
+    name: 'Juan Camilo Pineda Guerrero',
+    role: 'Head of Marketing',
+    company: 'Great Marketing AI',
+    initials: 'JP',
+    image: '/testimonials/juan-camilo-pineda.png',
+  },
+  {
+    quote:
+      "I've had the privilege of working closely with Jec Ursua at Great Marketing AI, and I can confidently say he's one of the most dedicated and people-oriented HR leaders I've ever worked with. From onboarding to team coordination, Jec brings structure, empathy, and genuine care to everything he does. He has a remarkable ability to balance operational efficiency with a human touch — making sure every team member feels supported while keeping processes running smoothly. His proactive mindset and strong communication skills make him an invaluable asset to any organization. I highly recommend Jec to any team looking for someone who leads with both competence and character.",
+    name: 'Karl Klein Enriquez',
+    role: 'Tech Lead & GHL Specialist',
+    company: 'Great Marketing AI',
+    initials: 'KK',
+    image: '/testimonials/karl-klein-enriquez.jpg',
+  },
 ]
 
 export const highlightTools = [
