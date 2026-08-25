@@ -130,7 +130,7 @@ export const experiences: Experience[] = [
     location: 'Remote · United States',
     roles: [
       {
-        period: 'Jan 2026 – Present',
+        period: 'Jan 2026 – Aug 2026',
         type: 'Full-time',
         title: 'Chief of Staff',
         description:
@@ -148,7 +148,7 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    period: 'Jan 2026 – Present',
+    period: 'Jan 2026 – Aug 2026',
     type: 'Full-time',
     title: 'Executive Assistant',
     company: 'Lead Distro AI',
