@@ -158,14 +158,27 @@ export const experiences: Experience[] = [
     tags: ['GoHighLevel', 'SEO', 'Email Deliverability', 'Partnerships', 'DNS'],
   },
   {
-    period: 'June 2024 – Dec 2025',
-    type: 'Full-time',
-    title: 'HR & Executive Assistant',
+    grouped: true,
     company: 'Great Marketing AI',
     location: 'Remote · United States',
-    description:
-      'Managed end-to-end internal recruitment and sourced candidates on behalf of clients, automated internal processes using Zapier, and provided executive support including email management, calendar management, and SOP development.',
-    tags: ['HR', 'GoHighLevel', 'Zapier', 'Notion', 'Recruitment'],
+    roles: [
+      {
+        period: 'Jan 2026 – Aug 2026',
+        type: 'Full-time',
+        title: 'Chief of Staff',
+        description:
+          'Promoted to Chief of Staff, managing end-to-end recruitment, driving SEO strategy, leading Next.js web operations and system development including bug fixes and client feature requests, building Claude AI skills, overseeing multi-brand content pipelines, and serving as primary liaison between the founders and all teams.',
+        tags: ['Operations', 'SEO', 'Next.js', 'Claude Skills', 'Leadership'],
+      },
+      {
+        period: 'June 2024 – Dec 2025',
+        type: 'Full-time',
+        title: 'HR & Executive Assistant',
+        description:
+          'Managed end-to-end internal recruitment and sourced candidates on behalf of clients, automated internal processes using Zapier, and provided executive support including email management, calendar management, and SOP development.',
+        tags: ['HR', 'GoHighLevel', 'Zapier', 'Notion', 'Recruitment'],
+      },
+    ],
   },
   {
     period: 'July 2024 – Sep 2024',

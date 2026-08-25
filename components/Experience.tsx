@@ -239,12 +239,12 @@ function GroupedBody({ exp, align = 'left' }: { exp: GroupedExperience; align?: 
               <span
                 className="text-[0.68rem] px-2 py-0.5 rounded-full font-medium"
                 style={
-                  i === 0
+                  role.period.includes('Present')
                     ? { background: 'rgba(6,182,212,0.12)', border: '1px solid rgba(6,182,212,0.3)', color: '#22d3ee' }
                     : { background: 'rgba(124,58,237,0.15)', border: '1px solid rgba(124,58,237,0.3)', color: '#a78bfa' }
                 }
               >
-                {i === 0 ? 'Current Role' : 'Previous Role'}
+                {role.period.includes('Present') ? 'Current Role' : 'Previous Role'}
               </span>
             </div>
             <div className={`flex items-center gap-2.5 mb-1.5 flex-wrap ${isRight ? 'md:justify-end' : ''}`}>
