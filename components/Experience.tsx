@@ -235,18 +235,20 @@ function GroupedBody({ exp, align = 'left' }: { exp: GroupedExperience; align?: 
             className="px-6 py-5"
             style={{ borderTop: i > 0 ? '1px solid var(--border-subtle)' : undefined }}
           >
-            <div className={`flex mb-2 ${isRight ? 'md:justify-end' : ''}`}>
-              <span
-                className="text-[0.68rem] px-2 py-0.5 rounded-full font-medium"
-                style={
-                  role.period.includes('Present')
-                    ? { background: 'rgba(6,182,212,0.12)', border: '1px solid rgba(6,182,212,0.3)', color: '#22d3ee' }
-                    : { background: 'rgba(124,58,237,0.15)', border: '1px solid rgba(124,58,237,0.3)', color: '#a78bfa' }
-                }
-              >
-                {role.period.includes('Present') ? 'Current Role' : 'Previous Role'}
-              </span>
-            </div>
+            {(role.period.includes('Present') || i > 0) && (
+              <div className={`flex mb-2 ${isRight ? 'md:justify-end' : ''}`}>
+                <span
+                  className="text-[0.68rem] px-2 py-0.5 rounded-full font-medium"
+                  style={
+                    role.period.includes('Present')
+                      ? { background: 'rgba(6,182,212,0.12)', border: '1px solid rgba(6,182,212,0.3)', color: '#22d3ee' }
+                      : { background: 'rgba(124,58,237,0.15)', border: '1px solid rgba(124,58,237,0.3)', color: '#a78bfa' }
+                  }
+                >
+                  {role.period.includes('Present') ? 'Current Role' : 'Previous Role'}
+                </span>
+              </div>
+            )}
             <div className={`flex items-center gap-2.5 mb-1.5 flex-wrap ${isRight ? 'md:justify-end' : ''}`}>
               <span className="text-xs font-semibold text-[#9b5af5]">{role.period}</span>
               <span
