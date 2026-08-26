@@ -371,6 +371,15 @@ export const clients = [
 export const testimonials = [
   {
     quote:
+      "I had the pleasure of working with Jec at Great Marketing AI, where he handled admin and content for our team. Jec is reliable, organized, and just gets things done without needing to be micromanaged (which, let's be honest, is rare gold in this line of work). He's flexible too: juggling schedules across time zones without dropping the ball. Whether it was keeping our content pipeline moving or handling day to day admin work, Jec brought consistency and a great attitude to everything he touched. Any team would be lucky to have him. I'm happy to recommend Jec, and I know he'll bring the same dedication to whatever he does next.",
+    name: 'Rafael Hernandez',
+    role: 'Founder & CEO',
+    company: 'Great Marketing AI',
+    initials: 'RH',
+    image: '/testimonials/rafael-hernandez.jpg',
+  },
+  {
+    quote:
       "I've worked with Jec across multiple projects covering lead generation, SEO, link building, and project management, and he's been consistently reliable in all of them. He's proactive, moves fast, and doesn't need much hand-holding. One of his strongest qualities is how quickly he picks up new things, whether it's a new tool, process, or type of task, he adapts fast and delivers. On top of that, he's easy to work with. Positive, reliable, and just a good presence in the team, which honestly matters more than people think. Overall, someone I'd happily keep working with.",
     name: 'Daiana Altinay',
     role: 'Marketing Strategist',
