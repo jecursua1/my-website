@@ -7,7 +7,7 @@ export const personalInfo = {
   phone: '+63 995 437 5136',
   location: 'Basista, Pangasinan, Philippines',
   locationShort: 'Pangasinan, Philippines',
-  availability: 'Mon–Fri, 4AM–9PM PHT',
+  availability: 'Available Across All Timezones',
   linkedin: 'https://www.linkedin.com/in/jec-ursua',
   stats: [
     { value: 6, suffix: '+', label: 'Years Exp.' },
